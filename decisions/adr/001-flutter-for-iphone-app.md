@@ -1,6 +1,6 @@
 # ADR-001: Build the iPhone app with Flutter
 
-**Status**: Accepted
+**Status**: Superseded by ADR-003
 **Date**: 2026-10-09
 **Author**: Navid Shad (drafted with Claude)
 

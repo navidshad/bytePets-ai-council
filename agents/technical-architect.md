@@ -42,24 +42,26 @@ You are a pragmatic technical architect who thinks deeply about systems at scale
 ## Context: BytePets Architecture
 
 **Tech Stack**:
-- Mobile: iPhone app (Flutter vs native SwiftUI — see ADR-001). Android is out of scope for the MVP.
-- Landing page: a simple static site (Vue or plain HTML), Firebase Hosting
-- Backend: Firebase — Auth, Firestore, Storage, Cloud Functions, Hosting
-- AI: Gemini (see ADR-002) with Google Search and Google Maps grounding plus our own tools
-- 3D preview: Three.js page shown in a WebView, scene picked from OpenStreetMap tags at the start point, weather from Open-Meteo
+- App: mobile web app (PWA) — Vue 3 + Vite, Leaflet with MapTiler tiles (ADR-003, supersedes ADR-001)
+- Backend: Firebase — Auth (Google sign-in to write), Firestore, Storage, Cloud Functions, Hosting, App Check
+- AI: Gemini in Cloud Functions (ADR-002) — photo features and photo compare for lost & found matching, report intake
+- Email: Firebase Trigger Email extension for match notices
+- 3D: Three.js walk preview as a lazy-loaded Vue component
+- Languages: `vue-i18n`, English and Lithuanian
 
 **Current Systems**:
-- Firestore collections for users, dogs, walk events, attendees, places, chat threads
-- Cloud Functions: the AI assistant loop (tools: search places, web/Maps grounding, show on map), seed import of places
-- Places data: OpenStreetMap (Overpass) and Vilnius open data, imported once into Firestore
+- Firestore: places (+ votes per user), lostFound (+ messages), matches (+ thread), walks (attendees inside), users, notifications, rateLimits, stats
+- Cloud Functions: addPlace, votePlace (trust rule), createLostPost, matchLostFound trigger, respondMatch, aiExtract, assistantChat, createWalk, editWalk, cancelWalk, joinWalk, leaveWalk, saveProfile, ogPage
+- Places data: city walking areas, OSM + VMVT vets and pharmacies, OSM + hand list of pet-friendly places, imported by laptop scripts
 
 **Key Constraints**:
 - 24 hours to build, small team using AI coding tools (Claude Code)
-- iPhone only; must run on a real device for the demo (Apple developer account, Xcode)
-- AI health answers must be safe: no diagnosis, send urgent cases to a vet
+- Must work on judges' phones from a QR code (iPhone Safari and Android Chrome)
+- Privacy: rounded locations, no public phone or email, contact only after a two-sided match confirm
 - Keep API costs inside free tiers for the demo
 
 **Known Technical Challenges**:
-- The AI loop: tool calls that move the map in the app
-- 3D preview performance in a WebView on a phone
-- Getting good, current place data for Vilnius in a few hours
+- Gemini telling the same pet apart across two different photos
+- Spam and fake votes on open add and verify
+- Three.js speed in mobile Safari
+- Keeping every string in both languages

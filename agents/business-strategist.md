@@ -43,17 +43,17 @@ You are a strategic business thinker who understands market dynamics and busines
 
 **Current Monetization**: None. This is a Hack4Vilnius hackathon MVP (Challenge #6); the goal is to win and validate demand.
 
-**Free Tier Limits**: Everything is free. TODO — set a fair-use limit on AI messages to control cost.
+**Free Tier Limits**: Everything is free for pet owners. Daily limits per user on adds, votes, posts and AI calls control spam and cost.
 
-**Paid Tier Benefits**: TODO — not decided. Ideas for later: premium AI assistant, featured listings for vets and pet businesses, partner offers.
+**Paid Tier Benefits**: None for users. Phase 2 ideas: a safety partner (e.g. If) for prevention content and anonymous, consented trends; claimed-listing extras for pet businesses, kept separate from trust badges; a civic data service for the city.
 
 **Current Metrics** (the ones you watch):
-- Walks created and walks that fill up
-- AI assistant chats per user
-- Map place views and "directions" taps
+- Fresh places (community confirm in the last 30 days) — north star
+- Contributions per week (adds, confirms, reports)
+- Lost & found: posts, matches confirmed by both sides, reunions
 
-**Target Users**: Dog owners pay nothing now. Later, local vets, groomers and pet shops may pay to reach them.
+**Target Users**: Pet owners pay nothing. The challenger, If Insurance, cares about prevention, vet access and trust. Later, pet businesses and the city may pay for data services.
 
-**Market Opportunity**: TODO — number of registered dogs in Vilnius.
+**Market Opportunity**: 55,384 registered dogs and about 102,100 registered pets in Vilnius city (pet register, data.gov.lt dataset 292, 2026-10-01); 318,721 dogs in Lithuania. If operates across the Nordics and Baltics.
 
-**Competitive Position**: Today the info is spread over Facebook groups, forums and static sites with no checks. General pet apps are not local to Vilnius. BytePets is local, social (walks) and has an AI assistant that knows the city's places.
+**Competitive Position**: Today the info is spread over Facebook groups, forums and static sites with no checks. General pet apps are not local to Vilnius. BytePets is local, checked by the community, shows how fresh each item is, and matches lost and found pets.

@@ -40,15 +40,18 @@ You are a seasoned product manager with deep understanding of product strategy a
 
 ## Context: BytePets Product
 
-**Mission**: Help dog owners in Vilnius get reliable local help for their dog, and meet other owners to walk with.
+**Mission**: Help pet owners in Vilnius find info they can trust — vets, pharmacies, pet-friendly places, walking areas and lost or found pets — and keep it true together.
 
-**Core Value Proposition**: One app for the dog-owner questions that today are spread over Facebook groups, forums and old websites — who can I walk with, where is the nearest vet or dog park, and is my dog OK?
+**Core Value Proposition**: One community-checked map instead of scattered Facebook groups, forums and old websites. Every item shows its source, its last confirm and how many owners checked it. Lost and found posts are matched by AI, and both people confirm.
 
-**Current Scope** (24-hour Hack4Vilnius MVP, Challenge #6):
-- Walk-Mate: create a dog-walk event (dog info, topics, start point, date/time, group size 2–4) and join others' events; each event has a 3D "vibe" preview of the start point with weather and avatars
-- Dog-services map of Vilnius (vets, emergency vets, pet shops/pharmacies, dog parks and walking areas)
-- AI assistant (Gemini): chat with photos about dog health and care, searches the web, and points to places on the map
-- A landing page
-- On hold: AI lost & found, crowdsourced venue checks, reputation system
+**Current Scope** (24-hour Hack4Vilnius MVP, challenger: If Insurance; Council 002):
+- Map and list: vets (incl. 24/7), pharmacies and pet shops, pet-friendly places, walking areas
+- Add a place; confirm or report it; a server-side trust rule shows badges and freshness
+- Lost & found tab with "I lost a pet" / "I found a pet" buttons, AI matching of lost and found posts, two-sided confirm before contact
+- Public share links; Google sign-in to write; emergency button
+- Walk-Mate light: create, edit, cancel, join and leave walks at walking areas, full-screen 3D preview with live join and leave (Council 003)
+- English and Lithuanian from day one
+- Assistant as a main way to use the app: find places, emergency, report lost/found, create/join walks; writes need a Confirm tap
+- Out of Phase 1: Walk-Mate extras (topics, edit, chat), AI health chat (Phase 2), push
 
-**Target Users**: Dog owners in Vilnius, mostly 20–45, smartphone-first, iPhone first. New owners and people new to the city feel the gap most.
+**Target Users**: Pet owners in Vilnius (dogs first, then cats and others), on any phone through the web. People who found an animal and will never install an app. New owners and people new to the city feel the gap most.

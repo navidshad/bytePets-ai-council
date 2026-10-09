@@ -2,7 +2,7 @@
 
 **Date**: 2026-10-09
 **Lenses**: Product Manager, Technical Architect
-**Status**: Decided
+**Status**: Superseded by `002-rescope-to-challenge-brief.md`
 
 ## Decision
 

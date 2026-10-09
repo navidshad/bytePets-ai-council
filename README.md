@@ -78,7 +78,7 @@ The council can also make your marketing films, launch images, video covers and 
 
 ## Set up
 
-This repo is set up for **BytePets** — an iPhone app for dog owners in Vilnius: find walking buddies, find dog services on a map, and ask an AI assistant about your dog. Built for Hack4Vilnius, Challenge #6. Re-run `SETUP.md` if the product changes.
+This repo is set up for **BytePets** — Vilnius's community-checked map for pet owners: find, add, confirm and share vets, pharmacies, pet-friendly places and walking areas, and match lost and found pets. Built for Hack4Vilnius (challenger: If Insurance), as a mobile web app. Re-run `SETUP.md` if the product changes.
 
 ## Optional: show your docs in ClickUp
 
