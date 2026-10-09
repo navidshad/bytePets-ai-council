@@ -33,4 +33,6 @@ Don't write one for:
 
 <!-- New ADRs are appended here as they're created. -->
 
-_None yet._
+- [ADR-001](001-flutter-for-iphone-app.md) — Build the iPhone app with Flutter — Superseded by ADR-003
+- [ADR-002](002-ai-assistant-gemini-on-firebase.md) — AI assistant on Gemini in Cloud Functions — Accepted
+- [ADR-003](003-mobile-web-app-pwa.md) — Build the app as a mobile web app (PWA) — Accepted
