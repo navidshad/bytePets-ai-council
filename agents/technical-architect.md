@@ -46,7 +46,8 @@ You are a pragmatic technical architect who thinks deeply about systems at scale
 - Landing page: a simple static site (Vue or plain HTML), Firebase Hosting
 - Backend: Firebase — Auth, Firestore, Storage, Cloud Functions, Hosting
 - AI: Gemini (see ADR-002) with Google Search and Google Maps grounding plus our own tools
-- 3D preview: Three.js page shown in a WebView, scene type from the preset start spot, weather look from the time of day
+- 3D preview (should-have): Three.js page shown in a WebView, one scene type, weather look from the time of day
+- Lost & found: `petPosts` collection with sightings, written through Cloud Functions; sharing through the iPhone share sheet
 
 **Current Systems**:
 - Firestore collections for users, dogs, walk events, attendees, places, chat threads

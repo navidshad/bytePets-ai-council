@@ -42,13 +42,14 @@ You are a thoughtful UX designer who obsesses over user experience. You think ab
 ## Context: BytePets UX
 
 **Design System**: None yet. Use the platform's native components and a small set of colour and type tokens.
-**Visual Style**: Warm, friendly and outdoorsy; the 3D walk preview is the "wow" moment.
+**Visual Style**: Warm, friendly and outdoorsy; the pet map is the main screen, and the 3D walk preview is a should-have.
 **Brand Colors**: TODO — not chosen yet (the prototype uses a deep park green with a warm amber accent).
 
 **Key Interfaces**:
-- Walk-Mate feed and event preview (full-screen 3D scene with glass cards on top)
-- Create-walk form (dog, topics, start point on a map, date/time, group size)
-- Pet map with filters; place card with source, last-checked line and "Still correct?" buttons; add-a-place form
+- Walk-Mate feed and walk screen (static scene picture in P0; full-screen 3D scene with glass cards on top is a should-have)
+- Create-walk form (dog, preset start point, date/time, group size)
+- Pet map with filters; place card with source, last-checked line, "Still correct?" and share buttons; add-a-place form
+- Lost & found: post form, pins and list on the map, post card with "I saw this pet", "Show contact", share and "Reunited"
 - AI assistant chat with photo upload and "show on map" pins
 - Landing page
 

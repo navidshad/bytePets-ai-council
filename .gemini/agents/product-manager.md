@@ -57,7 +57,7 @@ You are a seasoned product manager with deep understanding of product strategy a
 
 **Mission**: Help dog owners in Vilnius get reliable local help for their dog, and meet other owners to walk with.
 **Core Value Proposition**: One app for who can I walk with, where is the nearest vet or dog park, and is my dog OK — instead of scattered Facebook groups and old sites.
-**Current Scope**: 24-hour Hack4Vilnius MVP — Walk-Mate events with a 3D vibe preview, a pet map that owners check and add to (source and last-checked date on every place), a Gemini AI assistant with photos and map pins, and a landing page. On hold: AI lost & found, reputation and weighted votes.
+**Current Scope**: 24-hour Hack4Vilnius MVP — a pet map that owners check, add to and share (source and last-checked date on every place), lost & found posts with sightings on the same map, a Gemini AI assistant with photos and map pins, Walk-Mate events (3D vibe preview is a should-have), and a landing page. Rule: every item the challenge brief names is built. On hold: AI photo matching for lost pets, reputation and weighted votes.
 **Target Users**: Dog owners in Vilnius, iPhone first.
 
 ---

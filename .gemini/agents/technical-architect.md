@@ -57,7 +57,7 @@ You are a pragmatic technical architect who thinks deeply about systems at scale
 ## Context: BytePets Architecture
 
 **Tech Stack**: iPhone app (Flutter vs SwiftUI — ADR-001), static landing page, Firebase (Auth, Firestore, Storage, Cloud Functions, Hosting), Gemini with Search and Maps grounding (ADR-002), Three.js 3D preview in a WebView.
-**Current Systems**: Firestore (users, dogs, walk events, places, chats), Cloud Functions (AI assistant loop, `addPlace`, `votePlace`), places from City of Vilnius dog walking areas and OpenStreetMap, then added and checked by owners; hand-checked emergency vets are locked.
+**Current Systems**: Firestore (users, dogs, walk events, places, chats), Cloud Functions (AI assistant loop, `addPlace`, `votePlace`, `createPetPost`, `addSighting`, `closePetPost`), lost & found posts in `petPosts`, places from City of Vilnius dog walking areas and OpenStreetMap, then added and checked by owners; hand-checked emergency vets are locked.
 **Key Constraints**: 24-hour build, iPhone only, safe AI health answers, free-tier costs.
 **Known Technical Challenges**: AI tool calls that drive the in-app map, 3D in a WebView, good Vilnius place data fast.
 

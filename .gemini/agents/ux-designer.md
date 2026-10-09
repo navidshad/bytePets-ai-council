@@ -57,8 +57,8 @@ You are a thoughtful UX designer who obsesses over user experience. You think ab
 ## Context: BytePets UX
 
 **Design System**: None yet — native components plus a few tokens.
-**Visual Style**: Warm, friendly, outdoorsy; the 3D walk preview is the wow moment.
-**Key Interfaces**: Walk-Mate feed and 3D event preview, create-walk form, pet map with place checks ("Still correct?") and an add-a-place form, AI chat with photos and map pins, landing page.
+**Visual Style**: Warm, friendly, outdoorsy; the pet map is the main screen, and the 3D walk preview is a should-have.
+**Key Interfaces**: Walk-Mate feed and 3D event preview, create-walk form, pet map with place checks ("Still correct?"), an add-a-place form and share, lost & found posts with sightings, AI chat with photos and map pins, landing page.
 **Current UX Strengths**: The 3D preview prototype shows the vibe of a walk well.
 **Known Gaps**: Onboarding, dog profile, empty states, AI health warnings, 3D accessibility.
 

@@ -1,6 +1,6 @@
 # Hackathon Plan — BytePets at Hack4Vilnius
 
-> Event plan for the 24-hour build, from `decisions/council/001-hackathon-mvp-scope.md` and `decisions/council/002-match-mvp-to-challenge-brief.md`. Scope lives in `prd.md`; the system lives in `../tech/architecture.md`. This doc is about time, people and the demo.
+> Event plan for the 24-hour build, from `decisions/council/001-hackathon-mvp-scope.md` `decisions/council/002-match-mvp-to-challenge-brief.md` and `decisions/council/003-build-every-item-in-the-brief.md`. Scope lives in `prd.md`; the system lives in `../tech/architecture.md`. This doc is about time, people and the demo.
 
 ## Before the event
 - Paid Apple developer account ready; demo iPhone registered.
@@ -11,12 +11,16 @@
 ## Team tracks (3–4 people, each with Claude Code)
 - **A — Backend and AI:** Firestore, rules, Functions, Gemini.
 - **B — App:** Flutter shell, profile, walks wall, create form, detail screen, chat UI.
-- **C — 3D:** port the Three.js prototype into a WebView, bridge, scene types, thumbnails.
-- **D — Data and web:** place import, emergency vet list, map tab, landing page, seed data.
+- **C — Lost & found, then 3D:** post form, pins and list, sightings, close and expiry, share sheet. The 3D preview (one scene type, P1) only after the hour-14 checkpoint is green.
+- **D — Data and web:** place import (city walking areas first, then OpenStreetMap with pet-friendly places and shelters), emergency vet and shelter lists, map tab, landing page, seed data.
 
 Freeze the data model as `models.dart` and `types.ts` in hour 1. Changes go through person A.
 
-**Owner checks (decision 002), about 7 hours in total.** A builds `votePlace` and `addPlace`. B builds the "Still correct?" buttons, the source and last-checked line, and the add form. D imports the city dog walking areas as the first task, before OpenStreetMap. The timeline below does not place this work yet; the team places it. Build the place check before the 3D polish, so it is never the last thing built.
+**Owner checks (decision 002), about 7 hours in total.** A builds `votePlace` and `addPlace`. B builds the "Still correct?" buttons, the source and last-checked line, and the add form. D imports the city dog walking areas as the first task, before OpenStreetMap.
+
+**Every item in the brief (decision 003), about 13 hours in total.** A builds `createPetPost`, `addSighting` and `closePetPost`. C builds the lost & found screens and the share sheet. D adds pet-friendly places and shelters to the import and seeds lost & found posts.
+
+**The timeline table below was written before decisions 002 and 003 and is not changed.** It does not place this work, and its track C column is all 3D. The team places the new work. Rule of thumb: place checks, add a place and lost & found come before any 3D work.
 
 ## Timeline
 
@@ -32,23 +36,24 @@ Freeze the data model as `models.dart` and `types.ts` in hour 1. Changes go thro
 ## Cut line (cut from the top if behind at hour 14)
 1. Google Maps grounding pins (P2)
 2. Google Search grounding (P2)
-3. Share a place link (P2)
-4. The assistant's freshness line (P1)
-5. Add a place (P1) → owners can only check places
-6. Map filters → all pins, no filters
+3. The assistant's freshness line (P2)
+4. 3D walk preview (P1) → static scene picture
+5. The assistant lists lost pets nearby (P1)
+6. Tomorrow tab on the walks wall → today only
+7. Map filters → places and lost & found chips only
 
-Already cut by decision 002: free pin drop for walks, forecast weather, more than 3 scene types.
+Already cut by decisions 002 and 003: free pin drop for walks, forecast weather, walk topics, the live walk-in, more than one scene type, live landing counters, analytics events.
 
-**Never cut:** place card → "Still correct?" → count and date change; photo → urgency banner → pins on map; wall → 3D preview → join with animation; landing page with waitlist.
+**Never cut:** place card → "Still correct?" → count and date change; add a place; lost & found post → sighting from a second phone → "Reunited"; share a place or a post; photo → urgency banner → pins on map; walks wall → join → count changes; landing page with waitlist.
 
 Lost & found: only if all P0 and P1 are done by hour 18.
 
 ## Demo script (3 minutes)
 1. **Problem (20 s).** "I moved to Vilnius with my dog. I knew no one. When she got sick at night, I scrolled Facebook groups for 20 minutes to find an open vet."
-2. **Find (50 s).** "It's 11 p.m. and Luna ate something in the park." Send a prepared photo: "She ate this, is it bad?" Red banner: "Go to a vet now", with the reason. Tap "Show on map": the 24/7 vets are pinned, each marked "Checked by BytePets". Tap Directions.
-3. **Add and verify (30 s).** Open a dog walking area from the city's own data: "Confirmed by 3 owners, 2 days ago". On the second phone tap "Still correct? Yes": the first phone shows 4 and "today". If the add form is built: add a pet-friendly café; it shows grey as "Not checked yet".
-4. **Share (50 s).** Open the Walk-Mate wall. Tap a walk at Cathedral Square: the 3D scene fills the screen, two dogs and two "?" spots. Tap Join — a new avatar walks in. The second phone already shows "3 of 4".
-5. **Proof (20 s).** Landing page: real numbers from today for places checked, walks and waitlist.
-6. **Close (10 s).** "BytePets: the Vilnius pet map that owners keep true. Find help, check it, walk together."
+2. **Find (40 s).** "It's 11 p.m. and Luna ate something in the park." Send a prepared photo: "She ate this, is it bad?" Red banner: "Go to a vet now", with the reason. Tap "Show on map": the 24/7 vets are pinned, each marked "Checked by BytePets". Tap Directions.
+3. **Add and verify (35 s).** Open a dog walking area from the city's own data: "Confirmed by 3 owners, 2 days ago". On the second phone tap "Still correct? Yes": the first phone shows 4 and "today". Add a pet-friendly café: it shows grey as "Not checked yet".
+4. **Lost & found (40 s).** Tap the "Lost & found" chip: red and blue pins. Post "Lost: grey cat, Užupis" with a photo in a few taps. On the second phone tap "I saw this pet": the first phone shows the sighting. Tap Share: the share sheet opens with the photo and a map link.
+5. **Walk together (25 s).** Open the walks wall. Tap a walk at Cathedral Square and tap Join: the second phone already shows "3 of 4". If the 3D preview is built, show it here.
+6. **Proof and close (20 s).** Landing page with today's numbers and the waitlist. "BytePets: the Vilnius pet map that owners keep true. Find it, add it, check it, share it."
 
 One person drives the phone, one talks. Mirror the iPhone screen. Phone hotspot as Wi-Fi backup. Warm up the assistant before going on stage.

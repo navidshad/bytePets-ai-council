@@ -8,6 +8,8 @@
 ## Key metrics
 - **Places checked or added per week** — confirms, flags and new places from owners. Uninstrumented.
 - **Share of places checked in the last 30 days** — uninstrumented.
+- **Lost & found posts, sightings and reunited pets per week** — uninstrumented.
+- **Shares** — places and posts shared. Uninstrumented.
 - **Walks created per week** — uninstrumented.
 - **Fill rate** — share of walks with at least 2 people. Uninstrumented.
 - **AI assistant sessions per active user** — uninstrumented.
@@ -15,7 +17,7 @@
 - **Day-7 retention** — uninstrumented.
 
 ## How we instrument
-Firebase Analytics (Google Analytics for Firebase) events from the app, plus counts from Firestore. TODO — define event names during the build.
+Counts from Firestore for Phase 1 (Firebase Analytics events are cut for the hackathon; add them after).
 
 ## Guardrails
 - AI cost per active user stays inside the free tier for the demo.

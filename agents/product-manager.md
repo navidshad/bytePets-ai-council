@@ -45,10 +45,12 @@ You are a seasoned product manager with deep understanding of product strategy a
 **Core Value Proposition**: One app for the dog-owner questions that today are spread over Facebook groups, forums and old websites — who can I walk with, where is the nearest vet or dog park, and is my dog OK?
 
 **Current Scope** (24-hour Hack4Vilnius MVP, Challenge #6):
-- Walk-Mate: create a dog-walk event (dog info, topics, start point, date/time, group size 2–4) and join others' events; each event has a 3D "vibe" preview of the start point with weather and avatars
+- Walk-Mate: create a dog-walk event (dog info, start point, date/time, group size 2–4) and join others' events; a 3D "vibe" preview of the start point is a should-have
+- Lost & found on the same map: post a lost or found pet (any kind) with a photo, add sightings, close with "Reunited"; share any place or post
 - Pet map of Vilnius (vets, emergency vets, pet shops/pharmacies, dog parks and walking areas, pet-friendly places) that owners check ("Still correct?") and add to; every place shows its source and when it was last checked
 - AI assistant (Gemini): chat with photos about dog health and care, searches the web, and points to places on the map
 - A landing page
-- On hold: AI lost & found, reputation system and weighted votes
+- Rule: every item the challenge brief names is built in Phase 1
+- On hold: AI photo matching for lost pets, reputation system and weighted votes
 
 **Target Users**: Dog owners in Vilnius, mostly 20–45, smartphone-first, iPhone first. New owners and people new to the city feel the gap most.
