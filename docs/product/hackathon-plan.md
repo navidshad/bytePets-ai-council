@@ -28,11 +28,11 @@ Freeze the data model as `types.ts` (shared by app and Functions) in hour 1. Cha
 | 2–8 | `addPlace`, `votePlace`, `computeTrust`; `createLostPost`; `saveProfile`, `createWalk`, `editWalk`, `cancelWalk`, `joinWalk`, `leaveWalk` | Map, filters, list, place card with badges, add form, confirm/report | Lost & found form, board, map layer, post page `/l/:id` | Imports, GeoJSON snapshots, seed list of pet-friendly places; `WalkScene.vue` port (park, riverside, old town) |
 | 8–14 | `matchLostFound` (rules), `respondMatch`, notifications, email | Share sheet, `/p/:id`, emergency button, `/about` counters | Lost & found tab with the two big buttons, matches screen (yes/no), messages, reunited | Walks wall, create and edit walk, walk page with 3D, live join and leave on two phones; seed walks and demo posts, planted match pair; QR drive starts |
 | **14** | **Checkpoint: add → confirm → badge turns green on a second phone; lost post → match → both confirm; join a walk → avatar walks in on the other phone. In EN and LT. Works on a judge-style phone. Or cut.** | | | |
-| 14–20 | `aiExtract` features + photo compare in matching; tune the threshold | Empty/error states, "Open in your browser to post" | AI pre-filled form; assistant chat that takes a report and shows a draft card (`assistantReport` with A) | Confirm-after-join prompt, 3D polish and performance; `ogPage` previews; slides (2–3) |
+| 14–20 | `assistantChat` with read tools and P0 action cards; `aiExtract` features + photo compare; tune the threshold | Empty/error states, "Open in your browser to post" | AI pre-filled form; Assistant tab: chat, pins on the map, action cards with Confirm (`assistantChat` with A) | Confirm-after-join prompt, 3D polish and performance; `ogPage` previews; slides (2–3) |
 | 20–24 | **Feature freeze.** Bug fixes, App Check enforcement on, record backup video, rehearse 3 times, charge phones, sleep in turns | | | |
 
 ## Cut line (cut from the top if behind at hour 14)
-1. Assistant report chat (the two buttons and the form stay)
+1. Assistant P1 tools — keep find, emergency, report lost/found, create and join walk
 2. Link previews (`ogPage`) — links still work
 3. AI photo compare — keep AI features, or rule matching only
 4. Helper badges and "My contributions"

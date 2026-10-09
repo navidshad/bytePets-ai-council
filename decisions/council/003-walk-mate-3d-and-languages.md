@@ -1,4 +1,4 @@
-# Council: Bring back Walk-Mate with the 3D preview, ship in EN and LT
+# Council: Walk-Mate with the 3D preview, the assistant as a main way in, EN and LT
 
 **Date**: 2026-10-09
 **Lenses**: Founder call (no lenses run; builds on Council 002)
@@ -11,7 +11,8 @@
 2. **Walks feed the trust loop.** After joining a walk, the app asks "Is this walking area still OK?", and each walk shows the area's trust badge. Walks give people a weekly reason to come back and keep walking areas fresh.
 3. **The app ships in English and Lithuanian from day one (P0).** All app text, trust labels, emails and AI replies come in the user's language. Place names and user posts stay as written.
 4. **No walking-area outlines.** Walking areas are pins. City areas are imported as their centre points, and anyone can add a walking area by pinning it on the map.
-5. **The nightly stale job covers Imported and Community places only.** Official items keep their badge and are refreshed by the monthly re-import. Lost & found posts expire on their own after 30 days.
+5. **The assistant is a main way to use the app (P0).** People talk to it to find places, get the emergency vet, report a lost or found pet, and create or join a walk. More actions follow in P1. Reading happens at once; any write shows an action card that the user confirms with one tap. The assistant never writes on its own.
+6. **The nightly stale job covers Imported and Community places only.** Official items keep their badge and are refreshed by the monthly re-import. Lost & found posts expire on their own after 30 days.
 
 ## Why
 

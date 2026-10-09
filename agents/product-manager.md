@@ -51,7 +51,7 @@ You are a seasoned product manager with deep understanding of product strategy a
 - Public share links; Google sign-in to write; emergency button
 - Walk-Mate light: create, edit, cancel, join and leave walks at walking areas, full-screen 3D preview with live join and leave (Council 003)
 - English and Lithuanian from day one
-- P1: assistant that takes a lost or found report in plain words
+- Assistant as a main way to use the app: find places, emergency, report lost/found, create/join walks; writes need a Confirm tap
 - Out of Phase 1: Walk-Mate extras (topics, edit, chat), AI health chat (Phase 2), push
 
 **Target Users**: Pet owners in Vilnius (dogs first, then cats and others), on any phone through the web. People who found an animal and will never install an app. New owners and people new to the city feel the gap most.

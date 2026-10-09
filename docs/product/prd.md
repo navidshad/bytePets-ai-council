@@ -19,11 +19,12 @@ A web app with one map of all pet places in Vilnius.
 - **Lost & found:** post a lost or found pet. The app finds possible matches and tells both people.
 - **Walks:** owners create and join walks at walking areas.
 - **Share:** every place, post and walk has a link.
+- **Assistant:** talk to it to do most of the above: find places, report a lost or found pet, create or join a walk. It shows a card, and you tap Confirm.
 
 ## App vision
 A mobile web app. No install: scan a QR code or open a shared link.
 
-**Home** is a full-screen map of Vilnius. At the top: search and filter chips (Vets, Pharmacies, Pet-friendly, Walking areas, Lost & found). Above the map: two big buttons, **"I lost a pet"** and **"I found a pet"**. A red **Emergency** button floats in the corner. The bottom bar has **Map · Walks · Lost & found · Add · Me**. An EN / LT switch sits in the header.
+**Home** is a full-screen map of Vilnius. At the top: search and filter chips (Vets, Pharmacies, Pet-friendly, Walking areas, Lost & found). Above the map: two big buttons, **"I lost a pet"** and **"I found a pet"**. A red **Emergency** button floats in the corner. A **+ Add** button sits on the map. The bottom bar has **Map · Walks · Assistant · Lost & found · Me**. An EN / LT switch sits in the header.
 
 Pages:
 - **Map** (home) and **List**
@@ -31,7 +32,7 @@ Pages:
 - **Add place**
 - **Lost & found** — the two buttons and the board
 - **Report lost / found** — the form
-- **Assistant** — report in plain words
+- **Assistant** — chat; answers show pins on the map and action cards to confirm
 - **Match** — "Possible match", Yes / No, then a private chat
 - **Walks** — today and tomorrow
 - **Walk page** — full-screen 3D preview, Join / Leave, host Edit / Cancel
@@ -50,7 +51,7 @@ Pages:
 | **Verify** — "Still true?" Yes / Something's wrong; one vote per person | 3, 5 — reliability, verify | Place page | P0 |
 | **Lost & found** — two big buttons, post with photo, rounded location, no public phone | 4 — lost or found animals | Lost & found, Report lost / found | P0 |
 | **AI matching** — lost vs found posts, both told, both must confirm before a chat opens | 1, 4 — posts in different groups never meet | Match | P0 (AI photo reading P1) |
-| **Assistant report** — tell what happened in plain words, get a draft to post | 4, 5 — other help, add | Assistant | P1 |
+| **Assistant** — talk to do most things: find places, emergency vet, report lost/found, create or join a walk (P0); add or verify a place, edit/cancel/leave a walk, answer a match (P1). Writes always need a Confirm tap | 1, 4, 5 — find easily, other help, add | Assistant (+ Map for pins) | P0 |
 | **Walk-Mate** — create, edit, cancel, join and leave walks at walking areas; 3D preview with live join | 4, 5 — walking areas, more pet-friendly Vilnius | Walks, Walk page, Create / edit walk | P0 |
 | **Share** — a public link for every place, post and walk | 5 — share | Place page, Report, Walk page | P0 |
 | **Emergency** — nearest hand-checked 24/7 vet, no AI needed | 4 — vet services, other help | Emergency | P0 |

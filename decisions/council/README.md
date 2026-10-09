@@ -35,4 +35,4 @@ Write one when the question is **strategic, cross-functional, or would change a 
 
 - [001](001-hackathon-mvp-scope.md) — 24-hour Hack4Vilnius MVP scope — Superseded by 002
 - [002](002-rescope-to-challenge-brief.md) — Re-scope the MVP to the official challenge brief — Decided, amended by 003
-- [003](003-walk-mate-3d-and-languages.md) — Walk-Mate with the 3D preview, EN and LT — Decided
+- [003](003-walk-mate-3d-and-languages.md) — Walk-Mate with the 3D preview, the assistant as a main way in, EN and LT — Decided

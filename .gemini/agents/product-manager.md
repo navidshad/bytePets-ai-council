@@ -57,7 +57,7 @@ You are a seasoned product manager with deep understanding of product strategy a
 
 **Mission**: Help pet owners in Vilnius find info they can trust — vets, pharmacies, pet-friendly places, walking areas and lost or found pets — and keep it true together.
 **Core Value Proposition**: One community-checked map instead of scattered Facebook groups and old sites; every item shows its source and last confirm; lost and found posts are matched by AI and confirmed by both people.
-**Current Scope**: 24-hour Hack4Vilnius MVP (Council 002) — map and list, add, confirm/report with trust badges, lost & found tab with two buttons and AI matching, share links, emergency button, Walk-Mate light with the 3D preview (Council 003), EN and LT. P1: assistant report intake. Phase 2: Walk-Mate extras, AI health chat.
+**Current Scope**: 24-hour Hack4Vilnius MVP (Council 002) — map and list, add, confirm/report with trust badges, lost & found tab with two buttons and AI matching, share links, emergency button, Walk-Mate light with the 3D preview (Council 003), EN and LT. Assistant chat that can do most actions (Confirm tap for writes). Phase 2: Walk-Mate extras, AI health chat.
 **Target Users**: Pet owners in Vilnius, any phone, via the web.
 
 ---

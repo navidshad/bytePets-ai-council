@@ -49,7 +49,7 @@ You are a thoughtful UX designer who obsesses over user experience. You think ab
 - Map and list with filters, place card with source label, trust badge and freshness line
 - Add a place; "Still true?" confirm / report
 - Lost & found tab with two big buttons ("I lost a pet" / "I found a pet"), the board, the "Possible match" screen with yes/no
-- Assistant that takes a report and shows a draft card (P1)
+- Assistant tab: chat, pins on the map, action cards with Confirm
 - Walks wall, create-walk form, full-screen 3D walk preview with glass cards and the live join
 - Emergency button; "How we rate info" page; EN / LT switch
 
