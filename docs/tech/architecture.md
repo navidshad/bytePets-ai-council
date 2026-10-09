@@ -97,10 +97,23 @@ One pure function `computeTrust(place, votes, now)` in `functions/src/trust.ts`.
 **Limits and safety:** Gemini sees only the post photos, never user profiles. Photos of people are discouraged in the form. Cost is bounded: one features call per post plus at most 5 compare calls. A 30-second timeout falls back to the rule score.
 
 ## Data import
-All scripts write `data/snapshots/{source}.geojson` (committed) and then upsert to Firestore. Each source gets 60 minutes, then the fallback.
-- **Walking areas:** city open data / GIS layer (`origin: official`) → else OSM `leisure=dog_park` via Overpass (`imported`), deduped against the city list within 60 m.
-- **Vets and pharmacies:** OSM `amenity=veterinary`, `shop=pet` (`imported`); the VMVT register if it can be exported, geocoded with Nominatim at 1 request per second (`official`); 24/7 vets checked by phone (`imported`, `source.name: "Checked by BytePets team, Oct 2026"`).
-- **Pet-friendly:** OSM `dog=yes|leashed` plus a hand-made list with a `source.url` for each place (`imported`, starts unverified). No Facebook scraping; no stored Google Places data.
+All scripts write `data/snapshots/{source}.geojson` (committed) and then upsert to Firestore with stable ids. Each source gets 60 minutes, then the fallback. Sources checked on 2026-10-09.
+
+- **Walking areas (official).** City ArcGIS MapServer `Laisvalaikis_public`, layer 16 (existing, 35), 17 (being built, 4), 18 (planned, 8):
+  `https://gis.vplanas.lt/arcgis/rest/services/Interaktyvus_zemelapis2/Laisvalaikis_public/MapServer/16/query?where=1%3D1&outFields=*&outSR=4326&f=geojson`
+  Polygons, ~20 KB. Fields: `VIETA` (place text), `ETAPAS` (stage), `KITI_IRENG` (equipment). Ids `vln_area_{layer}_{OBJECTID}`, `origin: official`. Layers 17–18 get `status: planned` and show as "coming soon". Store the centre in `geo` and a simplified outline (< 50 points) in `shape`. No licence stated: credit "© Vilniaus miesto savivaldybė, SĮ Vilniaus planas".
+- **Vets and vet pharmacies (official).** VMVT register, data.gov.lt dataset 5258 (CC BY 4.0, monthly). **Always filter on the server**; the full set is ~100 MB:
+  `https://get.data.gov.lt/datasets/gov/vmvt/okis_subjektai/Subjektas?veiklos_tipas.contains("eterinar")&limit(5000)` (add `&format(csv)` for CSV), then keep Vilnius city addresses and active rows (~46). WGS84 coordinates are included, so no geocoding. Map practice premises and service providers → `vet`; retail vet pharmacies → `vet_pharmacy`; skip wholesalers. Show the business name, address and phone only. Never show emails, and skip rows marked `CENZŪRUOTA`.
+- **OpenStreetMap (imported).** Overpass, Vilnius city area. Send a User-Agent; if overpass-api.de is busy, use the mirror `https://maps.mail.ru/osm/tools/overpass/api/interpreter`.
+  ```
+  [out:json][timeout:90];area(id:3600968952)->.a;
+  (nwr["amenity"="veterinary"](area.a);nwr["shop"="pet"](area.a);
+   nwr["leisure"="dog_park"](area.a);nwr["dog"~"yes|leashed"](area.a););out tags center;
+  ```
+  Gives ~32 vets, 48 pet shops, 26 dog parks, 17 `dog=yes|leashed`. Dedupe against official rows: same category within 60 m (areas) or 40 m with a similar name (vets). Credit "© OpenStreetMap contributors" (ODbL).
+- **24/7 vets.** Checked by phone; `origin: imported`, `source.name: "Checked by BytePets team, Oct 2026"`, `category: emergency_vet`.
+- **Pet-friendly (seed).** A hand-made list of 30–50 places from venue websites and public guides, each with `source.url`; `origin: imported`, trust `unverified`. No Facebook, Google Places or booking-site data.
+- **Optional layer (P2).** Registered pets per street from data.gov.lt dataset 292 (CC BY 4.0, monthly CSV, `;`-separated) → "dogs per neighbourhood" on `/about`.
 
 ## Key integrations
 - **Gemini API** via `@google/genai` in Functions (ADR-002). Phase 1 uses structured output for photo features, photo compare and post parsing. The model id is pinned after the hour-0 spike. The health chat with Search and Maps grounding is Phase 2.

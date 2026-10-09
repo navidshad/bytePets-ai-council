@@ -54,6 +54,6 @@ You are a strategic business thinker who understands market dynamics and busines
 
 **Target Users**: Pet owners pay nothing. The challenger, If Insurance, cares about prevention, vet access and trust. Later, pet businesses and the city may pay for data services.
 
-**Market Opportunity**: TODO — number of registered dogs in Vilnius.
+**Market Opportunity**: 55,384 registered dogs and about 102,100 registered pets in Vilnius city (pet register, data.gov.lt dataset 292, 2026-10-01); 318,721 dogs in Lithuania. If operates across the Nordics and Baltics.
 
 **Competitive Position**: Today the info is spread over Facebook groups, forums and static sites with no checks. General pet apps are not local to Vilnius. BytePets is local, checked by the community, shows how fresh each item is, and matches lost and found pets.

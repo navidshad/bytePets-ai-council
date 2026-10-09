@@ -61,6 +61,7 @@ You are a strategic business thinker who understands market dynamics and busines
 **Paid Tier Benefits**: None for users. Phase 2: safety partner, claimed-listing extras (separate from trust badges), civic data service.
 **Current Metrics**: Fresh places (north star), contributions per week, lost & found matches and reunions.
 **Target Users**: Pet owners free; challenger If Insurance cares about prevention and trust; later businesses and the city may pay.
+**Market Opportunity**: 55,384 registered dogs and ~102,100 registered pets in Vilnius city (data.gov.lt dataset 292, 2026-10-01).
 **Competitive Position**: Local to Vilnius, community-checked, shows freshness, matches lost and found pets — versus scattered Facebook groups and static sites.
 
 ---

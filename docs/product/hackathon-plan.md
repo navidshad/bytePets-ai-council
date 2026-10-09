@@ -5,7 +5,7 @@
 ## Before the event
 - Team check: can at least two people write Vue/JS fast? If not, apply the ADR-003 fallback (Flutter app plus plain web share pages).
 - Firebase project on the Blaze plan with a budget alert; Gemini API key; MapTiler key; email provider for the Trigger Email extension.
-- 20 minutes now: look for the city walking-area dataset and the VMVT vet and pharmacy register (see "Data sources" in `prd.md`).
+- Data sources are found and checked (city walking areas, VMVT register, OSM). Run the three fetches once before the event and commit the snapshots (see `../tech/architecture.md` → "Data import").
 - Hand-check 5–8 24/7 vets in Vilnius by phone (name, address, phone, hours).
 - Collect 10 real lost/found photo pairs we may use (team pets, friends' pets, or freely licensed) for the matching test, and photos for the seed posts.
 - If anyone from If is at the event, book 5 minutes with them in hour 1.
@@ -22,7 +22,7 @@ Freeze the data model as `types.ts` (shared by app and Functions) in hour 1. Cha
 
 | Hours | A — Backend/AI | B — App | C — Lost & found | D — Data/pitch |
 |---|---|---|---|---|
-| 0–2 | Rules and Functions skeleton; **Gemini photo-features spike on 10 test pairs**; email sender test | **Vue PWA deployed to Hosting**, Google sign-in on iPhone Safari, map with tiles | Photo resize + EXIF strip + upload to Storage | Dataset search (20 min each), OSM Overpass queries, 24/7 vet list |
+| 0–2 | Rules and Functions skeleton; **Gemini photo-features spike on 10 test pairs**; email sender test | **Vue PWA deployed to Hosting**, Google sign-in on iPhone Safari, map with tiles | Photo resize + EXIF strip + upload to Storage | City areas + VMVT + Overpass fetches (URLs ready), 24/7 vet list |
 | 2–8 | `addPlace`, `votePlace`, `computeTrust`; `createLostPost` | Map, filters, list, place card with badges, add form, confirm/report | Lost & found form, board, map layer, post page `/l/:id` | Imports (60 min limit each), GeoJSON snapshots, seed list of pet-friendly places |
 | 8–14 | `matchLostFound` (rules), `respondMatch`, notifications, email | Share sheet, `/p/:id`, emergency button, `/about` counters | Lost & found tab with the two big buttons, matches screen (yes/no), messages, reunited | Seed demo posts and the planted match pair, QR drive starts |
 | **14** | **Checkpoint: add → confirm → badge turns green on a second phone; lost post → match → both confirm. Works on a judge-style phone. Or cut.** | | | |

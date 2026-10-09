@@ -128,13 +128,21 @@ Freshness colour of the last-confirm line: green ≤ 30 days, amber 31–90, gre
   - It never posts, shares contact data or confirms a match on its own. If the message sounds like a health emergency, it shows the emergency button instead of advice.
 
 ## Data sources
-| Source (from the brief) | Plan | Label |
-|---|---|---|
-| Vilnius city dog walking areas | City open data or GIS layer if found within 60 minutes; else OpenStreetMap `leisure=dog_park` plus a hand-made list from the city's pages | City data / Imported |
-| Vet clinics and pharmacies | OpenStreetMap `amenity=veterinary`, `shop=pet`; VMVT register if it can be exported; 24/7 vets checked by hand by phone | Official / Imported |
-| Publicly posted pet-friendly places | OpenStreetMap `dog=yes`/`dog=leashed`, plus a seed list of 30–50 places from public posts and venue websites, each with its source link | Imported, starts "Not yet confirmed" |
+Checked on 2026-10-09. Download details are in `../tech/architecture.md` → "Data import".
 
-We never scrape Facebook and never store Google Places data.
+| Source (from the brief) | Where it comes from | What we get | Label |
+|---|---|---|---|
+| Vilnius city dog walking areas | City map server (Vilniaus planas), layers 16–18 | 35 existing areas as polygons, plus 4 being built and 8 planned (shown as "coming soon") | City data |
+| | OpenStreetMap `leisure=dog_park` (fallback and extras) | 26 in the city, deduped against the city list | Imported |
+| Vet clinics and pharmacies | VMVT register on data.gov.lt (dataset 5258, CC BY 4.0) | ~46 active vet sites in Vilnius: practice premises, service providers, retail vet pharmacies | Official |
+| | OpenStreetMap `amenity=veterinary`, `shop=pet` | 32 vets, 48 pet shops | Imported |
+| | 24/7 vets checked by phone by the team | 5–8 | Imported, "Checked by BytePets team" |
+| Publicly posted pet-friendly places | OpenStreetMap `dog=yes`/`dog=leashed` | Only 17, of which 2 are cafés: too thin on its own | Imported |
+| | A hand-made list of 30–50 places from venue websites and public guides, each with its source link | The seed for the community to grow | Imported, starts "Not yet confirmed" |
+
+Context for the pitch: **55,384 registered dogs and about 102,100 registered pets in Vilnius city** (pet register, data.gov.lt dataset 292, 2026-10-01). There is no open feed of individual lost or found pets. That gap is why our board and matching matter.
+
+We never scrape Facebook and never store Google Places or booking-site data. Credits shown in the app: "© Vilniaus miesto savivaldybė, SĮ Vilniaus planas", "VMVT, CC BY 4.0", "© OpenStreetMap contributors".
 
 ## Demo assumptions (what is real and what is seeded)
 - **Real:** imported places with their source; adds, confirms and lost & found posts made by people at the event (QR drive); the AI matching; live badge changes.
