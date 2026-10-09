@@ -3,21 +3,27 @@
 > Living doc. How we talk about the product and how we price it. Changing this doc is a council-level change (see `AGENTS.md` → "Editing rules for living docs").
 
 ## One-line pitch
-An iPhone app for dog owners in Vilnius: find walking buddies, find dog services on a map, and ask an AI assistant about your dog.
+Vilnius's community-checked map for pet owners: find a vet, a pet-friendly place, a walking area or a lost pet, and see when someone last confirmed it.
 
 ## Positioning
-For dog owners in Vilnius who today search Facebook groups, forums and old websites for help. BytePets puts the city's dog services, other owners to walk with, and a smart assistant in one place. Unlike general pet apps, it is local: it knows Vilnius parks, vets and walking areas.
+For pet owners in Vilnius who today search Facebook groups, forums and old websites, and can't tell what is still true. BytePets puts vets, pharmacies, pet-friendly places, walking areas and lost & found in one place, and every item shows its source, its last confirm and how many owners checked it. Unlike Google Maps or a Facebook group, the info is kept true by the community, and lost and found posts find each other.
 
 ## Voice & tone
-- Warm, friendly and calm. We talk like a helpful neighbour who also has a dog.
+- Warm, friendly and calm. We talk like a helpful neighbour who also has a pet.
 - Short, clear sentences.
-- Do: be honest about what the AI knows. Say "see a vet" when it matters.
-- Don't: give a diagnosis, scare people, or promise that a place is open without a source.
-
-## Pricing
-Free during the hackathon MVP. TODO — decide a model after the event (ideas: premium assistant, featured listings for pet businesses).
+- Do: be honest about where info comes from and how old it is. Say "possible match", never "found your pet". Say "see a vet" when it matters.
+- Don't: give a diagnosis, scare people, promise that a place is open without a source, or claim official data we don't have.
 
 ## Key messages
-1. Never walk alone — find dog owners near you and walk together.
-2. Every dog service in Vilnius on one map.
-3. Ask anything about your dog, with a photo, and get a clear answer and the nearest place that can help.
+1. **One place, not twenty groups.** Vets, pharmacies, pet-friendly places, walking areas and lost & found, on one map.
+2. **Info you can trust.** Every place shows who added it, when it was last confirmed and by how many owners. Old info fades on its own.
+3. **Lost pets find their way home.** We match lost and found posts and tell both people. They decide; contact opens only when both say yes.
+4. **Built by owners, for the city.** Anyone can add, confirm or fix a place in two taps.
+
+## Partners and the challenger
+- If Insurance is the challenger, not our partner. Say "built for If's challenge". Don't use the If logo as a partner.
+- The only If touchpoint in the product is a "Pet emergency: what to do now" card, credited to If only if If agrees. No quote buttons, no ads, no use of user data as leads.
+- Name a partner (a vet, a shelter, the city) only if they really said yes.
+
+## Pricing
+Free for pet owners. No business model is shown in the MVP. Phase 2 ideas (see `../product/roadmap.md`): a safety partner for prevention content and anonymous, consented trends; claimed-listing extras for pet businesses, kept separate from trust badges; a civic data service for the city.

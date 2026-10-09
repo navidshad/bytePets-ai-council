@@ -56,11 +56,11 @@ You are a thoughtful UX designer who obsesses over user experience. You think ab
 
 ## Context: BytePets UX
 
-**Design System**: None yet — native components plus a few tokens.
-**Visual Style**: Warm, friendly, outdoorsy; the 3D walk preview is the wow moment.
-**Key Interfaces**: Walk-Mate feed and 3D event preview, create-walk form, dog-services map, AI chat with photos and map pins, landing page.
-**Current UX Strengths**: The 3D preview prototype shows the vibe of a walk well.
-**Known Gaps**: Onboarding, dog profile, empty states, AI health warnings, 3D accessibility.
+**Design System**: None yet — mobile-first web components plus a few tokens.
+**Visual Style**: Warm, friendly, calm; trust shown with clear colour badges.
+**Key Interfaces**: Map and list, place card with trust badge, add / confirm / report, Lost & found tab with two big buttons, possible-match screen, assistant report draft, emergency button.
+**Current UX Strengths**: A trust rule that fits on one screen; obvious lost & found entry.
+**Known Gaps**: Sign-in in in-app browsers, empty states, "possible match" without false hope, map accessibility.
 
 ---
 

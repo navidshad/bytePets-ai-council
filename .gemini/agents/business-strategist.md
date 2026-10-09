@@ -57,11 +57,11 @@ You are a strategic business thinker who understands market dynamics and busines
 ## Context: BytePets Business Model
 
 **Current Monetization**: None — Hack4Vilnius MVP; goal is to win and validate demand.
-**Free Tier Limits**: All free; TODO fair-use limit on AI messages.
-**Paid Tier Benefits**: TODO — later ideas: premium assistant, featured listings for vets and pet businesses.
-**Current Metrics**: Walks created and filled, AI chats per user, map place views.
-**Target Users**: Owners free; later local pet businesses may pay.
-**Competitive Position**: Local to Vilnius, social (walks) and an AI that knows the city's places — versus scattered Facebook groups and static sites.
+**Free Tier Limits**: All free for owners; daily per-user limits on writes and AI.
+**Paid Tier Benefits**: None for users. Phase 2: safety partner, claimed-listing extras (separate from trust badges), civic data service.
+**Current Metrics**: Fresh places (north star), contributions per week, lost & found matches and reunions.
+**Target Users**: Pet owners free; challenger If Insurance cares about prevention and trust; later businesses and the city may pay.
+**Competitive Position**: Local to Vilnius, community-checked, shows freshness, matches lost and found pets — versus scattered Facebook groups and static sites.
 
 ---
 

@@ -2,102 +2,155 @@
 
 > Living doc. This is the current state of the product, not a decision record. Edit it as decisions land. Changing this doc is a council-level change (see `AGENTS.md` → "Editing rules for living docs").
 
-**Phase**: Phase 1 — Hack4Vilnius MVP (Challenge #6), 24-hour build. Scope set by `decisions/council/001-hackathon-mvp-scope.md`.
+**Phase**: Phase 1 — Hack4Vilnius MVP, 24-hour build. Scope set by `decisions/council/002-rescope-to-challenge-brief.md` (supersedes Council 001). Platform: mobile web app (ADR-003).
+
+## The challenge (Hack4Vilnius, challenger: If Insurance)
+> How can we help pet owners find relevant and reliable information in Vilnius more easily? … Create a community-based solution that would help pet owners easily find, add, and verify relevant information in one place, share it with others, and contribute to making Vilnius more pet-friendly.
+
+Named sources: Vilnius city dog walking areas; information about veterinary clinics and pharmacies; publicly posted information about pet-friendly places.
 
 ## Vision
-Dog owners in Vilnius get help for their dog from many scattered places: Facebook groups, forums and old websites. The information is often out of date and nobody checks it. BytePets brings it into one iPhone app: other owners to walk with, the city's dog services on a map, and an AI assistant that answers questions about your dog and shows you where to go.
+Pet owners in Vilnius look for help in many scattered places: Facebook groups, forums, old websites. The info is often out of date, and you can't tell what is true. BytePets is **Vilnius's community-checked map for pet owners**. You can find a vet, a pharmacy, a pet-friendly place, a walking area or a lost pet, and see when someone last confirmed it. Anyone can add, confirm or flag info in two taps, and share it with one link.
 
 ## Target users
-Dog owners in Vilnius who use an iPhone. New owners and people new to the city feel the gap most.
+- **Pet owners in Vilnius**, dogs first, then cats and others. New owners and people new to the city feel the gap most.
+- **People who found an animal**, who often don't own a pet and will never install an app. They must be able to post and share from a browser.
+- **Secondary:** the city (a live pet-friendly map), vets and shelters (fresh listings), If (prevention and trust).
 
 ## Problems we solve
-1. "I want company on walks, but I don't know anyone here." → Walk-Mate.
-2. "My dog is acting strange. Is it bad? Where do I go right now?" → AI assistant + map.
-3. "Where is the nearest vet or dog park?" → Map.
+| Job | Today | BytePets |
+|---|---|---|
+| "Can I bring my pet here?" | Ask in a Facebook group and wait | Pet-friendly places with rules ("inside OK", "terrace only") and a trust badge |
+| "Where's a vet or pharmacy, and is it real and open?" | Google, old websites | Vets and pharmacies from official and open data, confirmed by owners; emergency button |
+| "Where can I walk my dog?" | Word of mouth | City walking areas on the map |
+| "My pet is lost" / "I found a pet" | Posts spread over many groups, and they never meet | One board, AI matching of lost with found, both sides told, one share link |
+| "Is this info still true?" | No way to tell | Source, last-confirmed date and the number of confirms on every card |
 
 ## Scope at a glance
 
 | Priority | Item |
 |---|---|
-| **Must (P0)** | Walk-Mate wall, create, join, 3D preview with live join; AI assistant with photo, urgency banner and "Show on map"; services map with imported places and checked emergency vets; anonymous sign-in and dog profile; landing page with waitlist |
-| **Should (P1)** | Live weather in the 3D scene; Google Search grounding with sources; "My walks" list; empty and error states |
-| **Could (P2)** | Leave a walk; share a walk link; "open now" filter; Google Maps grounding with pins; all 6 scene types; free pin drop with OpenStreetMap scene lookup |
-| **Cut** | AI lost & found (extra only if all P0 and P1 are done by hour 18); crowdsourced checks; reputation; push notifications; chat between walkers; editing walks; Sign in with Apple; Android |
+| **Must (P0)** | Map and list, 5 groups, filters; trust badge and freshness line; add a place; confirm / report; lost & found tab with two big buttons ("I lost a pet" / "I found a pet") and a board; lost ↔ found matching with two-sided confirm and notices; public share links; Google sign-in to write; emergency button; imports from the three named sources; "How we rate info" page with live counters |
+| **Should (P1)** | Gemini photo features for matching; assistant that takes a lost or found report in plain words; link previews in Messenger and Facebook; "My contributions" and helper badges; "Open now" filter; search by name; "Pet emergency: what to do now" card |
+| **Could (P2)** | Walking-area outlines (polygons); sightings with a location; printable lost-pet poster with QR; nightly stale job; Lithuanian language |
+| **Cut** | Walk-Mate build (the 3D prototype is shown only as "what's next"); AI health chat (Phase 2); push notifications; star ratings and reviews; insurance quotes or ads; native iPhone app |
 
 ## Core features
 
-### A. Sign-in and dog profile (P0)
-- **Story:** As a new user, I can start in one tap.
-  - Anonymous Firebase sign-in plus my first name. No email or password.
-- **Story:** As a dog owner, I add my dog once.
-  - One screen: dog name, breed (free text), size (S/M/L), optional photo. Saved to Firestore. Under 30 seconds.
-  - If I have no dog profile, creating or joining a walk sends me here first, then back.
-  - One dog per user in Phase 1.
+### A. Find: map and list (P0)
+- **Story:** As a pet owner, I open one link and see pet places in Vilnius on a map.
+  - Five groups with clear icons and filter chips: **Vets** (incl. 24/7), **Pharmacies & pet shops**, **Pet-friendly places** (cafés, restaurants, shops, hotels), **Walking areas**, **Lost & found**.
+  - A list view of the same items, sorted by distance when location is allowed, otherwise by trust.
+  - Browsing needs no account. Loads in under 3 seconds on 4G.
+- **Story:** As an owner, I tap a place and know if I can trust it.
+  - The card shows: name, group, pet rules, address, opening hours if known, Call, Directions (opens the phone's map app), Share.
+  - **Source label:** City data / Imported (with a link to where we saw it) / Community.
+  - **Trust badge and freshness line** (see "Trust rule" below), e.g. "Confirmed by 4 owners · 5 days ago".
+  - Pet types: dogs / cats / all pets.
 
-### B. Walk-Mate (P0 — the heart of the product)
-- **Story:** As an owner, I see a wall of walks for today and tomorrow.
-  - Two tabs: Today, Tomorrow. Each card: start place, time, dog avatars, spots left ("2 of 4"), topic chips, and a static picture of its scene type.
-  - Past walks are hidden. Full walks show "Full" and cannot be joined.
-  - Empty state: "No walks yet today. Start one — it takes 30 seconds."
-- **Story:** As an owner, I create a walk.
-  - Fields: start point (pick from ~10 popular Vilnius spots, or drop a pin), day (today or tomorrow), time, group size (2–4), short description, up to 3 topics from a fixed list (e.g. training, puppies, running, slow walk, new in Vilnius, just chill). Dog info comes from my profile.
-  - It shows on the wall within 2 seconds.
-  - Scene type comes from the preset spot, or from OpenStreetMap tags at a dropped pin; if unknown, "park". The host can change it.
-- **Story:** As an owner, I open a walk and see a 3D preview.
-  - Reference look: [prototypes/walkmate-3d-preview.html](prototypes/walkmate-3d-preview.html).
-  - Full-screen scene, one of: landmark, park, riverside, forest, old town, street. At least 3 in P0.
-  - Weather look: sun, cloud, rain, snow, evening. P0 may use a time-based value; P1 uses the forecast for that hour.
-  - Joined people show as avatars with their dogs; empty spots show as "?" ghosts. Event info sits on glass cards over the scene.
-  - Loads in under 3 seconds on the demo iPhone and runs smoothly.
-- **Story:** As an owner, I join a walk.
-  - Tap "Join": a "?" ghost turns into my avatar with an animation.
-  - Other phones see the new avatar walk in and the count change in real time.
-  - I can't join twice, join a full walk, or join my own walk.
-- Safety for meeting strangers: public start points only, first names only, small groups (max 4).
+### B. Add (P0)
+- **Story:** As an owner, I add a place I know in under 30 seconds.
+  - Pin on the map or "use my location", name, group, pet types, up to 3 quick facts (pet-friendly: "Allowed inside", "Water bowl", "Terrace only"; walking area: "Fenced", "Off-lead OK"), optional photo.
+  - **Duplicate check:** if the same group has a place within 40 m with a similar name, we show it and ask "Is it this one? Confirm it instead."
+  - It shows on the map at once as grey "Not yet confirmed". My own confirm doesn't count.
+  - Needs Google sign-in. Limit: 10 places a day.
 
-### C. Dog-services map (P0, kept plain)
-- **Story:** As an owner, I see Vilnius dog services on a map.
-  - Pins for 4 groups with clear icons: vet, emergency vet (24/7), pet shop / pharmacy, dog park / walking area.
-  - Data imported once from OpenStreetMap and (if found in 30 minutes) Vilnius open data. At least 50 places, all inside Vilnius.
-  - Emergency vets are checked by hand and marked as checked.
-  - Tap a pin: name, type, address, opening hours if known, call, and "Directions" (opens Apple Maps).
-  - Filter chips by type. ("Open now" is P2.)
+### C. Verify: confirm or report (P0)
+- **Story:** As an owner, I tell others if a place is still right.
+  - Every card has "Still true?" → **Yes** / **Something's wrong** (closed, moved, not pet-friendly any more, wrong hours, wrong info, other + a short note).
+  - One vote per person per item; you can change it once every 7 days. Needs Google sign-in.
+  - The badge updates live for everyone.
+  - We ask for a confirm right after someone taps Directions or Call, the next time they open the app ("Were you at Caffeine Užupis? Still pet-friendly?").
+- **Story:** As anyone, I can see how the rule works.
+  - A "How we rate info" page explains the six trust levels in plain words, and shows live counters: places, confirms this week, fresh places, open lost & found posts, reunions.
 
-### D. AI assistant (P0)
-- **Story:** As a worried owner, I describe a problem and send a photo, and get clear, safe advice.
-  - Chat with text and a photo from camera or library. Photos are resized on the phone before upload.
-  - Every health answer starts with an urgency banner: **Go to a vet now** (red), **See a vet soon** (amber), **Likely fine at home — watch for…** (green).
-  - Red-flag signs (poisoning, chocolate, xylitol, bloat, heavy bleeding, breathing trouble, seizures) always get "Go to a vet now" and the nearest checked 24/7 emergency vet. The server enforces this, not only the prompt.
-  - A fixed line under every health answer: "BytePets is not a vet. If in doubt, call a vet."
-  - The app shows progress while it works ("Looking at the photo…", "Searching…").
-- **Story:** As an owner, I ask where to go and see it on the map.
-  - "Where is the nearest emergency vet?" → the answer has a "Show on map" button; the Map tab opens with those places highlighted.
-  - End to end in under 10 seconds on venue Wi-Fi.
-- **P1:** Google Search grounding for care questions, with sources shown right under the answer.
-- **P2:** Google Maps grounding with pins for places we don't have. Sources keep the "Google Maps" label as is.
-- Cut: memory across chats, vet booking, voice.
+### Trust rule
+Computed on the server only. The canonical rule is in `decisions/council/002-rescope-to-challenge-brief.md`; implementation notes are in `../tech/architecture.md`.
 
-### E. Landing page (P0)
-- **Story:** As a visitor or judge, I understand BytePets in 5 seconds and can sign up.
-  - Hero line, one hero visual (the 3D walk scene), three feature blocks, a "Join the waitlist" email form saved to Firestore, live counters of walks created and waitlist sign-ups.
-  - Works on mobile. Vue (or plain HTML) on Firebase Hosting. Live by about hour 6.
+| Level | When | Badge |
+|---|---|---|
+| Hidden | 3+ reports from different people in 90 days and more reports than confirms | Off the map; team reviews |
+| Disputed | 2+ reports in 90 days, newer than the last confirm | Amber: "2 people say this may be closed" |
+| Confirmed | 2+ confirms from different people in 90 days (1 for imported or official) | Green: "Confirmed by N owners · X days ago" |
+| Official | City or state data, no open reports | Blue: "City data · updated {date}" |
+| Stale | No confirm in 180 days | Grey: "Not checked for 6+ months. Been here? Confirm it." |
+| Not yet confirmed | Everything else | Grey: "Added by a community member, not yet confirmed" |
+
+Freshness colour of the last-confirm line: green ≤ 30 days, amber 31–90, grey > 90.
+
+### D. Lost & found (P0)
+- **Story:** As someone in a panic, I find where to report in one tap.
+  - **Lost & found** is its own tab in the bottom bar. At the top: two big buttons, **"I lost a pet"** (red) and **"I found a pet"** (blue). Below: the board.
+  - The same two buttons sit on the home map, above the filters. No sign-in wall before the form: sign-in is asked for only at the Post step.
+  - Under the buttons, a small link: "Or tell the assistant what happened" (see I).
+- **Story:** As an owner who lost a pet, I post it in one minute and share it everywhere.
+  - Lost or Found, species (dog / cat / other), up to 3 photos, name (lost only), colour, size, short note, last-seen pin and time.
+  - The pin is rounded to about 100 m before saving. We never show an exact home location.
+  - No phone number is shown in public. Phone numbers and emails typed into the note are removed. People reach the poster through an in-app "I saw this pet" message.
+  - Red (lost) or blue (found) pins on their own map layer, plus a list, newest first.
+  - Share link per post, ready to paste into the Facebook groups people already use.
+  - Mark "Reunited": shows a happy state for 3 days, then hides. Posts expire after 30 days unless renewed.
+  - Anyone can report a post. 3 reports hide it.
+- **Story:** As someone who found an animal, I post it from a browser without installing anything.
+
+### E. Lost ↔ found matching (P0, with AI photo features in P1)
+- **Story:** As a lost-pet owner, I'm told when someone posts a found animal that might be mine, and I decide if it is.
+  - When a post is created, the server looks for posts of the other kind: same species, within 5 km, found no earlier than 1 day before it was lost, both less than 30 days old. It scores each one on species, size, colours, markings, collar, distance and time.
+  - **With AI (P1):** Gemini reads the photos and fills in the features (colours, pattern, markings, collar, coat, ear and tail shape, breed guess). The owner sees the pre-filled form and can fix it. For the top candidates, a second Gemini call compares the two photos and gives a short reason ("same white chest patch, red collar").
+  - **Without AI (P0 fallback):** the same scoring runs on what people typed in the form.
+  - Up to 3 matches above the threshold are created. **Both reporters are told:** an in-app "Possible match" badge, plus an email.
+  - Each side sees the other photo, the rough area, the reason, and "Possible match", never a certain match. They tap **"Yes, that's them"** or **"No"**.
+  - **Contact opens only when both say yes:** a private message thread between the two. When the owner marks the post Reunited, both posts close.
+  - One "No" closes that match for good. A pair is never suggested twice.
+- **Safety:** the AI never shares contact details, never closes a post, and never shows a match as certain.
+
+### F. Share (P0)
+- Every place and post has a public link (`/p/{id}`, `/l/{id}`) that opens with no sign-in.
+- The phone's share sheet (Messenger, WhatsApp, Facebook), or "Copy link" as a fallback.
+- P1: link previews with photo and title.
+
+### G. Emergency button (P0)
+- One tap from anywhere: the nearest hand-checked 24/7 vet, with Call and Directions. No AI, works even if Gemini is down.
+- P1: a "Pet emergency: what to do now" card with first steps. Credited to If only if If agrees. No quotes, ads or insurance links.
+
+### H. Sign-in and profile (P0)
+- Browse with no account.
+- To add, confirm, report, post or message: **Sign in with Google** (one tap). First name only is shown in public.
+- P1: "My contributions" (places added, confirms, reunions) and simple helper badges ("Vet scout", "Park keeper", "Lost-pet hero"). No points that buy anything.
+
+### I. Assistant for reports (P1)
+- **Story:** As a reporter, I tell the assistant what happened in my own words, and it files the report for me to check.
+  - Opened from "Or tell the assistant what happened" in the Lost & found tab, or from the Assistant button.
+  - Input: free text ("my grey cat ran off near Užupis last night"), a photo, a pasted Facebook post, or a photo of a paper poster.
+  - It works out lost or found, species and features from the text and photo, and asks only for what is missing, one short question at a time (at most 3): where, when, a photo.
+  - It shows a **draft card** that looks just like the post. The reporter can edit it, then taps **Post**. Posting goes through the same checks as the form, and matching runs at once.
+  - It can also turn a pasted post about a place into an add-place draft.
+  - It never posts, shares contact data or confirms a match on its own. If the message sounds like a health emergency, it shows the emergency button instead of advice.
+
+## Data sources
+| Source (from the brief) | Plan | Label |
+|---|---|---|
+| Vilnius city dog walking areas | City open data or GIS layer if found within 60 minutes; else OpenStreetMap `leisure=dog_park` plus a hand-made list from the city's pages | City data / Imported |
+| Vet clinics and pharmacies | OpenStreetMap `amenity=veterinary`, `shop=pet`; VMVT register if it can be exported; 24/7 vets checked by hand by phone | Official / Imported |
+| Publicly posted pet-friendly places | OpenStreetMap `dog=yes`/`dog=leashed`, plus a seed list of 30–50 places from public posts and venue websites, each with its source link | Imported, starts "Not yet confirmed" |
+
+We never scrape Facebook and never store Google Places data.
 
 ## Demo assumptions (what is real and what is seeded)
-- **Seeded and said so:** 10–15 walks for today and tomorrow across the scene types, with a mix of full, half-full and empty; seeded users with first names and dog avatars.
-- **Real:** place data (imported), the AI answers, live joins between two phones, waitlist numbers.
-- Weather may be a fixed value per walk if the forecast is not wired in time.
-- Backup: a short screen recording of the assistant flow, used only if the network fails.
+- **Real:** imported places with their source; adds, confirms and lost & found posts made by people at the event (QR drive); the AI matching; live badge changes.
+- **Seeded and said so:** a few confirms and reports so all trust levels show; 6–10 lost & found posts with photos the team owns or that are free to use. One planted pair is meant to match in the demo.
+- Backup: a screen recording of the matching flow, used only if the network fails.
 
 ## Out of scope (for now)
-- AI lost & found (on hold — extra only if time is left)
-- Crowdsourced checks of places, reputation and voting
-- Push notifications, chat between walkers, editing or deleting walks, moderation tools
-- Sign in with Apple, more than one dog per user
-- Android
+- Walk-Mate (group walks, 3D preview): Phase 2 candidate, see roadmap
+- AI health chat with urgency triage (ADR-002 safety rules kept for when it returns)
+- Push notifications, chat outside a confirmed match, moderation dashboard
+- Star ratings and reviews, paid listings, insurance offers
+- Native apps
 
 ## Success metrics
 See `../metrics/framework.md`. For the hackathon:
-- Walks created by real people during the event.
-- Walks with at least one joiner (north star).
-- Waitlist sign-ups on the landing page.
+- **Fresh places:** places confirmed by the community in the last 30 days (north star).
+- Places added and confirms made by real people during the event.
+- Lost & found posts shared; matches confirmed by both sides.
 - The demo runs end to end with no failure in 3 rehearsals.

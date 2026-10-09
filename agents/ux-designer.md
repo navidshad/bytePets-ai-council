@@ -41,16 +41,16 @@ You are a thoughtful UX designer who obsesses over user experience. You think ab
 
 ## Context: BytePets UX
 
-**Design System**: None yet. Use the platform's native components and a small set of colour and type tokens.
-**Visual Style**: Warm, friendly and outdoorsy; the 3D walk preview is the "wow" moment.
+**Design System**: None yet. A small set of colour and type tokens on top of plain, mobile-first web components.
+**Visual Style**: Warm, friendly and calm; trust is shown with clear colour badges (blue official, green confirmed, amber disputed, grey not confirmed or stale).
 **Brand Colors**: TODO — not chosen yet (the prototype uses a deep park green with a warm amber accent).
 
 **Key Interfaces**:
-- Walk-Mate feed and event preview (full-screen 3D scene with glass cards on top)
-- Create-walk form (dog, topics, start point on a map, date/time, group size)
-- Dog-services map with filters
-- AI assistant chat with photo upload and "show on map" pins
-- Landing page
+- Map and list with filters, place card with source label, trust badge and freshness line
+- Add a place; "Still true?" confirm / report
+- Lost & found tab with two big buttons ("I lost a pet" / "I found a pet"), the board, the "Possible match" screen with yes/no
+- Assistant that takes a report and shows a draft card (P1)
+- Emergency button; "How we rate info" page
 
-**Current UX Strengths**: The 3D event preview prototype (weather, avatars, open spots) shows the vibe of a walk well.
-**Known Gaps**: Onboarding and dog profile, empty states, how the AI shows health warnings, accessibility of the 3D view.
+**Current UX Strengths**: A simple trust rule that fits on one screen; two obvious lost & found buttons.
+**Known Gaps**: Sign-in inside Messenger/Facebook in-app browsers, empty states, how to show "possible match" without false hope, accessibility of map pins.

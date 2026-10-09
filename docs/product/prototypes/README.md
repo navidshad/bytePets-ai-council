@@ -4,7 +4,7 @@ Design prototypes that show how a feature should look and feel. They are referen
 
 | File | What it shows | Status |
 |---|---|---|
-| [walkmate-3d-preview.html](walkmate-3d-preview.html) | Walk-Mate event preview: full-screen 3D scene picked from the start point (landmark, park, riverside, forest, old town), weather looks, joined people with dogs, "?" ghosts for open spots, and the join animation. Event info sits on glass cards over the scene. | Approved look for Phase 1 |
+| [walkmate-3d-preview.html](walkmate-3d-preview.html) | Walk-Mate event preview: full-screen 3D scene picked from the start point (landmark, park, riverside, forest, old town), weather looks, joined people with dogs, "?" ghosts for open spots, and the join animation. Event info sits on glass cards over the scene. | Phase 2 (Walk-Mate). Shown only as "what's next" in the Phase 1 pitch (Council 002) |
 
 **How to open:** download the file and open it in a browser (it loads Three.js r128 from cdnjs). On a phone or a narrow window it shows the portrait layout.
 

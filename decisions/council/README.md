@@ -33,4 +33,5 @@ Write one when the question is **strategic, cross-functional, or would change a 
 
 <!-- New council decisions are appended here as they're created. -->
 
-_None yet._
+- [001](001-hackathon-mvp-scope.md) — 24-hour Hack4Vilnius MVP scope — Superseded by 002
+- [002](002-rescope-to-challenge-brief.md) — Re-scope the MVP to the official challenge brief — Decided

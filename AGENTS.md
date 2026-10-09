@@ -12,7 +12,7 @@ If a per-tool file and this file disagree on *workflow*, this file wins. The per
 
 ## What this repo is
 
-This repo is the **living product documentation** for **BytePets** — an iPhone app for dog owners in Vilnius: find walking buddies, find dog services on a map, and ask an AI assistant about your dog. The repo holds no product code. It is the source of truth for product strategy, technical architecture, marketing, metrics, and user-facing docs. The one exception is `studio/`, once it exists: the source of the marketing films, stills and slides. Agents build marketing pieces there (Workflow 4).
+This repo is the **living product documentation** for **BytePets** — Vilnius's community-checked map for pet owners: find, add, confirm and share vets, pharmacies, pet-friendly places and walking areas, and match lost and found pets. The repo holds no product code. It is the source of truth for product strategy, technical architecture, marketing, metrics, and user-facing docs. The one exception is `studio/`, once it exists: the source of the marketing films, stills and slides. Agents build marketing pieces there (Workflow 4).
 
 Every request flows through up to three stages — **triage** (is this trivial or a real decision?), then **depth** (how hard do we think?), then **output** (which record do we write?). The job of this file is to route the request through that flow and pick the cheapest path that does the job.
 

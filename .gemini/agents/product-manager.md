@@ -55,10 +55,10 @@ You are a seasoned product manager with deep understanding of product strategy a
 
 ## Context: BytePets Product
 
-**Mission**: Help dog owners in Vilnius get reliable local help for their dog, and meet other owners to walk with.
-**Core Value Proposition**: One app for who can I walk with, where is the nearest vet or dog park, and is my dog OK — instead of scattered Facebook groups and old sites.
-**Current Scope**: 24-hour Hack4Vilnius MVP — Walk-Mate events with a 3D vibe preview, a dog-services map, a Gemini AI assistant with photos, web search and map pins, and a landing page. On hold: AI lost & found, crowdsourced checks, reputation.
-**Target Users**: Dog owners in Vilnius, iPhone first.
+**Mission**: Help pet owners in Vilnius find info they can trust — vets, pharmacies, pet-friendly places, walking areas and lost or found pets — and keep it true together.
+**Core Value Proposition**: One community-checked map instead of scattered Facebook groups and old sites; every item shows its source and last confirm; lost and found posts are matched by AI and confirmed by both people.
+**Current Scope**: 24-hour Hack4Vilnius MVP (Council 002) — map and list, add, confirm/report with trust badges, lost & found tab with two buttons and AI matching, share links, emergency button. P1: assistant report intake. Phase 2: Walk-Mate, AI health chat.
+**Target Users**: Pet owners in Vilnius, any phone, via the web.
 
 ---
 
