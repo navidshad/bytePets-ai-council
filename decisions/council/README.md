@@ -37,3 +37,4 @@ Write one when the question is **strategic, cross-functional, or would change a 
 - [002](002-rescope-to-challenge-brief.md) — Re-scope the MVP to the official challenge brief — Decided, amended by 003
 - [003](003-walk-mate-3d-and-languages.md) — Walk-Mate with the 3D preview, the assistant as a main way in, EN and LT — Decided
 - [004](004-walk-slots-business.md) — Walk slots are the business — Decided
+- [005](005-mvp-rethink.md) — MVP re-think after the challenger and mentor feedback — Decided
