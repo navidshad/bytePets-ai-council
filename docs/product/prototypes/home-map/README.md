@@ -2,21 +2,21 @@
 
 A clickable phone prototype of the map-first home screen and the MVP features. Decision: `decisions/council/005-mvp-rethink.md`.
 
-**Open it:** https://claude.ai/artifact/G4h1gwYUzUQdFJx66sXFvb (a Design canvas; press Play on an artboard to click through). The files here are its source (`.dc.html` Design Components). They need the canvas runtime, so they do not open as plain web pages.
+**Open it:** https://claude.ai/artifact/G4h1gwYUzUQdFJx66sXFvb (a Design canvas; press Play on an artboard to click through). The prototype lives only there; this folder keeps its description and the scripts that draw the map.
 
 ## Screens
 
-| File | Screen |
+| Artboard | Screen |
 |---|---|
-| `Main.dc.html` | 1 · Home map: location header, colour chips (filter and legend), "you are here", floating ask box that shrinks to a paw button when you drag the map, pins fade near the edges |
-| `VetAnswer.dc.html` | 2 · Ask "vet open now": numbered results with Call |
-| `LostDog.dc.html` | 3 · Ask "I lost my dog": post first, then possible found posts, two-sided confirm |
-| `Lists.dc.html` | 4 · List view: Dog areas · Vets · Cafés · Lost & found · Walkers (later) |
-| `Place.dc.html` | 5 · Dog area page: photo, rating, tags, fence state, Check in |
-| `CheckIn.dc.html` | 6 · Check in: stars, photo, fence OK / broken, tags |
-| `Report.dc.html` | 7 · Report lost or found: photos, pet tags, rough area |
-| `Walker.dc.html` | 8 · Walker profile (later): tags, photo after every walk, free first meeting |
-| `VilniusMap.dc.html` | The map layer, shared by the screens |
+| Main | 1 · Home map: location header, colour chips (filter and legend), "you are here", floating ask box that shrinks to a paw button when you drag the map, pins fade near the edges |
+| VetAnswer | 2 · Ask "vet open now": numbered results with Call |
+| LostDog | 3 · Ask "I lost my dog": post first, then possible found posts, two-sided confirm |
+| Lists | 4 · List view: Dog areas · Vets · Cafés · Lost & found · Walkers (later) |
+| Place | 5 · Dog area page: photo, rating, tags, fence state, Check in |
+| CheckIn | 6 · Check in: stars, photo, fence OK / broken, tags |
+| Report | 7 · Report lost or found: photos, pet tags, rough area |
+| Walker | 8 · Walker profile (later): tags, photo after every walk, free first meeting |
+| VilniusMap | The map layer, shared by the screens |
 
 ## What is real and what is a sample
 - **Real:** map shapes from OpenStreetMap (Neris, Vilnia, parks, forests) and the positions and addresses of the city's dog-walking areas (Vilniaus planas map layer 16).

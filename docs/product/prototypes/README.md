@@ -1,12 +1,12 @@
 # Prototypes
 
-Design prototypes that show how a feature should look and feel. They are references for the app team, not product code.
+Design prototypes that show how features should look and feel. They live on claude.ai as live, clickable pages; GitHub cannot preview them, so this repo keeps only the links. They are references for the app team, not product code.
 
-| File | What it shows | Status |
-|---|---|---|
-| [walkmate-3d-preview.html](walkmate-3d-preview.html) | Walk-Mate event preview: full-screen 3D scene picked from the start point (landmark, park, riverside, forest, old town), weather looks, joined people with dogs, "?" ghosts for open spots, and the join animation. Event info sits on glass cards over the scene. | Approved look for Phase 1, Walk-Mate light (Council 003). Ported into the web app as `WalkScene.vue` |
-| [home-map/](home-map/README.md) | Map-first home and the MVP screens: home map with floating ask box, vet open now, lost dog, list view, dog area page, check-in, report lost/found, walker (later). Real Vilnius map shapes and city walking areas; other data are samples. | MVP direction (Council 005) |
+| Prototype | Link | What it shows | Status |
+|---|---|---|---|
+| Home map + MVP screens | https://claude.ai/artifact/G4h1gwYUzUQdFJx66sXFvb | Map-first home with a floating ask box, vet open now, lost dog, list view, dog area page, check-in, report lost/found, walker (later). Details: [home-map/](home-map/README.md) | MVP direction (Council 005) |
+| Walk-Mate 3D preview | https://claude.ai/artifact/YWY8LApuxdUqXLZgZrs5d8 | A walk's meeting spot in 3D (landmark, park, riverside, forest, old town), weather looks, people with dogs, "?" for open spots, the join animation | Later (out of the MVP, Council 005) |
 
-**How to open:** download the file and open it in a browser (it loads Three.js r128 from cdnjs). On a phone or a narrow window it shows the portrait layout.
+**How to open:** open the link in a browser. In the home map canvas, press Play on an artboard to click through. The 3D preview loads Three.js r128 from cdnjs; on a phone it shows the portrait layout.
 
-**How it maps to the app:** the web app wraps this scene in a Vue component and feeds it with `setScene` / `addAttendee` (see `../../tech/architecture.md` → 3D bridge (web)). Sample events, people and weather in the file are examples only.
+**Editing:** change a prototype on claude.ai (or ask Claude to); the link stays the same. Sample data in both are examples only.

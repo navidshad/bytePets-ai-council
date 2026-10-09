@@ -28,7 +28,7 @@ Laptop scripts: import-places, seed-demo
 - **Web app rules (ADR-003)** — "Open in your browser to post" inside Messenger and Facebook in-app browsers; `signInWithPopup` with `authDomain` on our Hosting domain; photos shrunk and redrawn on a canvas in the browser (strips EXIF and GPS) before upload; service worker on `autoUpdate` with no offline data; App Check debug token on localhost; MapTiler key with the OSM credit.
 - **Email** — Firebase "Trigger Email" extension writing to a `mail` collection (SMTP via a free-tier provider, picked and inbox-tested in hours 0–2). Used for match notices and walk cancellations; never carries anyone's contact details.
 - **Scripts (laptop, not deployed)** — `import-places` (each source → a committed GeoJSON snapshot → upsert to Firestore with stable ids) and `seed-demo`.
-- **3D walk preview** — the Three.js scene from `docs/product/prototypes/walkmate-3d-preview.html`, ported into a Vue component (`WalkScene.vue`) and lazy-loaded only on `/w/:id`, so the map stays light. Scene types in P0: park, riverside, old town (forest if time). Weather look from the time of day. Pixel ratio max 2, low-poly, stop rendering when the tab is hidden.
+- **3D walk preview** — the Three.js scene from the Walk-Mate 3D prototype (https://claude.ai/artifact/YWY8LApuxdUqXLZgZrs5d8), ported into a Vue component (`WalkScene.vue`) and lazy-loaded only on `/w/:id`, so the map stays light. Scene types in P0: park, riverside, old town (forest if time). Weather look from the time of day. Pixel ratio max 2, low-poly, stop rendering when the tab is hidden.
 
 ## Data
 
