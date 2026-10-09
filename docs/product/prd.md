@@ -11,7 +11,14 @@ From the official challenge:
 5. The answer must be **community-based**: owners **find, add, verify and share** info, and make Vilnius more pet-friendly.
 
 ## Solution
-**BytePets: Vilnius's community-checked map for pet owners.** One link, any phone, English and Lithuanian. Every place shows where it came from and when an owner last confirmed it. Lost and found pets are matched by AI. Owners plan walks together at the city's walking areas.
+A web app with one map of all pet places in Vilnius.
+
+- **Find:** vets, pharmacies, pet-friendly places and walking areas on one map.
+- **Add:** anyone can add a place.
+- **Verify:** owners tap "Still true?" on a place. Each place shows when it was last confirmed.
+- **Lost & found:** post a lost or found pet. The app finds possible matches and tells both people.
+- **Walks:** owners create and join walks at walking areas.
+- **Share:** every place, post and walk has a link.
 
 ## App vision
 A mobile web app. No install: scan a QR code or open a shared link.
