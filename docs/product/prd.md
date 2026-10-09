@@ -44,6 +44,7 @@ Dog owners in Vilnius who use an iPhone. New owners and people new to the city f
   - It shows on the wall within 2 seconds.
   - Scene type comes from the preset spot, or from OpenStreetMap tags at a dropped pin; if unknown, "park". The host can change it.
 - **Story:** As an owner, I open a walk and see a 3D preview.
+  - Reference look: [prototypes/walkmate-3d-preview.html](prototypes/walkmate-3d-preview.html).
   - Full-screen scene, one of: landmark, park, riverside, forest, old town, street. At least 3 in P0.
   - Weather look: sun, cloud, rain, snow, evening. P0 may use a time-based value; P1 uses the forecast for that hour.
   - Joined people show as avatars with their dogs; empty spots show as "?" ghosts. Event info sits on glass cards over the scene.
