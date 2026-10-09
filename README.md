@@ -1,8 +1,8 @@
-# AI Council Template
+# BytePets AI Council
 
 A reusable framework for running an **AI product council** over a living-docs repo. A small team of AI agents helps you make decisions and write them down, so the *why* behind every choice is saved and easy to find.
 
-This is a **template**. Clone it, fill in a few placeholders, and start your own product-docs repo. Nothing here is tied to one product.
+This repo holds the product docs and decisions for **BytePets**, our Hack4Vilnius (Challenge #6) entry.
 
 ## Works with
 
@@ -76,23 +76,9 @@ The council can also make your marketing films, launch images, video covers and 
 - `scripts/` and `.github/workflows/` — optional sync of `docs/` and `decisions/` to a ClickUp Doc
 - `.council-temp/` — scratch space for council sessions (gitignored)
 
-## Make it yours
+## Set up
 
-**The easy way — run setup.** The first time you open this repo, ask your agent to "set up the council" (or just start a council request — it will offer). The agent runs the initializer in `SETUP.md`: it interviews you, or reads a pitch / PRD you paste, and fills the whole template in — personas, docs, and the placeholders below — then commits. This is **Workflow 0** in `AGENTS.md`.
-
-**By hand (if you prefer).** The template uses a few placeholders. Search the repo for `<` and replace each one. The main ones:
-
-1. **`<PRODUCT_NAME>`** — your product or project name. Appears in `AGENTS.md`, the four `agents/*.md` files, and their `.gemini/agents/*.md` mirrors.
-2. **`<ONE_LINE_PITCH>`** — one line that says what the product is (in `AGENTS.md` → "What this repo is").
-3. **The `Context:` block in each `agents/*.md`** — fill in the real product, UX, architecture, and business facts. Keep these short; the deep detail lives in `docs/`.
-4. **The example doc paths** — `AGENTS.md` points at `docs/product/prd.md`, `docs/tech/architecture.md`, etc. The skeleton files exist; fill them in for your product.
-5. **The house writing style** (`AGENTS.md` → "Writing style") — the default is plain, simple English. Change it if your team needs a different voice.
-6. **"Code repos are read-only"** (`AGENTS.md`) — keep it if your docs repo sits next to separate code repos; delete it if not.
-
-Optional, when you are ready:
-- Rename the repo and update the title at the top of this file.
-- Add a fifth domain lens (see `AGENTS.md` → "Adding a domain lens").
-- Add a strict task convention if your team wants one (see `AGENTS.md` → "Turning decisions into work").
+This repo is set up for **BytePets** — an iPhone app for dog owners in Vilnius: find walking buddies, find dog services on a map, and ask an AI assistant about your dog. Built for Hack4Vilnius, Challenge #6. Re-run `SETUP.md` if the product changes.
 
 ## Optional: show your docs in ClickUp
 

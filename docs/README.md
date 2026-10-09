@@ -7,8 +7,6 @@ This folder holds the **living docs** — the current state of the product. The 
 - **marketing/** — brand, positioning, and pricing
 - **metrics/** — the metrics framework and what we measure
 
-> These are skeleton files. Fill them in for your product. Add or remove folders to fit how your team thinks.
-
 Decision records (outside this folder):
 
 - **`../decisions/pr-faq/`** — press-release feature pitches ("should we build this?")

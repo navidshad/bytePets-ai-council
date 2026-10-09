@@ -1,4 +1,4 @@
-# Technical Architecture — <PRODUCT_NAME>
+# Technical Architecture — BytePets
 
 > Skeleton living doc. The current shape of the system at a high level. The *why* behind specific choices lives in `../../decisions/adr/`. Changing this doc is a council-level change (see `AGENTS.md` → "Editing rules for living docs").
 

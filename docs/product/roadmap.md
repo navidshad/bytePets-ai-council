@@ -1,4 +1,4 @@
-# Roadmap — <PRODUCT_NAME>
+# Roadmap — BytePets
 
 > Skeleton living doc. The current plan of what ships next and why. Changing this doc is a council-level change (see `AGENTS.md` → "Editing rules for living docs"). Use **Phase 1 / Phase 2 / Phase 3** naming, not V1 / V2 / V3.
 

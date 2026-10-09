@@ -1,21 +1,24 @@
-# Product Requirements — <PRODUCT_NAME>
+# Product Requirements — BytePets
 
-> Skeleton living doc. This is the current state of the product, not a decision record. Edit it as decisions land. Changing this doc is a council-level change (see `AGENTS.md` → "Editing rules for living docs").
+> Living doc. This is the current state of the product, not a decision record. Edit it as decisions land. Changing this doc is a council-level change (see `AGENTS.md` → "Editing rules for living docs").
 
 ## Vision
-<One paragraph: what the product is, who it serves, and the change it makes.>
+Dog owners in Vilnius get help for their dog from many scattered places: Facebook groups, forums and old websites. The information is often out of date and nobody checks it. BytePets brings it into one iPhone app: other owners to walk with, the city's dog services on a map, and an AI assistant that answers questions about your dog.
 
 ## Target users
-<Who they are, what they want, where they are.>
+Dog owners in Vilnius who use an iPhone. New owners and people new to the city feel the gap most.
 
 ## Problems we solve
-<The top one to three user problems, in concrete terms.>
+1. It is hard to find other owners to walk with, safely and at a good time.
+2. Vet, pharmacy and dog-park information is scattered and out of date.
+3. When a dog seems unwell, owners don't know if it is urgent or where to go.
 
 ## Core features
-<The main things the product does today. One short line each.>
+TODO — set by the first council session (MVP scope).
 
 ## Out of scope (for now)
-<What we are deliberately not doing yet.>
+- AI lost & found (on hold, extra if time allows)
+- Android app
 
 ## Success metrics
-<The few numbers that tell us the product is working. Link to `../metrics/framework.md`.>
+See `../metrics/framework.md`. North star: walks that happen.
