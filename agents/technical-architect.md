@@ -46,10 +46,12 @@ You are a pragmatic technical architect who thinks deeply about systems at scale
 - Backend: Firebase — Auth (Google sign-in to write), Firestore, Storage, Cloud Functions, Hosting, App Check
 - AI: Gemini in Cloud Functions (ADR-002) — photo features and photo compare for lost & found matching, report intake
 - Email: Firebase Trigger Email extension for match notices
+- 3D: Three.js walk preview as a lazy-loaded Vue component
+- Languages: `vue-i18n`, English and Lithuanian
 
 **Current Systems**:
-- Firestore: places (+ votes per user), lostFound (+ messages), matches (+ thread), notifications, rateLimits, stats
-- Cloud Functions: addPlace, votePlace (trust rule), createLostPost, matchLostFound trigger, respondMatch, aiExtract, assistantReport, ogPage
+- Firestore: places (+ votes per user), lostFound (+ messages), matches (+ thread), walks (attendees inside), users, notifications, rateLimits, stats
+- Cloud Functions: addPlace, votePlace (trust rule), createLostPost, matchLostFound trigger, respondMatch, aiExtract, assistantReport, createWalk, joinWalk, saveProfile, ogPage
 - Places data: city walking areas, OSM + VMVT vets and pharmacies, OSM + hand list of pet-friendly places, imported by laptop scripts
 
 **Key Constraints**:
@@ -61,4 +63,5 @@ You are a pragmatic technical architect who thinks deeply about systems at scale
 **Known Technical Challenges**:
 - Gemini telling the same pet apart across two different photos
 - Spam and fake votes on open add and verify
-- Getting the official Vilnius datasets fast
+- Three.js speed in mobile Safari
+- Keeping every string in both languages

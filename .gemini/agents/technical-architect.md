@@ -56,10 +56,10 @@ You are a pragmatic technical architect who thinks deeply about systems at scale
 
 ## Context: BytePets Architecture
 
-**Tech Stack**: Mobile web app (Vue 3 PWA, Leaflet — ADR-003), Firebase (Auth with Google sign-in, Firestore, Storage, Cloud Functions, Hosting, App Check), Gemini in Functions (ADR-002).
-**Current Systems**: Firestore (places + votes, lostFound, matches, notifications, stats), Functions (addPlace, votePlace with trust rule, createLostPost, matchLostFound, respondMatch, aiExtract, assistantReport), imports from city data, OSM and VMVT.
+**Tech Stack**: Mobile web app (Vue 3 PWA, Leaflet — ADR-003), Firebase (Auth with Google sign-in, Firestore, Storage, Cloud Functions, Hosting, App Check), Gemini in Functions (ADR-002), Three.js 3D walk preview as a Vue component, `vue-i18n` (EN, LT).
+**Current Systems**: Firestore (places + votes, lostFound, matches, notifications, stats), Functions (addPlace, votePlace with trust rule, createLostPost, matchLostFound, respondMatch, aiExtract, assistantReport, createWalk, joinWalk), imports from city data, OSM and VMVT.
 **Key Constraints**: 24-hour build, judges' phones via QR, privacy in lost & found, free-tier costs.
-**Known Technical Challenges**: AI pet matching across photos, spam and fake votes, finding official datasets fast.
+**Known Technical Challenges**: AI pet matching across photos, spam and fake votes, 3D speed in mobile Safari.
 
 ---
 

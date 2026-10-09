@@ -6,7 +6,7 @@
 Vilnius's community-checked map for pet owners: find a vet, a pet-friendly place, a walking area or a lost pet, and see when someone last confirmed it.
 
 ## Positioning
-For pet owners in Vilnius who today search Facebook groups, forums and old websites, and can't tell what is still true. BytePets puts vets, pharmacies, pet-friendly places, walking areas and lost & found in one place, and every item shows its source, its last confirm and how many owners checked it. Unlike Google Maps or a Facebook group, the info is kept true by the community, and lost and found posts find each other.
+For pet owners in Vilnius who today search Facebook groups, forums and old websites, and can't tell what is still true. BytePets puts vets, pharmacies, pet-friendly places, walking areas and lost & found in one place, and every item shows its source, its last confirm and how many owners checked it. Unlike Google Maps or a Facebook group, the info is kept true by the community, lost and found posts find each other, and owners can plan walks together at the walking areas.
 
 ## Voice & tone
 - Warm, friendly and calm. We talk like a helpful neighbour who also has a pet.
@@ -18,7 +18,8 @@ For pet owners in Vilnius who today search Facebook groups, forums and old websi
 1. **One place, not twenty groups.** Vets, pharmacies, pet-friendly places, walking areas and lost & found, on one map.
 2. **Info you can trust.** Every place shows who added it, when it was last confirmed and by how many owners. Old info fades on its own.
 3. **Lost pets find their way home.** We match lost and found posts and tell both people. They decide; contact opens only when both say yes.
-4. **Built by owners, for the city.** Anyone can add, confirm or fix a place in two taps.
+4. **Walk together.** Plan a walk at a checked walking area, see it in 3D, and meet other owners.
+5. **Built by owners, for the city.** Anyone can add, confirm or fix a place in two taps, in English or Lithuanian.
 
 ## Partners and the challenger
 - If Insurance is the challenger, not our partner. Say "built for If's challenge". Don't use the If logo as a partner.

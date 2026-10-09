@@ -57,5 +57,6 @@ Format:
 - 2026-10-09 — Council — 24-hour Hack4Vilnius MVP scope — `decisions/council/001-hackathon-mvp-scope.md`
 - 2026-10-09 — Council — Re-scope the MVP to the official challenge brief (supersedes Council 001) — `decisions/council/002-rescope-to-challenge-brief.md`
 - 2026-10-09 — ADR-003 (Accepted) — Build the app as a mobile web app (PWA); supersedes ADR-001 — `decisions/adr/003-mobile-web-app-pwa.md`
+- 2026-10-09 — Council — Walk-Mate light with the 3D preview, EN and LT, walking areas as pins (amends Council 002) — `decisions/council/003-walk-mate-3d-and-languages.md`
 
 ---

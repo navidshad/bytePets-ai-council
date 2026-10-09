@@ -10,11 +10,12 @@
 - **Share of trusted places** — places that are Confirmed or Official, out of all active places.
 - **Lost & found** — posts created, posts shared, matches suggested, matches confirmed by both sides, reunions.
 - **Match precision** — matches confirmed by both / matches suggested. Tells us if the threshold is right.
+- **Walks with at least one joiner** — Walk-Mate health; each join also asks for a walking-area confirm.
 - **Time to vet** — taps from opening the app to calling or getting directions to a vet (target: 2 taps).
 - **Day-30 return** — users who come back and contribute again.
 
 ## How we instrument
-Firebase Analytics events: `place_added`, `place_confirmed`, `place_reported`, `lost_post_created`, `match_suggested`, `match_confirmed`, `reunited`, `share_tapped`, `emergency_opened`. Public counters in `stats/public`, updated by Functions and shown on `/about`.
+Firebase Analytics events: `place_added`, `place_confirmed`, `place_reported`, `lost_post_created`, `match_suggested`, `match_confirmed`, `reunited`, `share_tapped`, `emergency_opened`, `walk_created`, `walk_joined`, `walk_3d_opened`, `lang_switched`. Public counters in `stats/public`, updated by Functions and shown on `/about`.
 
 ## Guardrails
 - No exact home locations, phone numbers or emails in public data.

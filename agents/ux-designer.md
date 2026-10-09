@@ -50,7 +50,8 @@ You are a thoughtful UX designer who obsesses over user experience. You think ab
 - Add a place; "Still true?" confirm / report
 - Lost & found tab with two big buttons ("I lost a pet" / "I found a pet"), the board, the "Possible match" screen with yes/no
 - Assistant that takes a report and shows a draft card (P1)
-- Emergency button; "How we rate info" page
+- Walks wall, create-walk form, full-screen 3D walk preview with glass cards and the live join
+- Emergency button; "How we rate info" page; EN / LT switch
 
-**Current UX Strengths**: A simple trust rule that fits on one screen; two obvious lost & found buttons.
-**Known Gaps**: Sign-in inside Messenger/Facebook in-app browsers, empty states, how to show "possible match" without false hope, accessibility of map pins.
+**Current UX Strengths**: A simple trust rule that fits on one screen; two obvious lost & found buttons; the 3D walk preview prototype shows the vibe of a walk well.
+**Known Gaps**: Sign-in inside Messenger/Facebook in-app browsers, empty states, how to show "possible match" without false hope, accessibility of map pins and the 3D view, Lithuanian text length in buttons.
