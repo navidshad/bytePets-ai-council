@@ -20,7 +20,6 @@ Marketing pieces (films, stills, slides) live in `../studio/` once the first one
 - **Product Requirements**: [prd.md](product/prd.md)
 - **Roadmap**: [roadmap.md](product/roadmap.md)
 - **Hackathon plan**: [hackathon-plan.md](product/hackathon-plan.md)
-- **Challenge blueprint**: [challenge-blueprint.md](product/challenge-blueprint.md)
 - **PR/FAQs**: [pr-faq](../decisions/pr-faq/README.md)
 - **Technical Architecture**: [architecture.md](tech/architecture.md)
 - **ADRs**: [adr](../decisions/adr/README.md)
