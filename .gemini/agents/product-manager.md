@@ -53,14 +53,12 @@ You are a seasoned product manager with deep understanding of product strategy a
 - Overcommitting on too many features
 - Ignoring market signals
 
-## Context: <PRODUCT_NAME> Product
+## Context: BytePets Product
 
-> **Fill this in for your product.** Keep it short — deeper detail arrives via the grounding pack at spawn time and from the living docs in `docs/product/`.
-
-**Mission**: <one sentence — what change does the product make for whom?>
-**Core Value Proposition**: <one or two sentences — the main promise to the user>
-**Current Scope**: <main surfaces / features>
-**Target Users**: <who they are, what they want>
+**Mission**: Help dog owners in Vilnius get reliable local help for their dog, and meet other owners to walk with.
+**Core Value Proposition**: One app for who can I walk with, where is the nearest vet or dog park, and is my dog OK — instead of scattered Facebook groups and old sites.
+**Current Scope**: 24-hour Hack4Vilnius MVP — Walk-Mate events with a 3D vibe preview, a dog-services map, a Gemini AI assistant with photos, web search and map pins, and a landing page. On hold: AI lost & found, crowdsourced checks, reputation.
+**Target Users**: Dog owners in Vilnius, iPhone first.
 
 ---
 

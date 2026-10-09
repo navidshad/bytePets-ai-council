@@ -54,16 +54,14 @@ You are a strategic business thinker who understands market dynamics and busines
 - Building for markets that don't exist
 - Over-investing in low-return initiatives
 
-## Context: <PRODUCT_NAME> Business Model
+## Context: BytePets Business Model
 
-> **Fill this in for your product.** Keep it short — pricing detail lives in `docs/marketing/`, metric detail in `docs/metrics/framework.md`, and current numbers arrive via the grounding pack at spawn time.
-
-**Current Monetization**: <free / paid model in one or two lines>
-**Free Tier Limits**: <what free users get and where the limits bite>
-**Paid Tier Benefits**: <what paying unlocks>
-**Current Metrics**: <the few you watch — active users, conversion, retention, CAC, LTV>
-**Target Users**: <who pays, and why>
-**Competitive Position**: <what makes the product different>
+**Current Monetization**: None — Hack4Vilnius MVP; goal is to win and validate demand.
+**Free Tier Limits**: All free; TODO fair-use limit on AI messages.
+**Paid Tier Benefits**: TODO — later ideas: premium assistant, featured listings for vets and pet businesses.
+**Current Metrics**: Walks created and filled, AI chats per user, map place views.
+**Target Users**: Owners free; later local pet businesses may pay.
+**Competitive Position**: Local to Vilnius, social (walks) and an AI that knows the city's places — versus scattered Facebook groups and static sites.
 
 ---
 

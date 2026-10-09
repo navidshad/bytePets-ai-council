@@ -1,7 +1,5 @@
 # AGENTS.md — AI Council Decision Workflows
 
-> **Template repo — run setup first.** Before you use the council, initialize the repo for your product. Run **Workflow 0 — Setup**: an agent interviews you (or reads a pitch / PRD you paste) and fills in the whole template — personas, docs, and the placeholders. See `SETUP.md` for the routine. (Prefer to fill it in by hand? The placeholder list is in `README.md` → "Make it yours".)
-
 This file is the **single source of truth** for how AI agents run the decision-making workflows in this repo. It is the cross-tool standard: **Claude Code**, **Gemini CLI**, **Antigravity**, and **Cursor** all read it. The thin per-tool files point back here:
 
 - `CLAUDE.md` — Claude Code pointer + Claude Code spawning notes.
@@ -14,7 +12,7 @@ If a per-tool file and this file disagree on *workflow*, this file wins. The per
 
 ## What this repo is
 
-This repo is the **living product documentation** for `<PRODUCT_NAME>` — `<ONE_LINE_PITCH>`. The repo holds no product code. It is the source of truth for product strategy, technical architecture, marketing, metrics, and user-facing docs. The one exception is `studio/`, once it exists: the source of the marketing films, stills and slides. Agents build marketing pieces there (Workflow 4).
+This repo is the **living product documentation** for **BytePets** — an iPhone app for dog owners in Vilnius: find walking buddies, find dog services on a map, and ask an AI assistant about your dog. The repo holds no product code. It is the source of truth for product strategy, technical architecture, marketing, metrics, and user-facing docs. The one exception is `studio/`, once it exists: the source of the marketing films, stills and slides. Agents build marketing pieces there (Workflow 4).
 
 Every request flows through up to three stages — **triage** (is this trivial or a real decision?), then **depth** (how hard do we think?), then **output** (which record do we write?). The job of this file is to route the request through that flow and pick the cheapest path that does the job.
 
@@ -35,13 +33,11 @@ Engineering changes are made by the team — not by agents. This applies to ever
 
 `studio/` in **this** repo is not a code repo in this sense. It is marketing source, and agents may edit it, render from it and commit to it, through a branch and a pull request (Workflow 4).
 
-> Delete this section if your repo has no separate code repos, or loosen it to fit your setup.
+> The BytePets app and landing-page code live in separate repos. This repo holds only docs and decisions.
 
 ---
 
 ## Writing style — the house style
-
-> This is the **house style** for this repo. The default below is "plain, simple English" because it travels well and keeps docs readable for everyone, including non-native speakers. Replace this section if your project needs a different voice.
 
 Write in plain everyday English. Both **chat replies** AND **product docs** (PR/FAQs, ADRs, council syntheses, living docs) should use it:
 
@@ -192,7 +188,7 @@ Each agent prompt must:
 #### Subagent prompt template
 
 ```
-You are the {ROLE} on the <PRODUCT_NAME> AI Product Council.
+You are the {ROLE} on the BytePets AI Product Council.
 
 Step 1 — Persona. (Claude Code / Antigravity: read your persona file agents/{role-file}.md and adopt that voice and decision framework. Gemini CLI: you already are this persona.)
 Step 2 — Read for context (only these files, not whole folders): {1–2 specific paths}. If the grounding pack below already covers what you need, skip this step.

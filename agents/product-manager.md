@@ -38,17 +38,17 @@ You are a seasoned product manager with deep understanding of product strategy a
 - Overcommitting on too many features
 - Ignoring market signals
 
-## Context: <PRODUCT_NAME> Product
+## Context: BytePets Product
 
-> **Fill this in for your product.** This block grounds the lens in your real product. Keep it short — the deeper detail comes from the grounding pack at spawn time and from the living docs in `docs/product/`.
+**Mission**: Help dog owners in Vilnius get reliable local help for their dog, and meet other owners to walk with.
 
-**Mission**: <one sentence — what change does the product make for whom?>
+**Core Value Proposition**: One app for the dog-owner questions that today are spread over Facebook groups, forums and old websites — who can I walk with, where is the nearest vet or dog park, and is my dog OK?
 
-**Core Value Proposition**: <one or two sentences — the main promise to the user>
+**Current Scope** (24-hour Hack4Vilnius MVP, Challenge #6):
+- Walk-Mate: create a dog-walk event (dog info, topics, start point, date/time, group size 2–4) and join others' events; each event has a 3D "vibe" preview of the start point with weather and avatars
+- Dog-services map of Vilnius (vets, emergency vets, pet shops/pharmacies, dog parks and walking areas)
+- AI assistant (Gemini): chat with photos about dog health and care, searches the web, and points to places on the map
+- A landing page
+- On hold: AI lost & found, crowdsourced venue checks, reputation system
 
-**Current Scope**:
-- <main surface or feature 1>
-- <main surface or feature 2>
-- <main surface or feature 3>
-
-**Target Users**: <who they are, what they want, where they are>
+**Target Users**: Dog owners in Vilnius, mostly 20–45, smartphone-first, iPhone first. New owners and people new to the city feel the gap most.
