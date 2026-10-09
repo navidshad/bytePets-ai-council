@@ -19,6 +19,7 @@ Marketing pieces (films, stills, slides) live in `../studio/` once the first one
 
 - **Product Requirements**: [prd.md](product/prd.md)
 - **Roadmap**: [roadmap.md](product/roadmap.md)
+- **Hackathon plan**: [hackathon-plan.md](product/hackathon-plan.md)
 - **PR/FAQs**: [pr-faq](../decisions/pr-faq/README.md)
 - **Technical Architecture**: [architecture.md](tech/architecture.md)
 - **ADRs**: [adr](../decisions/adr/README.md)
@@ -51,6 +52,8 @@ Format:
 
 ---
 
-_No decisions logged yet._
+- 2026-10-09 — ADR-001 (Accepted) — Build the iPhone app with Flutter — `decisions/adr/001-flutter-for-iphone-app.md`
+- 2026-10-09 — ADR-002 (Accepted) — AI assistant on Gemini in Cloud Functions with Search and Maps grounding — `decisions/adr/002-ai-assistant-gemini-on-firebase.md`
+- 2026-10-09 — Council — 24-hour Hack4Vilnius MVP scope — `decisions/council/001-hackathon-mvp-scope.md`
 
 ---
