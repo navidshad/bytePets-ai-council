@@ -20,6 +20,7 @@ Marketing pieces (films, stills, slides) live in `../studio/` once the first one
 - **Product Requirements**: [prd.md](product/prd.md)
 - **Roadmap**: [roadmap.md](product/roadmap.md)
 - **Hackathon plan**: [hackathon-plan.md](product/hackathon-plan.md)
+- **Pitch guide**: [pitch-guide.md](product/pitch-guide.md)
 - **PR/FAQs**: [pr-faq](../decisions/pr-faq/README.md)
 - **Technical Architecture**: [architecture.md](tech/architecture.md)
 - **ADRs**: [adr](../decisions/adr/README.md)
@@ -58,5 +59,6 @@ Format:
 - 2026-10-09 — Council — Re-scope the MVP to the official challenge brief (supersedes Council 001) — `decisions/council/002-rescope-to-challenge-brief.md`
 - 2026-10-09 — ADR-003 (Accepted) — Build the app as a mobile web app (PWA); supersedes ADR-001 — `decisions/adr/003-mobile-web-app-pwa.md`
 - 2026-10-09 — Council — Walk-Mate light with the 3D preview, EN and LT, walking areas as pins (amends Council 002) — `decisions/council/003-walk-mate-3d-and-languages.md`
+- 2026-10-09 — Council — Walk slots are the business — `decisions/council/004-walk-slots-business.md`
 
 ---

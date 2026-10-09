@@ -9,6 +9,7 @@
 - Hand-check 5–8 24/7 vets in Vilnius by phone (name, address, phone, hours).
 - Collect 10 real lost/found photo pairs we may use (team pets, friends' pets, or freely licensed) for the matching test, and photos for the seed posts.
 - If anyone from If is at the event, book 5 minutes with them in hour 1.
+- Book mentor slots on go.veloxentry.com for Friday evening and Saturday morning.
 
 ## Team tracks (3–4 people, each with Claude Code)
 - **A — Backend and AI:** rules, Functions, trust rule, matching, Gemini, email.
@@ -29,7 +30,7 @@ Freeze the data model as `types.ts` (shared by app and Functions) in hour 1. Cha
 | 8–14 | `matchLostFound` (rules), `respondMatch`, notifications, email | Share sheet, `/p/:id`, emergency button, `/about` counters | Lost & found tab with the two big buttons, matches screen (yes/no), messages, reunited | Walks wall, create and edit walk, walk page with 3D, live join and leave on two phones; seed walks and demo posts, planted match pair; QR drive starts |
 | **14** | **Checkpoint: add → confirm → badge turns green on a second phone; lost post → match → both confirm; join a walk → avatar walks in on the other phone. In EN and LT. Works on a judge-style phone. Or cut.** | | | |
 | 14–20 | `assistantChat` with read tools and P0 action cards; `aiExtract` features + photo compare; tune the threshold | Empty/error states, "Open in your browser to post" | AI pre-filled form; Assistant tab: chat, pins on the map, action cards with Confirm (`assistantChat` with A) | Confirm-after-join prompt, 3D polish and performance; `ogPage` previews; slides (2–3) |
-| 20–24 | **Feature freeze.** Bug fixes, App Check enforcement on, record backup video, rehearse 3 times, charge phones, sleep in turns | | | |
+| 20–24 | **Feature freeze.** Bug fixes, App Check enforcement on, record the pre-pitch video and the backup demo video, slides, rehearse 3 times, charge phones, sleep in turns | | | |
 
 ## Cut line (cut from the top if behind at hour 14)
 1. Assistant P1 tools — keep find, emergency, report lost/found, create and join walk
@@ -44,15 +45,11 @@ Freeze the data model as `types.ts` (shared by app and Functions) in hour 1. Cha
 ## QR drive (real community proof)
 From hour 10, a QR code on our table and on slide 1. Ask every team and mentor to add or confirm one place they really know. Track the counter on `/about`. Never fake names or confirms.
 
-## Demo script (3 minutes)
-Give the demo in English. Switch the app to LT once, for 2 seconds, during "Find".
+## Pitch and demo
+The pitch is 5 minutes: ~3 min talk + ≥ 2 min live demo, then 3 min of jury questions. Script, demo story, jury answers and Sunday deadlines: **`pitch-guide.md`**.
 
-1. **Problem (15 s).** Screenshots of scattered Facebook posts: "Is this café dog-friendly?", and a lost-dog post and a found-dog post for what looks like the same dog, in two different groups. "The info is scattered, stale, and you can't tell what's true."
-2. **Find (20 s).** Open the map. Filter "Pet-friendly". A green card: "Confirmed by 4 owners · 5 days ago". A grey one: "Not checked for 6+ months". Tap EN → LT and back. "You see at once what you can trust, in your language."
-3. **Add, verify, share (35 s): hero 1.** Phone A adds a café in 20 seconds; it shows grey. A judge scans the QR code and taps "Still true". The card turns green live on the big screen. Tap Share; the link opens in a plain browser.
-4. **Lost & found (40 s): hero 2.** "Luna went missing in Žvėrynas yesterday" is already posted. Tap the big **"I found a pet"** button and post "small grey dog near Vingis Park" with a photo. The form fills itself from the photo. Seconds later, both phones show "Possible match: same white chest patch, red collar, 1.2 km away". Both tap "Yes, that's them", and a private thread opens. No phone number was shared until both said yes.
-5. **Walk together (30 s): hero 3.** Open the Vingis Park walking area: "Official · city data", "2 walks this week". Tap tonight's walk: the 3D scene fills the screen, two dogs and two "?" spots. Tap Join, and a new avatar walks in. Hold up the second phone: it already shows "3 of 4". Then the prompt: "Is Vingis Park still OK for dogs?" → Yes. "Every walk keeps the map fresh."
-6. **Emergency (10 s).** One tap: nearest checked 24/7 vet, Call, Directions.
-7. **Why it stays true, and why If cares (30 s).** The six trust levels in one slide. Live counters: "Today, N people in this room added or confirmed M places." Faster vet access, more pets found, owners who walk and check together. 55,384 dogs in Vilnius; next: partners keep data fresh, and alerts by area.
+Sunday deliverables:
+- **Morning:** pre-pitch YouTube video (max 5 min), link on VeloxEntry. Record it from the demo story.
+- **By 12:00 (one hour early):** final slides + backup PDF in our Drive folder, link on VeloxEntry. Check both links in incognito.
 
 One person drives the phone, one talks. Mirror the phone screen. Phone hotspot as Wi-Fi backup. Warm up the Functions before going on stage.
