@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vilnius map layer</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&amp;family=Nunito:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#2F6B4F}a:hover{color:#24543E}
+</style>
+</helmet>
+<div style="width: 1200px; height: 1112px; position: relative; overflow: hidden; background: #F5EFE4; font-family: 'Nunito', sans-serif;">
+  <svg width="1200" height="1112" viewBox="0 0 1200 1112" role="img" aria-label="Map of central Vilnius: the Neris and Vilnia rivers, parks and forests" style="position: absolute; left: 0; top: 0;">
+    <defs>
+      <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.4" fill="#C3DBB6"></circle></pattern>
+    </defs>
+    <rect width="1200" height="1112" fill="#F5EFE4"></rect>
+    <path fill="#CFE3C3" d="M260 437 L268 403 L264 397 L217 400 L206 434 L224 444 L260 437ZM-45 962 L-2 890 L17 886 L47 892 L43 926 L55 928 L63 938 L79 938 L91 948 L-45 962ZM476 115 L496 116 L504 122 L516 123 L523 115 L529 92 L513 87 L502 89 L498 67 L489 61 L495 50 L484 37 L496 43 L507 23 L482 13 L473 4 L472 15 L474 -13 L461 -51 L494 -70 L493 -56 L487 -54 L492 -39 L502 -36 L498 -25 L500 -15 L519 -16 L521 -3 L533 12 L533 16 L519 18 L523 36 L534 41 L539 34 L577 37 L576 47 L582 48 L587 57 L593 91 L583 91 L581 95 L595 100 L598 118 L582 118 L591 114 L582 102 L576 106 L576 101 L554 101 L547 113 L552 115 L553 125 L537 125 L526 134 L502 137 L476 115ZM17 698 L53 689 L57 678 L53 675 L59 676 L56 693 L43 693 L55 704 L59 714 L57 740 L35 751 L34 758 L23 764 L23 759 L16 757 L12 765 L11 758 L3 760 L-10 782 L-21 790 L-20 798 L-13 801 L-15 809 L-27 797 L-43 741 L-37 727 L-29 734 L-19 735 L-5 702 L9 710 L17 698Z"></path>
+    <path fill="#DCEBD2" d="M728 166 L726 187 L714 188 L657 185 L668 167 L688 161 L728 166ZM576 391 L560 406 L561 410 L569 424 L580 432 L585 429 L585 411 L586 402 L577 399 L579 393 L576 391ZM591 605 L618 616 L624 590 L620 589 L612 588 L602 578 L591 605ZM914 649 L900 629 L893 606 L878 619 L862 591 L859 603 L867 608 L866 611 L842 601 L850 585 L857 584 L872 590 L858 570 L837 587 L840 590 L832 596 L831 605 L806 621 L811 638 L808 640 L821 651 L826 667 L842 676 L849 687 L848 705 L838 714 L828 714 L832 720 L838 719 L867 699 L865 695 L872 674 L878 684 L881 683 L888 670 L885 659 L890 658 L879 650 L886 638 L895 632 L904 632 L906 638 L890 652 L891 657 L901 645 L908 652 L902 659 L908 655 L910 660 L914 649ZM950 451 L940 447 L936 461 L967 472 L972 457 L966 454 L965 445 L959 443 L956 447 L954 442 L950 451ZM410 727 L412 711 L415 708 L412 706 L411 710 L408 710 L408 704 L419 705 L438 684 L461 684 L481 677 L480 675 L451 680 L431 676 L407 663 L377 624 L363 586 L347 559 L335 560 L305 584 L281 608 L243 624 L220 653 L237 681 L254 695 L267 718 L280 733 L278 805 L321 806 L349 835 L379 807 L391 790 L410 727ZM955 250 L951 295 L936 336 L942 338 L961 299 L957 298 L967 265 L963 262 L966 254 L970 254 L976 226 L972 224 L974 219 L978 214 L975 195 L970 174 L966 175 L970 215 L958 251 L955 250ZM978 152 L977 174 L1000 179 L1004 153 L1001 151 L996 150 L993 155 L978 152ZM998 110 L988 109 L975 97 L977 80 L966 55 L964 53 L973 44 L987 36 L1005 106 L998 110ZM826 670 L843 682 L847 699 L838 712 L822 710 L825 691 L821 688 L805 681 L801 671 L805 661 L814 663 L813 667 L826 670ZM780 654 L762 659 L770 670 L792 664 L794 659 L804 660 L809 645 L802 640 L800 647 L780 654ZM975 502 L990 498 L995 493 L1011 503 L1007 517 L992 522 L971 509 L975 502Z"></path>
+    <path fill="url(#dots)" d="M410 727 L412 711 L415 708 L412 706 L411 710 L408 710 L408 704 L419 705 L438 684 L461 684 L481 677 L480 675 L451 680 L431 676 L407 663 L377 624 L363 586 L347 559 L335 560 L305 584 L281 608 L243 624 L220 653 L237 681 L254 695 L267 718 L280 733 L278 805 L321 806 L349 835 L379 807 L391 790 L410 727ZM914 649 L900 629 L893 606 L878 619 L862 591 L859 603 L867 608 L866 611 L842 601 L850 585 L857 584 L872 590 L858 570 L837 587 L840 590 L832 596 L831 605 L806 621 L811 638 L808 640 L821 651 L826 667 L842 676 L849 687 L848 705 L838 714 L828 714 L832 720 L838 719 L867 699 L865 695 L872 674 L878 684 L881 683 L888 670 L885 659 L890 658 L879 650 L886 638 L895 632 L904 632 L906 638 L890 652 L891 657 L901 645 L908 652 L902 659 L908 655 L910 660 L914 649Z"></path>
+    <g fill="none" stroke="#BCDDEA" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke-width="12" d="M279 605 L240 619 L219 640 L216 657 L228 678M472 674 L457 676 L445 673 L418 661 L405 651 L383 621 L359 563 L352 555 L344 553 L334 554 L313 567M313 567 L279 605M686 571 L638 563 L620 551 L588 516 L573 510 L548 508M228 678 L252 704 L272 739 L272 826 L259 881 L215 964 L214 987 L226 1039 L222 1052 L203 1072 L196 1105 L188 1120M757 608 L747 603 L716 578 L686 571M548 508 L530 515 L518 533 L506 573 L497 653 L487 665 L472 674M872 526 L857 545 L822 574 L800 601 L778 608 L757 608M826 2 L871 -6 L922 18 L938 30 L960 56 L968 70 L972 85 L970 102 L956 127 L952 140 L953 163 L962 199 L962 215 L937 315 L919 351 L914 366 L910 393 L908 457 L898 482 L872 526"></path>
+      <path stroke-width="6" d="M1201 762 L1189 765 L1178 752 L1173 751 L1169 754 L1163 777 L1144 782 L1136 796 L1117 794 L1104 811 L1096 814 L1078 811 L1055 801 L1046 817 L1039 812 L1049 781 L1048 773 L1025 757 L997 749 L990 742 L982 743 L971 754 L953 747 L917 751 L883 736 L867 733 L838 752 L803 752 L793 735 L802 721 L802 707 L807 706 L837 713 L846 706 L849 694 L844 680 L825 667 L819 650 L806 640 L790 605"></path>
+    </g>
+    <path fill="#BCDDEA" d="M500 583 L506 551 L518 522 L530 510 L544 504 L567 504 L587 510 L635 557 L654 563 L714 572 L732 583 L751 602 L762 605 L784 603 L798 596 L838 553 L856 540 L870 522 L877 527 L866 543 L829 573 L803 604 L792 611 L757 613 L712 580 L637 568 L616 553 L584 519 L553 513 L535 517 L522 532 L511 571 L502 649 L496 662 L485 672 L460 680 L428 675 L402 658 L379 626 L362 584 L350 561 L342 558 L320 569 L313 580 L281 608 L243 624 L221 648 L222 661 L238 683 L254 695 L267 718 L279 729 L281 739 L277 825 L268 870 L219 973 L220 995 L234 1031 L234 1041 L209 1079 L203 1103 L194 1122 L174 1136 L148 1142 L129 1152 L72 1212 L48 1212 L27 1202 L14 1190 L-14 1149 L-24 1143 L-19 1136 L7 1151 L20 1179 L41 1197 L68 1206 L91 1174 L122 1145 L149 1125 L171 1125 L183 1118 L191 1101 L198 1068 L218 1049 L208 960 L237 914 L257 872 L267 824 L268 763 L263 736 L252 713 L216 674 L210 654 L214 636 L232 617 L269 598 L310 559 L332 550 L349 548 L361 556 L385 618 L398 633 L439 666 L452 672 L467 672 L483 664 L492 654 L500 583ZM779 -67 L776 -116 L784 -143 L787 -169 L778 -207 L785 -208 L798 -170 L786 -105 L791 -84 L789 -42 L799 -19 L808 -8 L823 -2 L857 -11 L877 -11 L929 14 L951 34 L976 77 L974 102 L957 143 L958 168 L966 200 L966 215 L954 252 L943 312 L917 368 L915 415 L913 454 L903 483 L877 527 L870 522 L903 458 L909 373 L926 330 L920 317 L927 300 L930 302 L925 321 L929 325 L933 314 L958 215 L947 144 L952 123 L966 104 L966 81 L958 61 L935 35 L890 6 L867 1 L822 7 L799 -4 L782 -32 L778 -50 L779 -67Z"></path>
+    <g font-family="'Baloo 2', sans-serif" font-weight="600" fill="#A3927F" stroke="#F5EFE4" stroke-width="5" paint-order="stroke" letter-spacing="1">
+      <text x="600" y="540" font-size="20" font-style="italic" fill="#6FA9C2">Neris</text>
+      <text x="300" y="705" font-size="22">VINGIS PARK</text>
+      <text x="845" y="300" font-size="20">ŽIRMŪNAI</text>
+      <text x="470" y="200" font-size="20">ŠEŠKINĖ</text>
+      <text x="640" y="470" font-size="20">ŠNIPIŠKĖS</text>
+      <text x="790" y="770" font-size="22">OLD TOWN</text>
+      <text x="540" y="830" font-size="20">NAUJAMIESTIS</text>
+    </g>
+  </svg>
+
+  <sc-if value="{{showExtras}}" hint-placeholder-val="{{ true }}">
+    <div style="position: absolute; left: 740px; top: 588px; width: 76px; display: flex; flex-direction: column; align-items: center; pointer-events: none; opacity: 0.9;">
+      <svg width="56" height="64" viewBox="0 0 74 84" aria-hidden="true"><path d="M2 82 Q37 50 72 82" fill="#DCEBD2" stroke="#8C7B68" stroke-width="2.5"></path><path d="M24 66 V24 h26 v42" fill="#FFFFFF" stroke="#8C7B68" stroke-width="2.5" stroke-linejoin="round"></path><path d="M24 24 v-7 h5 v4 h5 v-4 h6 v4 h5 v-4 h5 v7" fill="#FFFFFF" stroke="#8C7B68" stroke-width="2.5" stroke-linejoin="round"></path><path d="M37 13 V2 l11 4 -11 4" fill="#F2A93B" stroke="#8C7B68" stroke-width="2" stroke-linejoin="round"></path></svg>
+    </div>
+    <div style="position: absolute; left: 856px; top: 604px; width: 56px; pointer-events: none; opacity: 0.9;">
+      <svg width="48" height="40" viewBox="0 0 64 54" aria-hidden="true"><g fill="#FFFFFF" stroke="#8C7B68" stroke-width="2.5" stroke-linejoin="round"><path d="M9 52 V22 H3 v-6 h6 V8 h6 v8 h6 v6 h-6 v30z"></path><path d="M29 52 V18 h-6 v-6 h6 V2 h6 v10 h6 v6 h-6 v34z"></path><path d="M49 52 V22 h-6 v-6 h6 V8 h6 v8 h6 v6 h-6 v30z"></path></g></svg>
+    </div>
+    <div style="position: absolute; left: 718px; top: 442px; width: 140px; height: 140px; border-radius: 999px; background: radial-gradient(circle, rgba(242,169,59,0.45) 0%, rgba(242,169,59,0.18) 45%, rgba(242,169,59,0) 70%); pointer-events: none;"></div>
+  </sc-if>
+
+  <sc-if value="{{showMe}}" hint-placeholder-val="{{ true }}">
+    <div style="position: absolute; left: 650px; top: 460px; width: 80px; height: 80px; border-radius: 999px; background: rgba(59,125,216,0.16); display: flex; align-items: center; justify-content: center; pointer-events: none;">
+      <div style="width: 26px; height: 26px; border-radius: 999px; background: #3B7DD8; border: 5px solid #FFFFFF; box-shadow: 0 2px 8px rgba(43,38,34,0.3); box-sizing: border-box;"></div>
+    </div>
+  </sc-if>
+
+  <sc-for list="{{pins}}" as="p" hint-placeholder-count="12">
+    <a href="{{p.href}}" aria-label="{{p.label}}" style="position: absolute; left: {{p.left}}px; top: {{p.top}}px; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; opacity: {{p.opacity}};">
+      <div style="width: 48px; height: 48px; box-sizing: border-box; border-radius: 999px; background: {{p.fill}}; border: 4px solid #FFFFFF; box-shadow: 0 4px 10px rgba(43,38,34,0.3); display: flex; align-items: center; justify-content: center;">
+        <sc-if value="{{p.isPaw}}" hint-placeholder-val="{{ true }}">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><circle cx="6.5" cy="9" r="2.1"></circle><circle cx="12" cy="6.3" r="2.1"></circle><circle cx="17.5" cy="9" r="2.1"></circle><path d="M7.5 17c0-3 2.2-5 4.5-5s4.5 2 4.5 5c0 2-2.2 2.2-4.5 2.2S7.5 19 7.5 17z"></path></svg>
+        </sc-if>
+        <sc-if value="{{p.isCross}}" hint-placeholder-val="{{ false }}">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M10 4h4v6h6v4h-6v6h-4v-6H4v-4h6z"></path></svg>
+        </sc-if>
+        <sc-if value="{{p.isCup}}" hint-placeholder-val="{{ false }}">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h12v4a6 6 0 0 1-6 6 6 6 0 0 1-6-6z"></path><path d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16"></path></svg>
+        </sc-if>
+        <sc-if value="{{p.isDog}}" hint-placeholder-val="{{ false }}">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M5 4 2 9l3 2 1-3v7a6 6 0 0 0 12 0V8l1 3 3-2-3-5h-3l-1 2h-6L8 4z"></path></svg>
+        </sc-if>
+      </div>
+      <sc-if value="{{p.showBadge}}" hint-placeholder-val="{{ false }}">
+        <div style="position: absolute; right: 0; top: 0; min-width: 24px; height: 24px; padding: 0 5px; box-sizing: border-box; border-radius: 999px; background: {{p.badgeBg}}; border: 2px solid #FFFFFF; color: #FFFFFF; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center;">{{p.badge}}</div>
+      </sc-if>
+    </a>
+  </sc-for>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"mode":{"editor":"enum","options":["all","vets","lost"],"default":"all"},"show":{"editor":"enum","options":["all","areas","vets","cafes","lost"],"default":"all"},"vx":{"editor":null},"vy":{"editor":null},"vw":{"editor":null},"vh":{"editor":null},"$preview":{"width":1200,"height":1112}}'>
+class Component extends DCLogic {
+renderVals() {
+const mode = this.props.mode ?? 'all';
+const show = this.props.show ?? 'all';
+const K = { area: '#3E8E5E', vet: '#0F7C78', cafe: '#D9822B', lost: '#E0583F', found: '#3B7DD8', closed: '#A39A90' };
+const group = { area: 'areas', vet: 'vets', cafe: 'cafes', lost: 'lost', found: 'lost' };
+const raw = [
+['A1', 'area', 'none', 431, 161, 'Dog area, Šeškinės g. 45A: no ratings yet'],
+['A2', 'area', 'broken', 497, 237, 'Dog area, Gelvonų g. 1: fence broken (sample)'],
+['A3', 'area', 'repair', 710, 242, 'Dog area, Ozo and Tauragnų g.: needs repair (sample)'],
+['A4', 'area', 'good', 634, 268, 'Dog area, Neries senvagės park: good (sample)'],
+['A5', 'area', 'good', 788, 512, 'Dog area, Šeimyniškių g. 30: good, busy now (sample)'],
+['A6', 'area', 'good', 458, 666, 'Dog area, Vytauto g. 1: good (sample)'],
+['A7', 'area', 'none', 404, 728, 'Dog area, Čiurlionio g.: no ratings yet'],
+['A8', 'area', 'good', 701, 849, 'Dog area, Šopeno g. 1: good (sample)'],
+['A9', 'area', 'good', 446, 869, 'Dog area, Skroblų g.: good (sample)'],
+['V1', 'vet', 'open', 656, 600, 'Paw Clinic (sample): open now'],
+['V2', 'vet', 'night', 550, 452, 'Night Vet (sample): open 24 hours'],
+['V3', 'vet', 'open', 812, 352, 'Happy Tails Vet (sample): open now'],
+['V4', 'vet', 'closed', 475, 565, 'Green Vet (sample): closed'],
+['V5', 'vet', 'closed', 750, 740, 'Old Town Vet (sample): closed'],
+['C1', 'cafe', 'ok', 720, 640, 'Café, dogs welcome (sample)'],
+['C2', 'cafe', 'ok', 668, 700, 'Café with a water bowl (sample)'],
+['C3', 'cafe', 'ok', 587, 352, 'Café, terrace only (sample)'],
+['C4', 'cafe', 'ok', 518, 790, 'Café with a dog menu (sample)'],
+['L1', 'lost', 'lost', 618, 415, 'Lost dog (sample)'],
+['L2', 'lost', 'lost', 812, 802, 'Lost cat (sample)'],
+['F1', 'found', 'found', 537, 627, 'Found dog (sample)']
+];
+const results = mode === 'vets' ? { V1: '1', V2: '2', V3: '3' } : mode === 'lost' ? { F1: '1' } : {};
+const vx = this.props.vx;
+const pins = raw.filter(([id, kind]) => mode !== 'all' || show === 'all' || group[kind] === show).map(([id, kind, status, x, y, label]) => {
+const num = results[id];
+let opacity = mode !== 'all' && !num ? 0.25 : 1;
+if (vx !== undefined && vx !== null) {
+const vy = this.props.vy ?? 0, vw = this.props.vw ?? 487.5, vh = this.props.vh ?? 1055;
+const edge = Math.min(x - vx, vx + vw - x, y - vy - 90, vy + vh - y - 110);
+opacity = opacity * Math.max(0.15, Math.min(1, edge / 70));
+}
+let badge = '', badgeBg = '#2F6B4F';
+if (num) badge = num;
+else if (status === 'broken') { badge = '!'; badgeBg = '#C8432B'; }
+else if (status === 'repair') { badge = '!'; badgeBg = '#D9822B'; }
+else if (status === 'night') { badge = '24'; badgeBg = '#2B2622'; }
+const fill = status === 'closed' || status === 'none' ? K.closed : K[kind];
+return {
+label, left: x - 30, top: y - 30, fill,
+href: kind === 'area' ? 'Place.dc.html' : kind === 'vet' ? 'VetAnswer.dc.html' : (kind === 'lost' || kind === 'found') ? 'LostDog.dc.html' : 'Lists.dc.html',
+isPaw: kind === 'area', isCross: kind === 'vet', isCup: kind === 'cafe', isDog: kind === 'lost' || kind === 'found',
+opacity: opacity.toFixed(2), badge, badgeBg, showBadge: badge !== ''
+};
+});
+return { pins, showExtras: mode === 'all', showMe: mode === 'all' };
+}
+}
+</script>
+</body>
+</html>

@@ -60,5 +60,6 @@ Format:
 - 2026-10-09 — ADR-003 (Accepted) — Build the app as a mobile web app (PWA); supersedes ADR-001 — `decisions/adr/003-mobile-web-app-pwa.md`
 - 2026-10-09 — Council — Walk-Mate light with the 3D preview, EN and LT, walking areas as pins (amends Council 002) — `decisions/council/003-walk-mate-3d-and-languages.md`
 - 2026-10-09 — Council — Walk slots are the business — `decisions/council/004-walk-slots-business.md`
+- 2026-10-09 — Council — MVP re-think: place + check-ins core, vets open now, map-first home (amends 002–004) — `decisions/council/005-mvp-rethink.md`
 
 ---

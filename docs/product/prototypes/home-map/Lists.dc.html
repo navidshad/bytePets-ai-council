@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>BytePets list view</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&amp;family=Nunito:wght@400;600;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#2F6B4F;text-decoration:none}a:hover{color:#24543E}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #FBF5EA; font-family: 'Nunito', sans-serif; color: #2B2622;">
+  <div style="position: absolute; left: -320px; top: -32px; width: 1200px; height: 1112px; transform: scale(0.8); transform-origin: 0 0;">
+    <dc-import name="VilniusMap" mode="all" hint-size="1200px,1112px"></dc-import>
+  </div>
+  <div style="position: absolute; left: 0; top: 0; width: 390px; height: 120px; background: rgba(251,245,234,0.35);"></div>
+
+  <div style="position: absolute; left: 0; right: 0; top: 88px; bottom: 0; background: #FFFDF8; border-radius: 24px 24px 0 0; box-shadow: 0 -6px 20px rgba(43,38,34,0.14); display: flex; flex-direction: column;">
+    <a href="Main.dc.html" style="height: 36px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; flex-shrink: 0; color: #6B6158; font-size: 12px; font-weight: 600;">
+      <span style="width: 40px; height: 5px; border-radius: 999px; background: #E7DCCB;"></span>Show map
+    </a>
+    <div style="padding: 0 16px; flex-shrink: 0;">
+      <div style="height: 48px; border-radius: 999px; background: #F6EFE3; display: flex; align-items: center; gap: 10px; padding: 0 6px 0 14px;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#2F6B4F" aria-hidden="true"><circle cx="6.5" cy="9" r="2"></circle><circle cx="12" cy="6.5" r="2"></circle><circle cx="17.5" cy="9" r="2"></circle><path d="M7.5 17c0-3 2.2-5 4.5-5s4.5 2 4.5 5c0 2-2.2 2.2-4.5 2.2S7.5 19 7.5 17z"></path></svg>
+        <label for="ask2" style="position: absolute; left: -9999px;">Ask BytePets</label>
+        <input id="ask2" placeholder="Ask… fenced area for a big dog" style="flex: 1; min-width: 0; border: none; background: transparent; font-family: 'Nunito', sans-serif; font-size: 15px; color: #2B2622; outline: none;">
+        <button aria-label="Send" style="width: 38px; height: 38px; border-radius: 999px; border: none; background: #2F6B4F; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <div role="tablist" aria-label="What to list" style="display: flex; padding: 8px 8px 0; border-bottom: 1px solid #E7DCCB; flex-shrink: 0;">
+      <sc-for list="{{tabs}}" as="t" hint-placeholder-count="5">
+        <button role="tab" aria-selected="{{t.active}}" onClick="{{t.pick}}" style="flex: 1; min-width: 0; height: 52px; border: none; background: transparent; border-bottom: 3px solid {{t.line}}; color: {{t.color}}; font-family: 'Baloo 2', sans-serif; font-weight: {{t.weight}}; font-size: 14px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0; line-height: 1.1;">{{t.label}}<span style="font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 600; color: #6B6158;">{{t.sub}}</span></button>
+      </sc-for>
+    </div>
+
+    <div style="flex: 1; overflow-y: auto; padding: 12px 16px 24px; display: flex; flex-direction: column; gap: 12px;">
+      <sc-if value="{{isAreas}}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <sc-for list="{{chips}}" as="c" hint-placeholder-count="6">
+            <button onClick="{{c.pick}}" aria-pressed="{{c.on}}" style="height: 36px; padding: 0 14px; border-radius: 999px; border: none; background: {{c.bg}}; color: {{c.fg}}; font-family: 'Nunito', sans-serif; font-weight: 600; font-size: 14px; cursor: pointer;">{{c.label}}</button>
+          </sc-for>
+        </div>
+        <div style="font-size: 13px; color: #6B6158;">Nearest first · sample ratings</div>
+      </sc-if>
+      <sc-if value="{{isLost}}" hint-placeholder-val="{{ false }}">
+        <div style="display: flex; gap: 8px;">
+          <a href="Report.dc.html" style="flex: 1; height: 56px; border-radius: 18px; background: #E0583F; color: #FFFFFF; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center;">I lost my pet</a>
+          <a href="Report.dc.html" style="flex: 1; height: 56px; border-radius: 18px; background: #3B7DD8; color: #FFFFFF; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center;">I found a pet</a>
+        </div>
+      </sc-if>
+      <sc-if value="{{isWalkers}}" hint-placeholder-val="{{ false }}">
+        <div style="border-radius: 16px; background: #FFF0CC; padding: 10px 12px; font-size: 13px; color: #6B4A1F; line-height: 1.4;"><b>Later.</b> Walkers show by neighbourhood only.</div>
+      </sc-if>
+
+      <sc-for list="{{rows}}" as="r" hint-placeholder-count="5">
+        <a href="{{r.href}}" style="display: flex; gap: 12px; align-items: center; padding: 10px; border-radius: 18px; background: #FFFFFF; border: 1px solid #E7DCCB; color: #2B2622;">
+          <div style="width: 64px; height: 64px; border-radius: 14px; background: {{r.thumb}}; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 22px; color: {{r.thumbInk}};">{{r.glyph}}</div>
+          <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px;">
+            <div style="font-weight: 700; font-size: 15px; line-height: 1.25;">{{r.name}}</div>
+            <div style="font-size: 13px; color: #6B6158;">{{r.meta}}</div>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; align-items: center;">
+              <span style="font-size: 12px; font-weight: 700; color: {{r.statusInk}}; background: {{r.statusBg}}; padding: 2px 8px; border-radius: 999px;">{{r.status}}</span>
+              <sc-for list="{{r.tags}}" as="g" hint-placeholder-count="2">
+                <span style="font-size: 12px; font-weight: 600; color: #2B2622; background: #F6EFE3; padding: 2px 8px; border-radius: 999px;">{{g}}</span>
+              </sc-for>
+            </div>
+          </div>
+          <div style="font-size: 13px; font-weight: 700; color: #6B6158; align-self: flex-start; white-space: nowrap;">{{r.dist}}</div>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { tab: 'areas', on: { fenced: true } };
+}
+renderVals() {
+const tab = this.state.tab;
+const on = this.state.on;
+const S = {
+good: ['Good', '#1E6B3A', '#DDF1E3'], repair: ['Needs repair', '#8A5A00', '#FFF0CC'], broken: ['Fence broken', '#A63A24', '#FDE2DC'],
+none: ['No ratings yet', '#5E5750', '#ECE8E2'], open: ['Open now', '#0F6B66', '#D6F1EF'], night: ['Open 24h', '#0F6B66', '#D6F1EF'],
+closed: ['Closed · opens 8:00', '#5E5750', '#ECE8E2'], welcome: ['Dogs welcome', '#1E6B3A', '#DDF1E3'], terrace: ['Terrace only', '#8A5A00', '#FFF0CC'],
+lost: ['Lost', '#FFFFFF', '#C8432B'], found: ['Found', '#FFFFFF', '#3B7DD8'], later: ['Later', '#6B4A1F', '#FFF0CC']
+};
+const T = {
+areas: { thumb: '#DDF1E3', ink: '#1E6B3A', glyph: 'P', href: 'Place.dc.html' },
+vets: { thumb: '#D6F1EF', ink: '#0F6B66', glyph: '+', href: 'VetAnswer.dc.html' },
+cafes: { thumb: '#FFE6B8', ink: '#6B4A1F', glyph: 'C', href: 'Lists.dc.html' },
+lost: { thumb: '#DCE9F7', ink: '#2B5C9E', glyph: '?', href: 'LostDog.dc.html' },
+walkers: { thumb: '#F6EFE3', ink: '#2F6B4F', glyph: 'W', href: 'Walker.dc.html' }
+};
+const data = {
+areas: [
+['Šeimyniškių g. 30', '★ 4.6 · 12 check-ins · Busy now', 'good', ['Fenced', 'Big dogs'], '0.8 km'],
+['Neries senvagės park, Kernavės g. 88', '★ 4.3 · 8 check-ins', 'good', ['Fenced', 'Agility'], '1.4 km'],
+['Čiurlionio g., by Vingis Park', 'No paw prints here yet. Be the first!', 'none', ['Open field'], '1.9 km'],
+['Ozo g. and Tauragnų g.', '★ 3.1 · 5 check-ins', 'repair', ['Small dogs'], '2.1 km'],
+['Gelvonų g. 1', '★ 2.4 · 6 check-ins · reported today', 'broken', ['Fenced'], '2.6 km']
+],
+vets: [
+['Paw Clinic (sample)', 'Dogs, cats · Hours checked 7 Oct', 'open', [], '1.2 km'],
+['Night Vet (sample)', 'Dogs, cats, rabbits · Hours checked 5 Oct', 'night', [], '2.0 km'],
+['Happy Tails Vet (sample)', 'Dogs, cats · Hours checked 7 Oct', 'open', [], '2.6 km'],
+['Green Vet (sample)', 'Dogs, cats · Hours checked 3 Oct', 'closed', [], '1.5 km']
+],
+cafes: [
+['Café Kava (sample)', '★ 4.7 · 9 check-ins', 'welcome', ['Water bowl', 'Treats'], '0.6 km'],
+['Bistro Upė (sample)', '★ 4.2 · 4 check-ins', 'welcome', ['Dog menu'], '1.1 km'],
+['Terasa (sample)', '★ 4.0 · 3 check-ins', 'terrace', ['Water bowl'], '1.6 km']
+],
+lost: [
+['Brown dog, medium (sample)', 'Found near Vingis Park · 2 days ago', 'found', ['Red collar'], '1.1 km'],
+['Lost dog, small, white (sample)', 'Last seen in Šeškinė · today', 'lost', [], '1.8 km'],
+['Lost cat, grey (sample)', 'Last seen in the Old Town · 3 days ago', 'lost', [], '2.4 km']
+],
+walkers: [
+['Walker in Žirmūnai (sample)', '★ 4.9 · 31 walks done · photo after every walk', 'later', ['Big dogs', 'Reactive OK'], 'Žirmūnai'],
+['Walker in Antakalnis (sample)', '★ 4.7 · 14 walks done · free first meeting', 'later', ['Small dogs', 'Cats too'], 'Antakalnis']
+]
+};
+const t = T[tab];
+const rows = data[tab].map(([name, meta, st, tags, dist]) => ({
+name, meta, tags, dist, status: S[st][0], statusInk: S[st][1], statusBg: S[st][2],
+thumb: t.thumb, thumbInk: t.ink, glyph: t.glyph, href: t.href
+}));
+const tabDefs = [['areas', 'Dog areas', 'map'], ['vets', 'Vets', '2 open'], ['cafes', 'Cafés', 'dogs ok'], ['lost', 'Lost & found', '2 · 1'], ['walkers', 'Walkers', 'later']];
+const tabs = tabDefs.map(([id, label, sub]) => ({
+label, sub, active: tab === id ? 'true' : 'false',
+color: tab === id ? '#2F6B4F' : '#6B6158', weight: tab === id ? 700 : 600, line: tab === id ? '#2F6B4F' : 'transparent',
+pick: () => this.setState({ tab: id })
+}));
+const chipDefs = [['big', 'Big dog'], ['small', 'Small dog'], ['fenced', 'Fenced'], ['equip', 'Equipment'], ['four', '4★ and up'], ['fence', 'Fence OK']];
+const chips = chipDefs.map(([id, label]) => ({
+label: on[id] ? '✓ ' + label : label, on: on[id] ? 'true' : 'false',
+bg: on[id] ? '#2F6B4F' : '#F6EFE3', fg: on[id] ? '#FFFFFF' : '#2B2622',
+pick: () => this.setState({ on: { ...this.state.on, [id]: !this.state.on[id] } })
+}));
+return { tabs, chips, rows, isAreas: tab === 'areas', isLost: tab === 'lost', isWalkers: tab === 'walkers' };
+}
+}
+</script>
+</body>
+</html>
