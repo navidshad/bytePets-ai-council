@@ -46,6 +46,7 @@ You are a thoughtful UX designer who obsesses over user experience. You think ab
 **Brand Colors**: TODO — not chosen yet (the prototype uses a deep park green with a warm amber accent).
 
 **Key Interfaces**:
+- Home: the assistant message box on top, then sections (Emergency, Lost & found, today's walks, place groups)
 - Map and list with filters, place card with source label, trust badge and freshness line
 - Add a place; "Still true?" confirm / report
 - Lost & found tab with two big buttons ("I lost a pet" / "I found a pet"), the board, the "Possible match" screen with yes/no

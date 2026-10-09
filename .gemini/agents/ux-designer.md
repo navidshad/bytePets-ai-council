@@ -58,7 +58,7 @@ You are a thoughtful UX designer who obsesses over user experience. You think ab
 
 **Design System**: None yet — mobile-first web components plus a few tokens.
 **Visual Style**: Warm, friendly, calm; trust shown with clear colour badges.
-**Key Interfaces**: Map and list, place card with trust badge, add / confirm / report, Lost & found tab with two big buttons, possible-match screen, assistant chat with action cards, walks wall and 3D walk preview, emergency button, EN / LT switch.
+**Key Interfaces**: Home with the assistant box and sections, map and list, place card with trust badge, add / confirm / report, Lost & found tab with two big buttons, possible-match screen, assistant chat with action cards, walks wall and 3D walk preview, emergency button, EN / LT switch.
 **Current UX Strengths**: A trust rule that fits on one screen; obvious lost & found entry; the 3D walk preview.
 **Known Gaps**: Sign-in in in-app browsers, empty states, "possible match" without false hope, map accessibility.
 
