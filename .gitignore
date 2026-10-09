@@ -28,3 +28,6 @@ npm-debug.log*
 # The synthesis is promoted to decisions/council/<NNN>-<slug>.md
 # before the session is deleted. See AGENTS.md → "Records and history".
 .council-temp/session_*/
+
+# Scraped third-party data with pet names and map points: keep local, commit totals only.
+research/*.csv

@@ -18,6 +18,7 @@ A web app with one map of all pet places in Vilnius.
 - **Verify:** owners tap "Still true?" on a place. Each place shows when it was last confirmed.
 - **Lost & found:** post a lost or found pet. The app finds possible matches and tells both people.
 - **Walks:** owners create and join walks at walking areas.
+- **Walk slots:** people register times they are free to walk dogs; owners book a slot. This is how we earn.
 - **Share:** every place, post and walk has a link.
 - **Assistant:** talk to it to do most of the above: find places, report a lost or found pet, create or join a walk. It shows a card, and you tap Confirm.
 
@@ -65,14 +66,18 @@ Every feature needs public data that shows demand. Numbers pulled 2026-10-09; so
 | **EN / LT** — the whole app in both languages | 1 — find info easily | 78,000 foreign-born residents, more than 1 in 10 [G] | All | P0 |
 | **Assistant** — talk to do most things; writes need a Confirm tap | 1, 4, 5 — find easily, other help, add | **Gap** — no public data | Home, Assistant chat | P0 |
 | **Walk-Mate** — create, edit, cancel, join and leave walks; 3D preview | 4, 5 — walking areas, more pet-friendly | **Gap** — none for social walks; indirect: ~1,580 dogs per area [A][B] | Walks, Walk page, Create / edit walk | P0 |
+| **Walk slots** — walkers register free times; owners book a slot; both tap "Done" after; payment mocked in the demo | Business model; 5 — community | 56 care and walking requests in Vilnius on paslaugos.lt, 10 of the newest 14 expired with no provider; prices €2–15, ~€8 [I] | Walks, Walk slots, Book a walk | P1 |
 | **Share** — a public link for every place, post and walk | 5 — share | Enabler | Place page, Report, Walk page | P0 |
 | **Community counters** | 5 — community | Enabler | How we rate info | P0 |
 | **Google sign-in to write** | 3 — one person, one vote | Enabler | Me | P0 |
 
 ## Gaps
-- **No public demand data:** the Assistant and Walk-Mate (incl. the 3D preview). Founder call to keep them. In the pitch, frame them as ways to get more owners using and checking the data.
+- **Weak demand data:** group walks have no Vilnius evidence [I]; the Assistant has none. Founder call to keep them. In the pitch, frame them as ways to get more owners using and checking the data.
 - **Proposed, not yet decided:** a **city coverage view** — dogs per elderate against walking areas, showing where Vilnius lacks them (Paneriai and Grigiškės: ~2,900 dogs, no area and none planned) [A][B].
 - **No public numbers:** stray animals caught per year in Vilnius; pet emergencies or poisonings (only news reports [H]).
+
+## Business
+Owners use the app free. We earn a fee on booked walk slots (start at 15%, about €1.20 on an €8 walk; to test). Later: If insurance per booked walk, the city for coverage data. Decision: Council 004.
 
 ## Data sources
 
@@ -91,3 +96,4 @@ Demand sources:
 - [F] 1551.lt and petla.app listings for the 24/7 vet.
 - [G] Go Vilnius, 2026-09-07.
 - [H] tv3.lt news on dog poisonings in Naujamiestis (2022, 2026).
+- [I] `research/Dog Owner Demand Research Vilnius.md` (paslaugos.lt requests, Boop, global walking market), 2026-10-09.
