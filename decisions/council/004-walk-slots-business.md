@@ -11,7 +11,7 @@ People can register **walk slots**: times when they are free to walk other peopl
 - **Walker** sets: day, time window, area, how many dogs, dog size, price per walk.
 - **Owner** books a slot for their dog. The walker accepts, and both get a notice.
 - **After the walk**, both tap "Done". The walker's profile shows "N walks done", which works like the trust badge on places.
-- **Fee**: a share of each booking. We start at 15% (about €1.20 on an €8 walk). This is an assumption to test.
+- **Fee**: a share of each booking. We propose 15%. This is an assumption to test.
 - **Insurance**: If could cover each booked walk (the dog and the walker). This is a partner idea to test, not a promise.
 - **Goods for dogs** move to "later": no demand data yet.
 
