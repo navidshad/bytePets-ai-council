@@ -42,7 +42,7 @@ Intro too long · listing the tech stack · demo won't load (no backup recording
 |---|---|---|---|
 | 1 | Team | 15 s | Names and roles on one slide. One sentence on why us. |
 | 2 | Challenge and problem | 45 s | Challenge name. A person: *"Rūta, 31, from Žvėrynas. Her dog Luna ran off at Vingis Park. She posted in three Facebook groups. Someone posted a found dog in a fourth group. The two posts never met."* Plus: "Is this café dog-friendly?" posts with no answer. |
-| 3 | Open data | — | **Dataset:** city walking areas (35) and the pet register (55,384 dogs). **Insight:** ≈ 1,580 dogs for every city walking area. **In the product:** every area is on the map with a badge, and walks and confirms keep it fresh. |
+| 3 | Open data | — | **Dataset:** city walking areas (35) and the pet register (55,384 dogs). **Insight:** ≈ 1,580 dogs for every city walking area, and ~8,200 dogs live in 4 elderates with no area at all. Only 2 of 1,021 cafés and bars are tagged dog-friendly. Lost pets reported in Vilnius doubled in 2026 (165 so far vs 68 in 2025). **In the product:** every area is on the map with a badge, and walks and confirms keep it fresh. |
 | 3 | Solution | 60 s | *"We help pet owners in Vilnius find info they can trust and find lost pets, by letting the community add, confirm and share it on one map, with an assistant that does it for you."* Two or three app screenshots. |
 | 4 | Demo | 2 min | One story from start to finish (below). |
 | 5 | Users | 20 s | 55,384 dog owners and ~102,000 pet owners in Vilnius; people who find an animal. Who pays: not the users (see Q&A). |

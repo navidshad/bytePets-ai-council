@@ -49,22 +49,30 @@ Pages:
 - **Me** — sign-in, dog profile, my posts and walks, language
 
 ## Features
+Every feature needs public data that shows demand. Numbers pulled 2026-10-09; sources at the bottom.
 
-| Feature | Solves (challenge problem) | Pages | Priority |
-|---|---|---|---|
-| **One map for everything** — vets, pharmacies, pet-friendly places, walking areas, lost & found, with filters | 1, 4 — scattered info, one place | Home, Map, List | P0 |
-| **Trust badge** — source label + "Confirmed by N owners · X days ago"; badges: Official, Confirmed, Not yet confirmed, Disputed, Stale | 2, 3 — outdated, unreliable | Place page, How we rate info | P0 |
-| **Add a place** — pin it on the map, with a duplicate warning | 5 — add | Add place | P0 |
-| **Verify** — "Still true?" Yes / Something's wrong; one vote per person | 3, 5 — reliability, verify | Place page | P0 |
-| **Lost & found** — two big buttons, post with photo, rounded location, no public phone | 4 — lost or found animals | Lost & found, Report lost / found | P0 |
-| **AI matching** — lost vs found posts, both told, both must confirm before a chat opens | 1, 4 — posts in different groups never meet | Match | P0 (AI photo reading P1) |
-| **Assistant** — talk to do most things: find places, emergency vet, report lost/found, create or join a walk (P0); add or verify a place, edit/cancel/leave a walk, answer a match (P1). Writes always need a Confirm tap | 1, 4, 5 — find easily, other help, add | Home, Assistant chat (+ Map for pins) | P0 |
-| **Walk-Mate** — create, edit, cancel, join and leave walks at walking areas; 3D preview with live join | 4, 5 — walking areas, more pet-friendly Vilnius | Walks, Walk page, Create / edit walk | P0 |
-| **Share** — a public link for every place, post and walk | 5 — share | Place page, Report, Walk page | P0 |
-| **Emergency** — nearest hand-checked 24/7 vet, no AI needed | 4 — vet services, other help | Emergency | P0 |
-| **Community counters** — places added and confirmed, reunions, walks | 5 — community, more pet-friendly | How we rate info | P0 |
-| **EN / LT** — the whole app in both languages | 1 — find info easily | All | P0 |
-| **Google sign-in to write** — browsing is open | 3 — one real person, one vote | Me | P0 |
+| Feature | Solves (challenge problem) | Demand (public data) | Pages | Priority |
+|---|---|---|---|---|
+| **One map for everything** — vets, pharmacies, pet-friendly places, walking areas, lost & found, with filters | 1, 4 — scattered info, one place | 102,100 registered pets in Vilnius [A] | Home, Map, List | P0 |
+| **Walking areas** — city areas on the map | 4 — walking areas | 55,384 dogs, 35 areas: ~1,580 dogs per area; ~8,200 dogs in 4 elderates with no area [A][B] | Map, Place page | P0 |
+| **Vets and pharmacies** | 4 — vet services | ~2,200 pets per vet site [A][C]; only 34% of OSM vets list hours, phone and website [D] | Map, Place page | P0 |
+| **Trust badge** — source label + "Confirmed by N owners · X days ago" | 2, 3 — outdated, unreliable | 66% of vet listings are incomplete [D]; the official vet register only starts in 2025 [C] | Place page, How we rate info | P0 |
+| **Add a place** — pin it on the map, with a duplicate warning | 5 — add | Only 2 of 1,021 cafés and bars (0.2%) are tagged dog-friendly [D] | Add place | P0 |
+| **Verify** — "Still true?" Yes / Something's wrong; one vote per person | 3, 5 — reliability, verify | Same as Trust badge [C][D] | Place page | P0 |
+| **Lost & found** — two big buttons, post with photo, rounded location, no public phone | 4 — lost or found animals | 165 pets reported lost in Vilnius in 2026 so far, more than double 2025 (68) [E] | Lost & found, Report lost / found | P0 |
+| **AI matching** — lost vs found, both told, both confirm before a chat opens | 1, 4 — posts never meet | Same as Lost & found [E] | Match | P0 (AI photo reading P1) |
+| **Emergency** — nearest hand-checked 24/7 vet, no AI needed | 4 — vet services, other help | Only 1 vet tagged 24/7 in OSM, and listings disagree on its hours [D][F] | Emergency | P0 |
+| **EN / LT** — the whole app in both languages | 1 — find info easily | 78,000 foreign-born residents, more than 1 in 10 [G] | All | P0 |
+| **Assistant** — talk to do most things; writes need a Confirm tap | 1, 4, 5 — find easily, other help, add | **Gap** — no public data | Home, Assistant chat | P0 |
+| **Walk-Mate** — create, edit, cancel, join and leave walks; 3D preview | 4, 5 — walking areas, more pet-friendly | **Gap** — none for social walks; indirect: ~1,580 dogs per area [A][B] | Walks, Walk page, Create / edit walk | P0 |
+| **Share** — a public link for every place, post and walk | 5 — share | Enabler | Place page, Report, Walk page | P0 |
+| **Community counters** | 5 — community | Enabler | How we rate info | P0 |
+| **Google sign-in to write** | 3 — one person, one vote | Enabler | Me | P0 |
+
+## Gaps
+- **No public demand data:** the Assistant and Walk-Mate (incl. the 3D preview). Founder call to keep them. In the pitch, frame them as ways to get more owners using and checking the data.
+- **Proposed, not yet decided:** a **city coverage view** — dogs per elderate against walking areas, showing where Vilnius lacks them (Paneriai and Grigiškės: ~2,900 dogs, no area and none planned) [A][B].
+- **No public numbers:** stray animals caught per year in Vilnius; pet emergencies or poisonings (only news reports [H]).
 
 ## Data sources
 
@@ -74,4 +82,12 @@ Pages:
 | Vet clinics and pharmacies | VMVT register on data.gov.lt (official) + OpenStreetMap + 24/7 vets checked by phone |
 | Pet-friendly places | OpenStreetMap + a hand-made list with source links, then the community grows it |
 
-Pitch fact: **55,384 registered dogs** in Vilnius (data.gov.lt, 2026-10-01).
+Demand sources:
+- [A] Registered pets, data.gov.lt dataset 292 (2026-10-01). Split by elderate is our estimate (streets matched to OSM addresses, 99% matched).
+- [B] City walking areas, Vilniaus planas map layers 16–18 (35 existing, 12 built or planned).
+- [C] VMVT register, data.gov.lt dataset 5258.
+- [D] OpenStreetMap via Overpass, Vilnius city.
+- [E] Lost and exported pets, data.gov.lt dataset 293 (2026-10-01). Vilnius lost: 147 (2023), 74 (2024), 68 (2025), 165 (2026 to date).
+- [F] 1551.lt and petla.app listings for the 24/7 vet.
+- [G] Go Vilnius, 2026-09-07.
+- [H] tv3.lt news on dog poisonings in Naujamiestis (2022, 2026).
