@@ -31,7 +31,7 @@ Pet owners in Vilnius look for help in many scattered places: Facebook groups, f
 
 | Priority | Item |
 |---|---|
-| **Must (P0)** | Map and list, 5 groups, filters; trust badge and freshness line; add a place; confirm / report; lost & found tab with two big buttons ("I lost a pet" / "I found a pet") and a board; lost ↔ found matching with two-sided confirm and notices; public share links; Google sign-in to write; emergency button; imports from the three named sources; "How we rate info" page with live counters; **Walk-Mate light** (wall, create a walk at a walking area, edit, join, leave, 3D preview with live join and leave); **English and Lithuanian** |
+| **Must (P0)** | Map and list, 5 groups, filters; trust badge and freshness line; add a place; confirm / report; lost & found tab with two big buttons ("I lost a pet" / "I found a pet") and a board; lost ↔ found matching with two-sided confirm and notices; public share links; Google sign-in to write; emergency button; imports from the three named sources; "How we rate info" page with live counters; **Walk-Mate light** (wall, create a walk at a walking area, edit, cancel, join, leave, 3D preview with live join and leave); **English and Lithuanian** |
 | **Should (P1)** | Gemini photo features for matching; assistant that takes a lost or found report in plain words; link previews in Messenger and Facebook; "My contributions" and helper badges; "Open now" filter; search by name; "Pet emergency: what to do now" card |
 | **Could (P2)** | Sightings with a location; printable lost-pet poster with QR; nightly stale job (Imported and Community places); more 3D scene types and weather looks |
 
@@ -147,6 +147,10 @@ Freshness colour of the last-confirm line: green ≤ 30 days, amber 31–90, gre
 - **Story:** As a host, I can edit my walk.
   - I can change the day, time, group size (not below the number of people already in), note, scene and start point.
   - Everyone who joined gets an in-app notice: "Tonight's walk at Vingis moved to 19:30". The 3D scene and the wall update live.
+- **Story:** As a host, I can cancel my walk at any time.
+  - Tap **Cancel walk** (with an "Are you sure?" and an optional short reason).
+  - Everyone who joined gets an in-app notice and an email: "Tonight's walk at Vingis Park was cancelled."
+  - The walk leaves the wall at once. Its link and 3D page show "This walk was cancelled". Nobody can join it any more.
   - After joining: "Is {area} still OK for dogs?" → Yes / Something's wrong (the normal confirm).
 - **Dog profile:** one dog per user: name, size (S/M/L), colour (for the avatar). Asked for the first time someone creates or joins a walk.
 - **Safety:** public start points only, first names only, groups of at most 4.
@@ -180,7 +184,7 @@ We never scrape Facebook and never store Google Places or booking-site data. Cre
 - Backup: a screen recording of the matching flow, used only if the network fails.
 
 ## Out of scope (for now)
-- Walk-Mate extras: topics, cancel, chat between walkers, forecast weather
+- Walk-Mate extras: topics, chat between walkers, forecast weather
 - AI health chat with urgency triage (ADR-002 safety rules kept for when it returns)
 - Push notifications, chat outside a confirmed match, moderation dashboard
 - Star ratings and reviews, paid listings, insurance offers

@@ -10,7 +10,7 @@ Phone browser (Vue PWA, Leaflet + OSM tiles)
   ├─ reads ─────────────► Firestore (places, lostFound, matches, walks, stats)
   ├─ calls ─────────────► Cloud Functions (callable, App Check)
   │                         addPlace · votePlace · createLostPost · updateLostPost
-  │                         createWalk · editWalk · joinWalk · leaveWalk · saveProfile
+  │                         createWalk · editWalk · cancelWalk · joinWalk · leaveWalk · saveProfile
   │                         sendLostMessage · respondMatch · reportLostPost · aiExtract · assistantReport
   │                           └─ Gemini (photo features, photo compare, post parsing)
   ├─ uploads photos ────► Firebase Storage
@@ -26,7 +26,7 @@ Laptop scripts: import-places, seed-demo
 - **Cloud Functions (2nd gen, Node 20, `europe-west1`)** — the callables listed above, all with `enforceAppCheck: true`. `aiExtract` and `matchLostFound` have `minInstances: 1` during the demo.
 - **Auth** — Firebase Auth. Browse with no sign-in. Writes need **Google sign-in** (the Function checks `auth.token.firebase.sign_in_provider == "google.com"`).
 - **Web app rules (ADR-003)** — "Open in your browser to post" inside Messenger and Facebook in-app browsers; `signInWithPopup` with `authDomain` on our Hosting domain; photos shrunk and redrawn on a canvas in the browser (strips EXIF and GPS) before upload; service worker on `autoUpdate` with no offline data; App Check debug token on localhost; MapTiler key with the OSM credit.
-- **Email** — Firebase "Trigger Email" extension writing to a `mail` collection (SMTP via a free-tier provider, picked and inbox-tested in hours 0–2). Used only for match notices; never carries the other person's contact details.
+- **Email** — Firebase "Trigger Email" extension writing to a `mail` collection (SMTP via a free-tier provider, picked and inbox-tested in hours 0–2). Used for match notices and walk cancellations; never carries anyone's contact details.
 - **Scripts (laptop, not deployed)** — `import-places` (each source → a committed GeoJSON snapshot → upsert to Firestore with stable ids) and `seed-demo`.
 - **3D walk preview** — the Three.js scene from `docs/product/prototypes/walkmate-3d-preview.html`, ported into a Vue component (`WalkScene.vue`) and lazy-loaded only on `/w/:id`, so the map stays light. Scene types in P0: park, riverside, old town (forest if time). Weather look from the time of day. Pixel ratio max 2, low-poly, stop rendering when the tab is hidden.
 
@@ -62,9 +62,9 @@ Laptop scripts: import-places, seed-demo
 
 **`users/{uid}`** — `firstName`, `lang: en | lt`, `dog?: {name, size: S|M|L, color, avatarSeed}`, `createdAt`. Written only through `saveProfile`.
 
-**`walks/{walkId}`** — `areaId?` (a `walking_area` place) or `start: {lat, lng, label}` for a dropped pin; `areaName`; `hostUid`, `hostName`; `startsAt`, `day` (Vilnius date string); `maxSize` (2–4); `count`; `note?` (≤ 200); `scene: park | riverside | old_town | forest`; `attendees: {uid → {name, dogName, size, color, avatarSeed, joinedAt}}`; `status: open | full`. Wall query: `day in [today, tomorrow]`, ordered by `startsAt`. Attendees sit inside the walk doc, so one listener feeds the wall, the walk page and the 3D scene.
+**`walks/{walkId}`** — `areaId?` (a `walking_area` place) or `start: {lat, lng, label}` for a dropped pin; `areaName`; `hostUid`, `hostName`; `startsAt`, `day` (Vilnius date string); `maxSize` (2–4); `count`; `note?` (≤ 200); `scene: park | riverside | old_town | forest`; `attendees: {uid → {name, dogName, size, color, avatarSeed, joinedAt}}`; `status: open | full | cancelled`, `cancelReason?`. Wall query: `day in [today, tomorrow]` and `status in [open, full]`, ordered by `startsAt`. Attendees sit inside the walk doc, so one listener feeds the wall, the walk page and the 3D scene.
 
-**`notifications/{uid}/items/{id}`** — `type: match | message | walk_changed`, `refId`, `read`, `createdAt`. Drives the in-app badge.
+**`notifications/{uid}/items/{id}`** — `type: match | message | walk_changed | walk_cancelled`, `refId`, `read`, `createdAt`. Drives the in-app badge.
 
 **`rateLimits/{uid}`** — daily counters per action. Functions only.
 
@@ -86,6 +86,7 @@ Laptop scripts: import-places, seed-demo
 | `saveProfile` | Google sign-in; first name 1–30; dog fields valid; `lang` | 20 |
 | `createWalk` | Google sign-in; dog profile set; start is a `walking_area` place or a pin inside Vilnius; starts within 48 h; size 2–4; host is the first attendee; scene from the area (park) or the host's pick | 5 |
 | `editWalk` | host only; walk not past; new start within 48 h; `maxSize` ≥ current `count`; start point valid; writes a `walk_changed` notification for each attendee | 20 |
+| `cancelWalk` | host only; any time before the start; sets `status: cancelled`, `cancelReason?`; writes a `walk_cancelled` notification and an email for each attendee | 10 |
 | `joinWalk` | Firestore transaction: not full, not already in, not the host, walk not past; adds the attendee, updates `count` and `status` | 10 |
 | `leaveWalk` | Firestore transaction: caller is an attendee and not the host; walk not past; removes the attendee, lowers `count`, sets `status: open` | 10 |
 | `aiExtract` | `mode: photo_features | parse_post`; returns JSON only; never writes posts | 20 |
@@ -139,7 +140,7 @@ All scripts write `data/snapshots/{source}.geojson` (committed) and then upsert 
 - **Gemini API** via `@google/genai` in Functions (ADR-002). Phase 1 uses structured output for photo features, photo compare and post parsing. The model id is pinned after the hour-0 spike. The health chat with Search and Maps grounding is Phase 2.
 - **Leaflet + MapTiler tiles** (OpenStreetMap data and credit). Google Maps content is never drawn on this map (Google terms).
 - **Directions** — links to Apple Maps on iOS and Google Maps elsewhere (`geo:` / `maps.apple.com` / `google.com/maps/dir`).
-- **Analytics** — Firebase Analytics events: `place_added`, `place_confirmed`, `place_reported`, `lost_post_created`, `match_suggested`, `match_confirmed`, `reunited`, `share_tapped`, `emergency_opened`, `walk_created`, `walk_edited`, `walk_joined`, `walk_left`, `walk_3d_opened`, `lang_switched`.
+- **Analytics** — Firebase Analytics events: `place_added`, `place_confirmed`, `place_reported`, `lost_post_created`, `match_suggested`, `match_confirmed`, `reunited`, `share_tapped`, `emergency_opened`, `walk_created`, `walk_edited`, `walk_cancelled`, `walk_joined`, `walk_left`, `walk_3d_opened`, `lang_switched`.
 
 ## Constraints & non-functional needs
 - 24-hour build; must work on judges' phones from a QR code (iPhone Safari and Android Chrome).
