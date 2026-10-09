@@ -11,7 +11,7 @@
 - Partners as data owners: the city feeds official walking areas; shelters post found animals; vets keep their own hours up to date.
 - Lost & found alerts by area (email first; push once the app can rely on it), sightings with a location, printable posters with QR.
 - AI health chat with urgency triage and "Show on map" (ADR-002 safety rules; Google Maps results as cards, never pins).
-- **Walk-Mate, full:** topics, leave, edit and cancel walks, reminders, live weather in the 3D scene, more scene types.
+- **Walk-Mate, full:** topics, cancel walks, reminders, live weather in the 3D scene, more scene types.
 - A tile provider plan for real traffic.
 
 ## Later

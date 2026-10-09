@@ -25,8 +25,8 @@ Freeze the data model as `types.ts` (shared by app and Functions) in hour 1. Cha
 | Hours | A — Backend/AI | B — App | C — Lost & found | D — Data/pitch |
 |---|---|---|---|---|
 | 0–2 | Rules and Functions skeleton; **Gemini photo-features spike on 10 test pairs**; email sender test | **Vue PWA deployed to Hosting**, Google sign-in on iPhone Safari, map with tiles | Photo resize + EXIF strip + upload to Storage | City areas + VMVT + Overpass fetches (URLs ready), 24/7 vet list; **3D prototype running on a real iPhone and Android in Safari/Chrome, measure speed** |
-| 2–8 | `addPlace`, `votePlace`, `computeTrust`; `createLostPost`; `saveProfile`, `createWalk`, `joinWalk` | Map, filters, list, place card with badges, add form, confirm/report | Lost & found form, board, map layer, post page `/l/:id` | Imports, GeoJSON snapshots, seed list of pet-friendly places; `WalkScene.vue` port (park, riverside, old town) |
-| 8–14 | `matchLostFound` (rules), `respondMatch`, notifications, email | Share sheet, `/p/:id`, emergency button, `/about` counters | Lost & found tab with the two big buttons, matches screen (yes/no), messages, reunited | Walks wall, create walk, walk page with 3D, live join on two phones; seed walks and demo posts, planted match pair; QR drive starts |
+| 2–8 | `addPlace`, `votePlace`, `computeTrust`; `createLostPost`; `saveProfile`, `createWalk`, `editWalk`, `joinWalk`, `leaveWalk` | Map, filters, list, place card with badges, add form, confirm/report | Lost & found form, board, map layer, post page `/l/:id` | Imports, GeoJSON snapshots, seed list of pet-friendly places; `WalkScene.vue` port (park, riverside, old town) |
+| 8–14 | `matchLostFound` (rules), `respondMatch`, notifications, email | Share sheet, `/p/:id`, emergency button, `/about` counters | Lost & found tab with the two big buttons, matches screen (yes/no), messages, reunited | Walks wall, create and edit walk, walk page with 3D, live join and leave on two phones; seed walks and demo posts, planted match pair; QR drive starts |
 | **14** | **Checkpoint: add → confirm → badge turns green on a second phone; lost post → match → both confirm; join a walk → avatar walks in on the other phone. In EN and LT. Works on a judge-style phone. Or cut.** | | | |
 | 14–20 | `aiExtract` features + photo compare in matching; tune the threshold | Empty/error states, "Open in your browser to post" | AI pre-filled form; assistant chat that takes a report and shows a draft card (`assistantReport` with A) | Confirm-after-join prompt, 3D polish and performance; `ogPage` previews; slides (2–3) |
 | 20–24 | **Feature freeze.** Bug fixes, App Check enforcement on, record backup video, rehearse 3 times, charge phones, sleep in turns | | | |
@@ -39,7 +39,7 @@ Freeze the data model as `types.ts` (shared by app and Functions) in hour 1. Cha
 5. 3D scene types beyond park — park only
 6. Email notices — in-app badge only
 
-**Never cut:** the Lost & found tab with its two buttons; map with trust badges; add; confirm / report; lost & found post, match and two-sided confirm; share links; Google sign-in for writes; emergency button; walks wall → 3D preview → join with the walk-in animation; English and Lithuanian.
+**Never cut:** the Lost & found tab with its two buttons; map with trust badges; add; confirm / report; lost & found post, match and two-sided confirm; share links; Google sign-in for writes; emergency button; walks wall → 3D preview → join and leave with the walk-in/out animation; create and edit a walk; English and Lithuanian.
 
 ## QR drive (real community proof)
 From hour 10, a QR code on our table and on slide 1. Ask every team and mentor to add or confirm one place they really know. Track the counter on `/about`. Never fake names or confirms.

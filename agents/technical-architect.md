@@ -51,7 +51,7 @@ You are a pragmatic technical architect who thinks deeply about systems at scale
 
 **Current Systems**:
 - Firestore: places (+ votes per user), lostFound (+ messages), matches (+ thread), walks (attendees inside), users, notifications, rateLimits, stats
-- Cloud Functions: addPlace, votePlace (trust rule), createLostPost, matchLostFound trigger, respondMatch, aiExtract, assistantReport, createWalk, joinWalk, saveProfile, ogPage
+- Cloud Functions: addPlace, votePlace (trust rule), createLostPost, matchLostFound trigger, respondMatch, aiExtract, assistantReport, createWalk, editWalk, joinWalk, leaveWalk, saveProfile, ogPage
 - Places data: city walking areas, OSM + VMVT vets and pharmacies, OSM + hand list of pet-friendly places, imported by laptop scripts
 
 **Key Constraints**:

@@ -49,7 +49,7 @@ You are a seasoned product manager with deep understanding of product strategy a
 - Add a place; confirm or report it; a server-side trust rule shows badges and freshness
 - Lost & found tab with "I lost a pet" / "I found a pet" buttons, AI matching of lost and found posts, two-sided confirm before contact
 - Public share links; Google sign-in to write; emergency button
-- Walk-Mate light: walks at walking areas, join, full-screen 3D preview with live join (Council 003)
+- Walk-Mate light: create, edit, join and leave walks at walking areas, full-screen 3D preview with live join and leave (Council 003)
 - English and Lithuanian from day one
 - P1: assistant that takes a lost or found report in plain words
 - Out of Phase 1: Walk-Mate extras (topics, edit, chat), AI health chat (Phase 2), push

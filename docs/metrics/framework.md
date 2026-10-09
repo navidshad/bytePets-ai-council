@@ -15,7 +15,7 @@
 - **Day-30 return** — users who come back and contribute again.
 
 ## How we instrument
-Firebase Analytics events: `place_added`, `place_confirmed`, `place_reported`, `lost_post_created`, `match_suggested`, `match_confirmed`, `reunited`, `share_tapped`, `emergency_opened`, `walk_created`, `walk_joined`, `walk_3d_opened`, `lang_switched`. Public counters in `stats/public`, updated by Functions and shown on `/about`.
+Firebase Analytics events: `place_added`, `place_confirmed`, `place_reported`, `lost_post_created`, `match_suggested`, `match_confirmed`, `reunited`, `share_tapped`, `emergency_opened`, `walk_created`, `walk_edited`, `walk_joined`, `walk_left`, `walk_3d_opened`, `lang_switched`. Public counters in `stats/public`, updated by Functions and shown on `/about`.
 
 ## Guardrails
 - No exact home locations, phone numbers or emails in public data.

@@ -10,7 +10,7 @@ Phone browser (Vue PWA, Leaflet + OSM tiles)
   ├─ reads ─────────────► Firestore (places, lostFound, matches, walks, stats)
   ├─ calls ─────────────► Cloud Functions (callable, App Check)
   │                         addPlace · votePlace · createLostPost · updateLostPost
-  │                         createWalk · joinWalk · saveProfile
+  │                         createWalk · editWalk · joinWalk · leaveWalk · saveProfile
   │                         sendLostMessage · respondMatch · reportLostPost · aiExtract · assistantReport
   │                           └─ Gemini (photo features, photo compare, post parsing)
   ├─ uploads photos ────► Firebase Storage
@@ -64,7 +64,7 @@ Laptop scripts: import-places, seed-demo
 
 **`walks/{walkId}`** — `areaId?` (a `walking_area` place) or `start: {lat, lng, label}` for a dropped pin; `areaName`; `hostUid`, `hostName`; `startsAt`, `day` (Vilnius date string); `maxSize` (2–4); `count`; `note?` (≤ 200); `scene: park | riverside | old_town | forest`; `attendees: {uid → {name, dogName, size, color, avatarSeed, joinedAt}}`; `status: open | full`. Wall query: `day in [today, tomorrow]`, ordered by `startsAt`. Attendees sit inside the walk doc, so one listener feeds the wall, the walk page and the 3D scene.
 
-**`notifications/{uid}/items/{id}`** — `type: match | message`, `refId`, `read`, `createdAt`. Drives the in-app badge.
+**`notifications/{uid}/items/{id}`** — `type: match | message | walk_changed`, `refId`, `read`, `createdAt`. Drives the in-app badge.
 
 **`rateLimits/{uid}`** — daily counters per action. Functions only.
 
@@ -85,7 +85,9 @@ Laptop scripts: import-places, seed-demo
 | `reportLostPost` | one per user; 3 reports → `hidden` | 20 |
 | `saveProfile` | Google sign-in; first name 1–30; dog fields valid; `lang` | 20 |
 | `createWalk` | Google sign-in; dog profile set; start is a `walking_area` place or a pin inside Vilnius; starts within 48 h; size 2–4; host is the first attendee; scene from the area (park) or the host's pick | 5 |
+| `editWalk` | host only; walk not past; new start within 48 h; `maxSize` ≥ current `count`; start point valid; writes a `walk_changed` notification for each attendee | 20 |
 | `joinWalk` | Firestore transaction: not full, not already in, not the host, walk not past; adds the attendee, updates `count` and `status` | 10 |
+| `leaveWalk` | Firestore transaction: caller is an attendee and not the host; walk not past; removes the attendee, lowers `count`, sets `status: open` | 10 |
 | `aiExtract` | `mode: photo_features | parse_post`; returns JSON only; never writes posts | 20 |
 | `assistantReport` | multi-turn (history sent by the client, max 6 turns); returns `{reply, draft, missing[], done}`; never writes posts; red-flag health words → returns the emergency card | 30 |
 
@@ -93,7 +95,7 @@ Laptop scripts: import-places, seed-demo
 One pure function `computeTrust(place, votes, now)` in `functions/src/trust.ts`. All thresholds are constants at the top of the file, and the same numbers are shown on `/about`. It runs inside the `votePlace` transaction. A nightly scheduled job (P2) moves untouched **Imported and Community** places to `stale` (180 days with no confirm, or since import). Official items never go stale; the monthly re-import refreshes them. Lost & found posts are not places; `expireLostPosts` closes them after 30 days. until then, the app shows `stale` based on `lastConfirmedAt`, while the server value stays the source of truth. Order of checks: hidden → disputed → confirmed → official → stale → unverified. The rule itself is in Council 002.
 
 ## 3D bridge (web)
-`WalkScene.vue` wraps the prototype's scene code. It takes the walk doc as a prop and exposes `setScene(walk)` once, `addAttendee(a)` for each new attendee (plays the walk-in) and `removeAttendee(uid)`. The walk page listens to `walks/{id}` and passes only the changes, so a join on one phone animates on every other phone. Taps on a "?" ghost emit `tapSlot`, which opens Join. No WebView or postMessage is needed on the web.
+`WalkScene.vue` wraps the prototype's scene code. It takes the walk doc as a prop and exposes `setScene(walk)` once, `addAttendee(a)` for each new attendee (plays the walk-in) and `removeAttendee(uid)` (plays the walk-out and brings back the "?" ghost), and `updateWalk(walk)` after an edit (time label, scene, size). The walk page listens to `walks/{id}` and passes only the changes, so a join or leave on one phone animates on every other phone. Taps on a "?" ghost emit `tapSlot`, which opens Join. No WebView or postMessage is needed on the web.
 
 ## Languages
 - `vue-i18n` with `en.json` and `lt.json`; no hard-coded strings in components. A missing key falls back to English and is logged in development.
@@ -137,7 +139,7 @@ All scripts write `data/snapshots/{source}.geojson` (committed) and then upsert 
 - **Gemini API** via `@google/genai` in Functions (ADR-002). Phase 1 uses structured output for photo features, photo compare and post parsing. The model id is pinned after the hour-0 spike. The health chat with Search and Maps grounding is Phase 2.
 - **Leaflet + MapTiler tiles** (OpenStreetMap data and credit). Google Maps content is never drawn on this map (Google terms).
 - **Directions** — links to Apple Maps on iOS and Google Maps elsewhere (`geo:` / `maps.apple.com` / `google.com/maps/dir`).
-- **Analytics** — Firebase Analytics events: `place_added`, `place_confirmed`, `place_reported`, `lost_post_created`, `match_suggested`, `match_confirmed`, `reunited`, `share_tapped`, `emergency_opened`, `walk_created`, `walk_joined`, `walk_3d_opened`, `lang_switched`.
+- **Analytics** — Firebase Analytics events: `place_added`, `place_confirmed`, `place_reported`, `lost_post_created`, `match_suggested`, `match_confirmed`, `reunited`, `share_tapped`, `emergency_opened`, `walk_created`, `walk_edited`, `walk_joined`, `walk_left`, `walk_3d_opened`, `lang_switched`.
 
 ## Constraints & non-functional needs
 - 24-hour build; must work on judges' phones from a QR code (iPhone Safari and Android Chrome).
