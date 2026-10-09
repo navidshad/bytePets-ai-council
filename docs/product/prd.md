@@ -77,7 +77,12 @@ Every feature needs public data that shows demand. **Only real numbers, taken st
 - **No public numbers:** stray animals caught per year in Vilnius; pet emergencies or poisonings (only news reports [H]).
 
 ## Business
-Owners use the app free. We earn a fee on booked walk slots (we propose 15%; to test). Later: If insurance per booked walk, the city for coverage data. Decision: Council 004.
+Owners use the app free. Three plans (Council 004):
+- **Plan A (main): walk slots** — owners book a neighbour's walk slot; we keep a fee (we propose 15%; to test). Demand: 56 walk and care requests [I].
+- **Plan B: pet insurance** — a partner insurer (e.g. If) offers a quote on the pet's profile and pays us per policy. Demand data: still to find.
+- **Plan C: ads for pet stores** — sponsored listings of goods for dogs; the store pays per listing or click. Demand data: still to find.
+
+Paid content never changes a trust badge, and there are no offers on emergency or lost-pet screens.
 
 ## Data sources
 

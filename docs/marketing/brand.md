@@ -27,4 +27,4 @@ For pet owners in Vilnius who today search Facebook groups, forums and old websi
 - Name a partner (a vet, a shelter, the city) only if they really said yes.
 
 ## Pricing
-Free for pet owners. We earn a fee on booked **walk slots** (start at 15%; to test). Later: If insurance per booked walk, and the city for coverage data. Trust badges are never paid for. Decision: Council 004.
+Free for pet owners. Plan A: a fee on booked **walk slots** (we propose 15%; to test). Backups: Plan B, pet insurance quotes from a partner insurer (fee per policy); Plan C, sponsored listings for pet stores. No offers on emergency or lost-pet screens. Trust badges are never paid for. Decision: Council 004.

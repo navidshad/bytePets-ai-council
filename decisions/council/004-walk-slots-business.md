@@ -12,8 +12,9 @@ People can register **walk slots**: times when they are free to walk other peopl
 - **Owner** books a slot for their dog. The walker accepts, and both get a notice.
 - **After the walk**, both tap "Done". The walker's profile shows "N walks done", which works like the trust badge on places.
 - **Fee**: a share of each booking. We propose 15%. This is an assumption to test.
-- **Insurance**: If could cover each booked walk (the dog and the walker). This is a partner idea to test, not a promise.
-- **Goods for dogs** move to "later": no demand data yet.
+- **Plan B — pet insurance (backup).** A partner insurer, such as If, offers a quote on the pet's profile. The insurer pays us a fee per policy sold. No demand data yet.
+- **Plan C — ads for pet stores (backup).** Stores show goods for dogs and offers, marked "Sponsored". The store pays per listing or per click. No demand data yet.
+- **Always:** owners use the map free; paid content never changes a trust badge; no offers on emergency or lost-pet screens.
 
 For the hackathon, walk slots are **P1**: register a slot and book it. Payment is a mock, labelled "demo".
 
@@ -24,7 +25,7 @@ Local research shows strong demand for paid walking and care, and weak demand fo
 ## Open Issues
 
 - Is 15% a fee walkers accept on an €8 walk? Ask mentors and test.
-- Would If cover booked walks? Ask the challenger rep.
+- Plans B and C: find public data on pet insurance uptake and pet-goods spending in Lithuania; ask If whether they would partner.
 - Payments, walker checks and disputes are Phase 2.
 
 ## Action Items
