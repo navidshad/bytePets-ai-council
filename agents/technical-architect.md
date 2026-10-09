@@ -46,12 +46,12 @@ You are a pragmatic technical architect who thinks deeply about systems at scale
 - Landing page: a simple static site (Vue or plain HTML), Firebase Hosting
 - Backend: Firebase — Auth, Firestore, Storage, Cloud Functions, Hosting
 - AI: Gemini (see ADR-002) with Google Search and Google Maps grounding plus our own tools
-- 3D preview: Three.js page shown in a WebView, scene picked from OpenStreetMap tags at the start point, weather from Open-Meteo
+- 3D preview: Three.js page shown in a WebView, scene type from the preset start spot, weather look from the time of day
 
 **Current Systems**:
 - Firestore collections for users, dogs, walk events, attendees, places, chat threads
 - Cloud Functions: the AI assistant loop (tools: search places, web/Maps grounding, show on map), seed import of places
-- Places data: OpenStreetMap (Overpass) and Vilnius open data, imported once into Firestore
+- Places data: City of Vilnius dog walking areas and OpenStreetMap, imported into Firestore; owners then add places and confirm or flag them through Cloud Functions (`addPlace`, `votePlace`); hand-checked emergency vets are locked
 
 **Key Constraints**:
 - 24 hours to build, small team using AI coding tools (Claude Code)

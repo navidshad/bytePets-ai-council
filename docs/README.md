@@ -55,5 +55,6 @@ Format:
 - 2026-10-09 — ADR-001 (Accepted) — Build the iPhone app with Flutter — `decisions/adr/001-flutter-for-iphone-app.md`
 - 2026-10-09 — ADR-002 (Accepted) — AI assistant on Gemini in Cloud Functions with Search and Maps grounding — `decisions/adr/002-ai-assistant-gemini-on-firebase.md`
 - 2026-10-09 — Council — 24-hour Hack4Vilnius MVP scope — `decisions/council/001-hackathon-mvp-scope.md`
+- 2026-10-09 — Council — Match the MVP to the Challenge #6 brief: owners add and check places — `decisions/council/002-match-mvp-to-challenge-brief.md`
 
 ---

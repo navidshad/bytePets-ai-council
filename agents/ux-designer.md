@@ -48,7 +48,7 @@ You are a thoughtful UX designer who obsesses over user experience. You think ab
 **Key Interfaces**:
 - Walk-Mate feed and event preview (full-screen 3D scene with glass cards on top)
 - Create-walk form (dog, topics, start point on a map, date/time, group size)
-- Dog-services map with filters
+- Pet map with filters; place card with source, last-checked line and "Still correct?" buttons; add-a-place form
 - AI assistant chat with photo upload and "show on map" pins
 - Landing page
 

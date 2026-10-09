@@ -3,10 +3,10 @@
 > Living doc. How we talk about the product and how we price it. Changing this doc is a council-level change (see `AGENTS.md` → "Editing rules for living docs").
 
 ## One-line pitch
-An iPhone app for dog owners in Vilnius: find walking buddies, find dog services on a map, and ask an AI assistant about your dog.
+The Vilnius pet map that owners keep true: an iPhone app to find, add and check pet places, ask an AI assistant about your dog, and find walking buddies.
 
 ## Positioning
-For dog owners in Vilnius who today search Facebook groups, forums and old websites for help. BytePets puts the city's dog services, other owners to walk with, and a smart assistant in one place. Unlike general pet apps, it is local: it knows Vilnius parks, vets and walking areas.
+For dog owners in Vilnius who today search Facebook groups, forums and old websites for help. BytePets puts the city's pet places, a smart assistant, and other owners to walk with in one place. Owners add places and confirm that they are still correct, so every place shows where it came from and when it was last checked. Unlike general pet apps, it is local: it knows Vilnius parks, vets and walking areas. We start with dogs; the places and vets serve every pet.
 
 ## Voice & tone
 - Warm, friendly and calm. We talk like a helpful neighbour who also has a dog.
@@ -18,6 +18,6 @@ For dog owners in Vilnius who today search Facebook groups, forums and old websi
 Free during the hackathon MVP. TODO — decide a model after the event (ideas: premium assistant, featured listings for pet businesses).
 
 ## Key messages
-1. Never walk alone — find dog owners near you and walk together.
-2. Every dog service in Vilnius on one map.
-3. Ask anything about your dog, with a photo, and get a clear answer and the nearest place that can help.
+1. One pet map of Vilnius, checked by the owners who use it. Every place shows its source and when it was last confirmed.
+2. Ask anything about your dog, with a photo, and get a clear answer and the nearest place that can help.
+3. Never walk alone — find dog owners near you and walk together.

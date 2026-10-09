@@ -46,9 +46,9 @@ You are a seasoned product manager with deep understanding of product strategy a
 
 **Current Scope** (24-hour Hack4Vilnius MVP, Challenge #6):
 - Walk-Mate: create a dog-walk event (dog info, topics, start point, date/time, group size 2–4) and join others' events; each event has a 3D "vibe" preview of the start point with weather and avatars
-- Dog-services map of Vilnius (vets, emergency vets, pet shops/pharmacies, dog parks and walking areas)
+- Pet map of Vilnius (vets, emergency vets, pet shops/pharmacies, dog parks and walking areas, pet-friendly places) that owners check ("Still correct?") and add to; every place shows its source and when it was last checked
 - AI assistant (Gemini): chat with photos about dog health and care, searches the web, and points to places on the map
 - A landing page
-- On hold: AI lost & found, crowdsourced venue checks, reputation system
+- On hold: AI lost & found, reputation system and weighted votes
 
 **Target Users**: Dog owners in Vilnius, mostly 20–45, smartphone-first, iPhone first. New owners and people new to the city feel the gap most.

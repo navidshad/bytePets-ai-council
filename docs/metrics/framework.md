@@ -6,6 +6,8 @@
 **Walks that happen**: walk events that get at least one other owner to join.
 
 ## Key metrics
+- **Places checked or added per week** — confirms, flags and new places from owners. Uninstrumented.
+- **Share of places checked in the last 30 days** — uninstrumented.
 - **Walks created per week** — uninstrumented.
 - **Fill rate** — share of walks with at least 2 people. Uninstrumented.
 - **AI assistant sessions per active user** — uninstrumented.
