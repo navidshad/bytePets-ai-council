@@ -31,3 +31,25 @@
 
 ## Out for now
 Group walks and the 3D preview, AI photo matching for lost & found, payments in the app, push alerts by area, "Still there?" prompts while the app is closed, dog-care logging.
+
+## Build plan (3 people)
+
+**Step 1 — Base project (both developers, together, first).** Everything the features stand on, so the two tracks never block each other:
+- Flutter app shell: navigation, the map-first home layout, empty screens for every feature.
+- Design system in code: tokens as `ThemeData` + a `ThemeExtension`, and the shared widgets (Button, Chip, StatusPill, MapPin, BottomSheet, ListRow, ResultCard). Source: https://claude.ai/artifact/24xFqfY1jiSzN4HhK3pgxr
+- Sign-in and profile: account, first name, one dog profile (name, size, photo). Offer Sign in with Apple next to Google: the App Store requires it when a third-party sign-in is offered.
+- The map widget: styled map, pins, chips, "you are here", edge fade.
+- Backend and data model: users, places, reviews, reports, lost & found posts, walks, messages; storage for photos and videos; access rules.
+- English and Lithuanian set up from the start.
+
+**Step 2 — Two feature tracks, in parallel.**
+
+| Track | Owner | Features |
+|---|---|---|
+| A · Places & reports | Developer 1 | 3 Dog areas (import the city's 35), 4 Report on the map, 5 Still there?, 6 Reviews, 7 Vets open now, 8 Dog-friendly places, 13 Share |
+| B · Pets & walks | Developer 2 | 9 Lost & found, 10 Walk assistants, 11 Live walk, 12 Walk chat |
+| Last · Ask box | Whoever finishes first | 2 Ask box: it searches what tracks A and B built |
+
+**Step 3 — Landing page (third person, from day one).** One page in English and Lithuanian: what BytePets is, three screenshots from the UI, a waitlist or download link, privacy page. The same person can also check vet hours by phone and collect the first dog-friendly places.
+
+Rules for working together: the data model and the shared widgets change only in the base project, by agreement; each feature lives in its own folder; one pull request per feature.
