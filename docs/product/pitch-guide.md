@@ -60,7 +60,7 @@ Answer first, then explain. Agree beforehand who takes tech and who takes busine
 |---|---|
 | How is it different from what exists? | Facebook groups and Google don't show if info is still true, and lost and found posts never meet. We show who confirmed what and when, and we match lost with found. |
 | Where will the data come from long term? | City and VMVT open data, re-imported each month, plus owners confirming. Next: vets and shelters keep their own listings. |
-| Who will pay? | Owners use the map free. People register walk slots, owners book them, and we take a small fee (we'll test 15%). 56 Vilnius requests for walking and care on one site, most never answered, show the demand. Backups: insurance quotes from a partner insurer, and sponsored listings for pet stores. |
+| Who will pay? | Owners use the map free. People register walk slots and owners book and pay in the app. The walker is paid 24 hours after the walk, and we keep a small fee (we'll test 15%). In the demo the money is pretend and labelled. 56 Vilnius requests for walking and care on one site, most never answered, show the demand. Backups: insurance quotes from a partner insurer, and sponsored listings for pet stores. |
 | What really worked, what was a mock-up? | Real: imported city and VMVT data, add and confirm, matching, walks, the assistant. Seeded: demo posts, walks and a few confirms. |
 | First step next month? | A pilot in one district with the city's walking-area data and two shelters, measuring places confirmed and pets reunited. |
 | Benefit to Vilnius? | Pets get home faster, owners find trusted vets and places, and the city gets a live pet map. Measured by places confirmed in the last 30 days. |

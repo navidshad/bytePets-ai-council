@@ -7,7 +7,7 @@
 
 ## Next
 **Phase 2 — after the hackathon (if we continue).**
-- Walk slots for real: payments, walker checks, disputes; test the 15% fee; ask If about cover per booked walk.
+- Walk slots for real: move from demo money to a licensed provider that holds the money (`decisions/council/006-walk-payments.md`); walker tax details for DAC7; walker checks; disputes; test the proposed 15% fee; ask If about cover per booked walk.
 - Keep the map fresh: confirm prompts after a visit, a nightly stale job, a claimed-listing flow for vets and venues ("verified by the clinic", always free).
 - Partners as data owners: the city feeds official walking areas; shelters post found animals; vets keep their own hours up to date.
 - Lost & found alerts by area (email first; push once the app can rely on it), sightings with a location, printable posters with QR.
