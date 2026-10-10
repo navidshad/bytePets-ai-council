@@ -1,6 +1,6 @@
 # Product Requirements — BytePets
 
-> Living doc. Hack4Vilnius 2026, Challenge #6 (If Insurance). Decision: `decisions/council/005-mvp-rethink.md`. Prototype: https://claude.ai/artifact/G4h1gwYUzUQdFJx66sXFvb
+> Living doc. Hack4Vilnius 2026, Challenge #6 (If Insurance). Decisions: `decisions/council/005-mvp-rethink.md`, `decisions/council/006-walk-payments.md` (payments). Prototype: https://claude.ai/artifact/G4h1gwYUzUQdFJx66sXFvb
 
 **What it is:** one map of Vilnius for dog owners. The city's data says where; owners say what's true now.
 **Platform:** Flutter app (iOS first). English and Lithuanian.
@@ -18,19 +18,21 @@
 | 7 | **Vets open now** | Clinics with opening hours, "checked on [date]", which animals they treat, reviews, and a Call button. | At 23:00 only open clinics show |
 | 8 | **Dog-friendly places** | Mainly cafés and restaurants: dogs inside or terrace only, water bowl, dog menu, photos and reviews. | A café added by one owner shows on the map with its tags |
 | 9 | **Lost & found** | Two buttons: **I lost a pet** / **I found a pet**. Report in three steps: photo, pet (dog / cat / other, size, colour), rough area and time. Board and map pins, share link, mark "reunited". | A report is posted in under 30 seconds |
-| 10 | **Walk assistants** | People offer walk slots; owners book one. Walker profile: rough area, tags (big dogs, reactive OK, cats), rating, walks done. | An owner finds a walker nearby and books a slot |
-| 11 | **Live walk** | During a booked walk the walker turns on GPS and sends photos and short videos. The owner sees the route, the updates and the walker's position live. | The owner sees the walker move and a new photo arrive during the walk |
+| 10 | **Walk assistants** | People offer walk slots ("Offer walks" on Me); owners find them on the map or in a list and book one. The walker accepts or declines the request. Walker profile: rough area, tags (big dogs, reactive OK, cats), rating, walks done. | An owner books a slot and the walker accepts it |
+| 11 | **Live walk** | The walker taps **Start walk** (GPS on) and **End walk**. In between they send photos and short videos. The owner sees a "walk is live" bar on the home map, then the route, the updates and the walker's position. | The owner sees the walker move and a new photo arrive during the walk |
 | 12 | **Walk chat** | Each walk has its own chat between owner and walker. It stays saved as the walk's history, with the route and the media. | After the walk, both can open the chat, route and media |
 | 13 | **Share** | Every place, report, lost & found post and walker profile has a link that opens without the app. | A shared post opens in a phone browser |
+| 14 | **Payments** | Demo money for now. The owner pays one price at booking; the money is held. Cancel free until 2 h before. 24 h after End walk the walker gets the price minus the BytePets fee (proposed 15%); a problem reported in that window stops it. Owner: Me → Payments (spent, each walk, receipt). Walker: Me → Earnings (on hold, on the way, paid out, fee per walk, year total). | A walk booked and ended shows in the owner's Payments, then moves to the walker's Paid out when the window ends |
 
 ## Rules
 - **Privacy:** a walker's live position is visible only to the owner, and only during their booked walk. Lost & found shows a rough area (about 150 m), never an exact address. No phone numbers in public.
 - **Trust:** colour shows a place's state; text shows how fresh it is ("confirmed 2 days ago"). The newest answers win.
 - **Photo location:** read from the photo to place a report, then removed from the file before upload.
 - **Sign-in:** browse without an account; sign in to report, review, post, book or chat.
+- **Money:** price, fee, booking status and money records change only on the server, never on the phone. Amounts are whole cents. Every money move is a ledger entry that is never edited. Until a licensed provider holds real money, every money screen says "Demo money, no real payment".
 
 ## Out for now
-Group walks and the 3D preview, AI photo matching for lost & found, payments in the app, push alerts by area, "Still there?" prompts while the app is closed, dog-care logging.
+Group walks and the 3D preview, AI photo matching for lost & found, real money (a licensed provider will hold it; ADR to come), push alerts by area, "Still there?" prompts while the app is closed, dog-care logging.
 
 ## Build plan (3 people)
 
@@ -39,15 +41,15 @@ Group walks and the 3D preview, AI photo matching for lost & found, payments in 
 - Design system in code: tokens as `ThemeData` + a `ThemeExtension`, and the shared widgets (Button, Chip, StatusPill, MapPin, BottomSheet, ListRow, ResultCard). Source: https://claude.ai/artifact/24xFqfY1jiSzN4HhK3pgxr
 - Sign-in and profile: account, first name, one dog profile (name, size, photo). Offer Sign in with Apple next to Google: the App Store requires it when a third-party sign-in is offered.
 - The map widget: styled map, pins, chips, "you are here", edge fade.
-- Backend and data model: users, places, reviews, reports, lost & found posts, walks, messages; storage for photos and videos; access rules.
+- Backend and data model: users, places, reviews, reports, lost & found posts, walks, messages, bookings, ledger and wallets; storage for photos and videos; access rules. A shared `Money` type (whole cents, EN/LT format).
 - English and Lithuanian set up from the start.
 
 **Step 2 — Two feature tracks, in parallel.**
 
 | Track | Owner | Features |
 |---|---|---|
-| A · Places & reports | Developer 1 | 3 Dog areas (import the city's 35), 4 Report on the map, 5 Still there?, 6 Reviews, 7 Vets open now, 8 Dog-friendly places, 13 Share |
-| B · Pets & walks | Developer 2 | 9 Lost & found, 10 Walk assistants, 11 Live walk, 12 Walk chat |
+| A · Places, reports & lost pets | Developer 1 | 3 Dog areas (import the city's 35), 4 Report on the map, 5 Still there?, 6 Reviews, 7 Vets open now, 8 Dog-friendly places, 9 Lost & found, 13 Share |
+| B · Walks & payments | Developer 2 | 10 Walk assistants, 11 Live walk, 12 Walk chat, 14 Payments (booking states, 2 h and 24 h rules on the server, demo gateway) |
 | Last · Ask box | Whoever finishes first | 2 Ask box: it searches what tracks A and B built |
 
 **Step 3 — Landing page (third person, from day one).** One page in English and Lithuanian: what BytePets is, three screenshots from the UI, a waitlist or download link, privacy page. The same person can also check vet hours by phone and collect the first dog-friendly places.
